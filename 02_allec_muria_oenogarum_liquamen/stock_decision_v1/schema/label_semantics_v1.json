@@ -1,0 +1,315 @@
+{
+ "schema": "sdv1-label-semantics-v1",
+ "created_utc": "2026-10-14",
+ "owner": "TEACHER (stock_decision_v1/teacher/sdv1_failure_ledger.py reads it); PILOT-DATA adopts it in sd0_render.py",
+ "why": "REVIEW_2026-10-13_2105 finding 4: sd0_render copied label_basis (a provenance term) into both target_basis and label_verification; the failure ledger used a different vocabulary, so rule_oracle / human_annotation gold with every teacher wrong came out ambiguous_or_defective_label instead of common_teacher_failure.",
+ "fields": {
+  "target_basis": "WHAT the gold distribution means (a key of target_basis below). Decides hard vs soft scoring.",
+  "label_verification": "HOW the gold's correctness was established (a key of label_verification below). Decides whether a model disagreement can be a failure category or must be a review item.",
+  "label_provenance": "WHERE the label came from upstream: the Stage 0 source-map label_basis value, verbatim (a key of stage0_provenance_map). Never used as target_basis or label_verification directly.",
+  "label_provenance_detail": "optional free text (source-map reason, recast id, review id)",
+  "evidence_refs": "list of references that establish the label: source record ids, oracle / rule ids + revisions, execution fixture ids, review ids, cited spans. [] when none is available (allowed; recorded as such)."
+ },
+ "target_basis": {
+  "hard_fact": {
+   "distribution": "one-hot (ties = several maximal keys)",
+   "scoring": "from_gold",
+   "native_metric": "tie_accepting_hard_accuracy",
+   "miss_is_reasoning_error": true
+  },
+  "optimal_action": {
+   "distribution": "one-hot over actions (the Bayes action under a stated loss)",
+   "scoring": "from_gold",
+   "native_metric": "action_regret when loss_by_option is given, else tie_accepting_hard_accuracy",
+   "miss_is_reasoning_error": true
+  },
+  "realised_outcome": {
+   "distribution": "one-hot: the outcome that actually happened (court ruling, AfD close, trial result ...)",
+   "scoring": "from_gold",
+   "native_metric": "tie_accepting_hard_accuracy (+ log score)",
+   "miss_is_reasoning_error": false,
+   "note": "an aleatoric event: a wrong argmax is not by itself a reasoning error; failure categories are kept but generation_priority becomes 'review'"
+  },
+  "recorded_action": {
+   "distribution": "one-hot: what a recorded agent / person did",
+   "scoring": "from_gold",
+   "native_metric": "tie_accepting_hard_accuracy",
+   "miss_is_reasoning_error": false,
+   "note": "behaviour, not correctness"
+  },
+  "human_distribution": {
+   "distribution": "retained annotator distribution",
+   "scoring": "soft",
+   "native_metric": "soft_metrics (NLL, Brier, TV)",
+   "miss_is_reasoning_error": false
+  },
+  "exact_posterior": {
+   "distribution": "exact posterior / posterior-predictive of a stated model",
+   "scoring": "soft",
+   "native_metric": "soft_metrics",
+   "miss_is_reasoning_error": false
+  },
+  "outcome_probability": {
+   "distribution": "probability of a future outcome from a stated process",
+   "scoring": "soft",
+   "native_metric": "soft_metrics",
+   "miss_is_reasoning_error": false
+  },
+  "graded_rating": {
+   "distribution": "ordinal human rating: one level, or a soft interpolation between neighbouring levels",
+   "scoring": "from_gold",
+   "native_metric": "hard if the gold is one-hot or a uniform tie set, else soft_metrics",
+   "miss_is_reasoning_error": true
+  }
+ },
+ "hardness_rule": "scoring 'from_gold': hard when the nonzero gold entries are all equal (one-hot, or uniform over a set of equally correct keys: tie-accepting accuracy); soft when they differ (graded relevance, annotator splits, interpolated ratings). A soft row is never a failure category (soft_target_metric_only: NLL / Brier stored; a verified failure needs evidence).",
+ "label_verification": {
+  "exact_oracle": {
+   "tier": "independent",
+   "means": "an owned, versioned executable rule / exact calculation produced the label"
+  },
+  "execution_check": {
+   "tier": "independent",
+   "means": "the label was established by executing code / tests"
+  },
+  "construction_rule": {
+   "tier": "independent",
+   "means": "the label is fixed by the generating template's construction (e.g. BBQ, HANS)"
+  },
+  "outcome_record": {
+   "tier": "independent",
+   "means": "the label is the recorded outcome from an authoritative record"
+  },
+  "retained_human_distribution": {
+   "tier": "independent",
+   "means": "the observed annotator distribution, kept as collected"
+  },
+  "cited_evidence_review": {
+   "tier": "independent",
+   "means": "cited evidence + an independent review (DATA_SPEC accepted class)"
+  },
+  "checked_teacher_reasoning": {
+   "tier": "independent",
+   "means": "teacher reasoning independently checked (DATA_SPEC accepted class)"
+  },
+  "author_constructed": {
+   "tier": "independent",
+   "means": "written with a unique answer by its author (the teacher dry-run set only)"
+  },
+  "source_human_gold": {
+   "tier": "source_gold",
+   "means": "the curated human gold label of the source dataset, not re-verified by us (annotation noise possible)"
+  },
+  "upstream_llm_reviewed": {
+   "tier": "unverified",
+   "means": "an upstream label whose recast was reviewed by an LLM (tasksource GLM-5.3 review): NOT independent verification"
+  },
+  "model_label": {
+   "tier": "unverified",
+   "means": "the label was produced by a model"
+  },
+  "unaudited_rule": {
+   "tier": "unverified",
+   "means": "a generator rule without an independent audit"
+  },
+  "recorded_behaviour": {
+   "tier": "unverified",
+   "means": "what an agent did; says nothing about correctness"
+  },
+  "unknown": {
+   "tier": "unverified",
+   "means": "missing or unrecognised"
+  }
+ },
+ "tiers": {
+  "independent": "accepted: model / gold disagreements are failure categories",
+  "source_gold": "accepted as gold for categorisation (standard dataset gold); errors possible",
+  "unverified": "NOT accepted: any model disagreement with the gold -> ambiguous_or_defective_label (a review item); a per-source independent audit (DATA_SPEC 50-example family QC) may promote a source via promotions below"
+ },
+ "always": "common_teacher_failure always carries needs_independent_check = true (an executable oracle or two independent grounded reviews before it may be called a teacher error), whatever the tier.",
+ "stage0_provenance_map": {
+  "rule_oracle": {
+   "target_basis": "hard_fact",
+   "label_verification": "exact_oracle",
+   "scoring": "from_gold",
+   "examples": [
+    "bayes_families/ret_fact",
+    "garas_synth/grounded_answer",
+    "garas_synth/linked_facts",
+    "garas_synth/retrieval_rank",
+    "garas_synth/scope_discrimination",
+    "tasksource ts_rule/* (33)"
+   ]
+  },
+  "execution_verified": {
+   "target_basis": "hard_fact",
+   "label_verification": "execution_check",
+   "scoring": "from_gold",
+   "examples": [
+    "code_contests"
+   ]
+  },
+  "template_rule": {
+   "target_basis": "hard_fact",
+   "label_verification": "construction_rule",
+   "scoring": "from_gold",
+   "examples": [
+    "bbq",
+    "hans"
+   ]
+  },
+  "exact_posterior": {
+   "target_basis": "exact_posterior",
+   "label_verification": "exact_oracle",
+   "scoring": "soft",
+   "examples": [
+    "bayes_pref",
+    "bayes_families/{coin,lr,normal_mean,rate}",
+    "garas_synth/{beta_rate,binary_evidence}"
+   ]
+  },
+  "exact_action": {
+   "target_basis": "optimal_action",
+   "label_verification": "exact_oracle",
+   "scoring": "from_gold",
+   "examples": [
+    "garas_synth/comparative_cost"
+   ]
+  },
+  "human_annotation": {
+   "target_basis": "hard_fact",
+   "label_verification": "source_human_gold",
+   "scoring": "from_gold",
+   "examples": [
+    "banking77",
+    "blimp",
+    "circa",
+    "clinc150",
+    "commonsense_qa",
+    "contract_nli",
+    "cosmos_qa",
+    "e_care",
+    "... (18)"
+   ]
+  },
+  "human_distribution": {
+   "target_basis": "human_distribution",
+   "label_verification": "retained_human_distribution",
+   "scoring": "soft",
+   "examples": [
+    "go_emotions",
+    "ibm_argq",
+    "measuring_hate_speech",
+    "scruples",
+    "stanford_politeness"
+   ]
+  },
+  "human_rating": {
+   "target_basis": "graded_rating",
+   "label_verification": "source_human_gold",
+   "scoring": "from_gold",
+   "examples": [
+    "helpsteer2"
+   ]
+  },
+  "realised_outcome": {
+   "target_basis": "realised_outcome",
+   "label_verification": "outcome_record",
+   "scoring": "from_gold",
+   "examples": [
+    "wikipedia_afd",
+    "aidev_pr_outcomes",
+    "casino",
+    "courtlistener_swiss_courts",
+    "clinicaltrials_gov",
+    "ca_dmhc_imr",
+    "openfda",
+    "folktables_acs",
+    "... (18)"
+   ]
+  },
+  "upstream_annotation_llm_reviewed": {
+   "target_basis": "hard_fact",
+   "label_verification": "upstream_llm_reviewed",
+   "scoring": "from_gold",
+   "examples": [
+    "tasksource filtered-full (298 sources)"
+   ],
+   "note": "soft tasksource rows (source_label_soft: annotator disagreement or interpolated ratings) score soft by the hardness rule"
+  },
+  "model_labelled_upstream": {
+   "target_basis": "hard_fact",
+   "label_verification": "model_label",
+   "scoring": "from_gold",
+   "examples": [
+    "tasksource model-labelled sources (4)"
+   ]
+  },
+  "model_or_unverified_synthetic": {
+   "target_basis": "hard_fact",
+   "label_verification": "model_label",
+   "scoring": "from_gold",
+   "examples": [
+    "jebadiah",
+    "kaivoss",
+    "mghafiri",
+    "vagmi"
+   ]
+  },
+  "rule_synthetic": {
+   "target_basis": "hard_fact",
+   "label_verification": "unaudited_rule",
+   "scoring": "from_gold",
+   "examples": [
+    "procedural_typed_decisions",
+    "tasksource rule_synthetic (13)"
+   ]
+  },
+  "recorded_agent_action": {
+   "target_basis": "recorded_action",
+   "label_verification": "recorded_behaviour",
+   "scoring": "from_gold",
+   "examples": [
+    "open_jev"
+   ]
+  }
+ },
+ "unit_target_basis_aliases": {
+  "source_label_hard": "hard_fact",
+  "source_label_soft": "from_gold (soft unless one-hot)",
+  "note": "tasksource unit-level curation target_basis (convert_tasksource_ff.py); it never overrides the provenance mapping"
+ },
+ "ledger_v1_aliases": {
+  "label_verification": {
+   "source_annotation": "source_human_gold",
+   "human_distribution": "retained_human_distribution",
+   "cited_evidence_with_independent_review": "cited_evidence_review",
+   "independently_checked_teacher_reasoning": "checked_teacher_reasoning",
+   "exact_oracle": "exact_oracle",
+   "author_constructed": "author_constructed"
+  },
+  "target_basis": {
+   "hard": "hard_fact",
+   "one_hot": "hard_fact",
+   "soft": "human_distribution",
+   "latent_belief": "human_distribution",
+   "empirical_distribution": "human_distribution"
+  }
+ },
+ "promotions": {},
+ "renderer_contract": {
+  "target_basis": "stage0_provenance_map[label_basis].target_basis",
+  "label_verification": "stage0_provenance_map[label_basis].label_verification (a per-row verified value, when one exists, wins)",
+  "label_provenance": "label_basis verbatim",
+  "label_provenance_detail": "the source-map reason / recast id when available",
+  "evidence_refs": "source record id, oracle / rule id + revision, review id when available; [] otherwise",
+  "unmapped_label_basis": "refuse the row (no silent default)"
+ },
+ "resolution_in_the_ledger": [
+  "1. A value of label_verification or target_basis that is a stage0_provenance_map key is mapped through it (covers rows rendered before this schema, where both fields hold label_basis).",
+  "2. Otherwise each field is read from its own table (ledger_v1_aliases accepted).",
+  "3. Unknown verification -> tier unverified; unknown target basis -> hardness from the gold and flagged unknown_target_basis."
+ ],
+ "revision": 2,
+ "revision_note": "2026-10-14 r2: (1) hardness_rule: a uniform tie set over equally correct keys is HARD (tie-accepting); (2) every one-hot-type basis (hard_fact, optimal_action, realised_outcome, recorded_action) scores 'from_gold', so a graded gold under such a basis (e.g. per-question overrides of realised_outcome rows) is soft, never a failure category. stage0_provenance_map target / verification values, tiers, fields and renderer contract are unchanged from r1 (md5 7cf436b2)."
+}

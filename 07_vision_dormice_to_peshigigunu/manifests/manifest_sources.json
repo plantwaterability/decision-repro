@@ -1,0 +1,1261 @@
+{
+ "ug1_nc": {
+  "rows": 323264,
+  "ocr_cache": "ug1",
+  "ocr_rows": 219143,
+  "ocr_share": 0.6779072213423084,
+  "sources": {
+   "ade_cnt": 18464,
+   "ai2d_mmmu": 13679,
+   "ai2d_rb2": 13717,
+   "aokvqa_rw": 7000,
+   "bdd_drive": 7800,
+   "chartnet": 10249,
+   "chartnet_b": 13751,
+   "chartnet_mmmu": 7811,
+   "chartnet_rb2": 7737,
+   "coco_b": 5327,
+   "coco_count": 7218,
+   "coco_wino": 3414,
+   "cord_train": 9416,
+   "docvqa": 5354,
+   "fhm_fg": 4000,
+   "funsd_train": 4084,
+   "gqa_rw": 10000,
+   "hm_fill": 2166,
+   "hm_train": 8434,
+   "hs_depth": 3000,
+   "hs_dist": 3700,
+   "hs_multiview": 5661,
+   "hs_rel": 2000,
+   "hs_viscorr": 9339,
+   "infovqa_train": 1750,
+   "lvis_cnt": 5900,
+   "lvis_cnt_b": 2400,
+   "lvis_rel": 3300,
+   "m2w": 15000,
+   "meme_v1": 1500,
+   "mindcube": 6403,
+   "ml_harmeme": 1200,
+   "ml_harmeme_c": 1000,
+   "ml_mami": 1800,
+   "ml_memotion": 600,
+   "ml_mimic": 300,
+   "multioff": 360,
+   "oid_cnt": 4700,
+   "oid_rel": 6000,
+   "oid_scn_cnt": 5000,
+   "oid_street": 4000,
+   "paco_func": 3000,
+   "paco_sem": 3000,
+   "pixmo_cnt": 8000,
+   "pridemm": 3640,
+   "sat": 2558,
+   "spair_sem": 6000,
+   "sqa_mmmu": 5510,
+   "sqa_rb2": 5546,
+   "tally_cnt": 6277,
+   "textvqa_rw": 5000,
+   "vg_rw": 3698,
+   "vizwiz_rw": 7000,
+   "vqa2_rw": 5726,
+   "vrd25": 5178,
+   "vrd_b": 5181,
+   "vsr": 3416
+  },
+  "source_line": {
+   "ade_cnt|nc": 18464,
+   "ai2d_mmmu|nc": 13679,
+   "ai2d_rb2|nc": 13717,
+   "aokvqa_rw|clean": 7000,
+   "bdd_drive|nc": 7800,
+   "chartnet_b|clean": 13751,
+   "chartnet_mmmu|clean": 7811,
+   "chartnet_rb2|clean": 7737,
+   "chartnet|clean": 10249,
+   "coco_b|clean": 5327,
+   "coco_count|clean": 7218,
+   "coco_wino|clean": 3414,
+   "cord_train|clean": 9416,
+   "docvqa|clean": 5354,
+   "fhm_fg|nc": 4000,
+   "funsd_train|nc": 4084,
+   "gqa_rw|clean": 10000,
+   "hm_fill|nc": 2166,
+   "hm_train|nc": 8434,
+   "hs_depth|clean": 3000,
+   "hs_dist|clean": 3700,
+   "hs_multiview|clean": 5661,
+   "hs_rel|clean": 2000,
+   "hs_viscorr|clean": 9339,
+   "infovqa_train|nc": 1750,
+   "lvis_cnt_b|clean": 2400,
+   "lvis_cnt|clean": 5900,
+   "lvis_rel|clean": 3300,
+   "m2w|clean": 15000,
+   "meme_v1|clean": 1500,
+   "mindcube|clean": 6403,
+   "ml_harmeme_c|nc": 1000,
+   "ml_harmeme|nc": 1200,
+   "ml_mami|nc": 1800,
+   "ml_memotion|nc": 600,
+   "ml_mimic|nc": 300,
+   "multioff|nc": 360,
+   "oid_cnt|clean": 4700,
+   "oid_rel|clean": 6000,
+   "oid_scn_cnt|clean": 5000,
+   "oid_street|clean": 4000,
+   "paco_func|clean": 3000,
+   "paco_sem|clean": 3000,
+   "pixmo_cnt|nc": 8000,
+   "pridemm|nc": 3640,
+   "sat|clean": 2558,
+   "spair_sem|nc": 6000,
+   "sqa_mmmu|nc": 5510,
+   "sqa_rb2|nc": 5546,
+   "tally_cnt|nc": 6277,
+   "textvqa_rw|clean": 5000,
+   "vg_rw|clean": 3698,
+   "vizwiz_rw|clean": 7000,
+   "vqa2_rw|clean": 5726,
+   "vrd25|clean": 5178,
+   "vrd_b|clean": 5181,
+   "vsr|clean": 3416
+  },
+  "keys": {
+   "id": 323264,
+   "family": 323264,
+   "source": 323264,
+   "line": 323264,
+   "licence": 323264,
+   "subtask": 323264,
+   "images": 323264,
+   "question": 323264,
+   "options": 323264,
+   "gold": 323264,
+   "prompt": 323264,
+   "img_src_sha256": 323264,
+   "img_sha256": 323264,
+   "img_phash": 323264,
+   "extra": 134946
+  },
+  "header": {
+   "manifest": "ug1_nc",
+   "config": {
+    "name": "ug1_nc",
+    "base_path": "/data/shared/visdata_f/manifests_f/uf2_nc_ade.jsonl",
+    "base_sha256": "df059f4d8aa72f000eabe808025ef89bfb9f3c94fc6a0e93aada174578df15d2",
+    "line": "nc",
+    "add": {
+     "pixmo_cnt": 8000,
+     "gqa_rw": 10000
+    },
+    "hm_add": {
+     "fhm_fg": 4000
+    },
+    "extra_e": {
+     "ade_cnt": 12064
+    }
+   },
+   "rows": 323264,
+   "steps_at_64": 5051.0,
+   "rows_sha256": "65e7224c571fa5c814630229ca234e68c96ba4f78fd52796f3bae90dcfaad20b",
+   "base": {
+    "path": "/data/shared/visdata_f/manifests_f/uf2_nc_ade.jsonl",
+    "rows": 289200,
+    "rows_sha256": "df059f4d8aa72f000eabe808025ef89bfb9f3c94fc6a0e93aada174578df15d2",
+    "note": "base rows are byte-identical and in the same relative order; the base ids, picked from the new file, reproduce the base file (asserted)"
+   },
+   "added_rows": 34064,
+   "added_per_source": {
+    "ade_cnt": 12064,
+    "fhm_fg": 4000,
+    "gqa_rw": 10000,
+    "pixmo_cnt": 8000
+   },
+   "added_per_family": {
+    "RealWorldQA": 10000,
+    "CV-Bench": 20064,
+    "Moderation (Hateful Memes)": 4000
+   },
+   "added_per_subtask": {
+    "CV-Bench|Count": 20064,
+    "Moderation (Hateful Memes)|fine_attack": 1599,
+    "Moderation (Hateful Memes)|fine_target": 2401,
+    "RealWorldQA|choose": 3370,
+    "RealWorldQA|mc": 3612,
+    "RealWorldQA|yesno": 3018
+   },
+   "per_family": {
+    "BLINK": 47400,
+    "RealWorldQA": 52782,
+    "CV-Bench": 81064,
+    "CharXiv": 24000,
+    "R-Bench-M": 27000,
+    "MMMU-Pro vision": 27000,
+    "Moderation (Hateful Memes)": 25000,
+    "InfographicVQA": 7104,
+    "Winoground": 3414,
+    "Mind2Web": 15000,
+    "KIE (CORD+FUNSD)": 13500
+   },
+   "per_family_share": {
+    "BLINK": 0.1466,
+    "RealWorldQA": 0.1633,
+    "CV-Bench": 0.2508,
+    "CharXiv": 0.0742,
+    "R-Bench-M": 0.0835,
+    "MMMU-Pro vision": 0.0835,
+    "Moderation (Hateful Memes)": 0.0773,
+    "InfographicVQA": 0.022,
+    "Winoground": 0.0106,
+    "Mind2Web": 0.0464,
+    "KIE (CORD+FUNSD)": 0.0418
+   },
+   "repeat_factor": {
+    "G:pixmo_cnt": 0.97,
+    "G:gqa_rw": 0.56,
+    "GHM:fhm_fg:yes": 0.38,
+    "GHM:fhm_fg:no": 0.38,
+    "GE:ade_cnt": 0.77
+   },
+   "per_source": {
+    "ade_cnt": 18464,
+    "ai2d_mmmu": 13679,
+    "ai2d_rb2": 13717,
+    "aokvqa_rw": 7000,
+    "bdd_drive": 7800,
+    "chartnet": 10249,
+    "chartnet_b": 13751,
+    "chartnet_mmmu": 7811,
+    "chartnet_rb2": 7737,
+    "coco_b": 5327,
+    "coco_count": 7218,
+    "coco_wino": 3414,
+    "cord_train": 9416,
+    "docvqa": 5354,
+    "fhm_fg": 4000,
+    "funsd_train": 4084,
+    "gqa_rw": 10000,
+    "hm_fill": 2166,
+    "hm_train": 8434,
+    "hs_depth": 3000,
+    "hs_dist": 3700,
+    "hs_multiview": 5661,
+    "hs_rel": 2000,
+    "hs_viscorr": 9339,
+    "infovqa_train": 1750,
+    "lvis_cnt": 5900,
+    "lvis_cnt_b": 2400,
+    "lvis_rel": 3300,
+    "m2w": 15000,
+    "meme_v1": 1500,
+    "mindcube": 6403,
+    "ml_harmeme": 1200,
+    "ml_harmeme_c": 1000,
+    "ml_mami": 1800,
+    "ml_memotion": 600,
+    "ml_mimic": 300,
+    "multioff": 360,
+    "oid_cnt": 4700,
+    "oid_rel": 6000,
+    "oid_scn_cnt": 5000,
+    "oid_street": 4000,
+    "paco_func": 3000,
+    "paco_sem": 3000,
+    "pixmo_cnt": 8000,
+    "pridemm": 3640,
+    "sat": 2558,
+    "spair_sem": 6000,
+    "sqa_mmmu": 5510,
+    "sqa_rb2": 5546,
+    "tally_cnt": 6277,
+    "textvqa_rw": 5000,
+    "vg_rw": 3698,
+    "vizwiz_rw": 7000,
+    "vqa2_rw": 5726,
+    "vrd25": 5178,
+    "vrd_b": 5181,
+    "vsr": 3416
+   },
+   "per_line": {
+    "clean": 208937,
+    "nc": 114327
+   },
+   "hm_yes_share": 0.5,
+   "hm_per_source_yes": {
+    "fhm_fg": [
+     2000,
+     4000
+    ],
+    "hm_fill": [
+     1097,
+     2166
+    ],
+    "hm_train": [
+     4203,
+     8434
+    ],
+    "meme_v1": [
+     750,
+     1500
+    ],
+    "ml_harmeme": [
+     600,
+     1200
+    ],
+    "ml_harmeme_c": [
+     500,
+     1000
+    ],
+    "ml_mami": [
+     900,
+     1800
+    ],
+    "ml_memotion": [
+     300,
+     600
+    ],
+    "ml_mimic": [
+     150,
+     300
+    ],
+    "multioff": [
+     180,
+     360
+    ],
+    "pridemm": [
+     1820,
+     3640
+    ]
+   },
+   "round_g_pool": {
+    "chartqa_h": {
+     "built": 6509,
+     "kept": 6142,
+     "drop_public": 24,
+     "drop_dev": 32,
+     "drop_proxy": 297,
+     "drop_nevertrain": 14
+    },
+    "fhm_fg": {
+     "built": 11292,
+     "kept": 10564,
+     "drop_public": 668,
+     "drop_dev": 60
+    },
+    "gqa_rw": {
+     "built": 18000,
+     "kept": 17896,
+     "drop_dev": 51,
+     "drop_public": 52,
+     "drop_proxy": 1
+    },
+    "hs_cnt": {
+     "built": 5000,
+     "kept": 4998,
+     "drop_public": 2
+    },
+    "pixmo_cnt": {
+     "built": 8281,
+     "kept": 8272,
+     "drop_public": 3,
+     "drop_dev": 2,
+     "drop_nevertrain": 4
+    }
+   },
+   "dedupe": {
+    "public_images": 10742,
+    "dev_images": 5909,
+    "proxy_images": 3598,
+    "rbh_images": 1530,
+    "charxiv_val_test_images": 2323,
+    "nevertrain_images": {
+     "vikhyatk__CountBenchQA": 491,
+     "amitakamath2__whatsup_vlms": 421,
+     "yifanzhang114__MME-RealWorld-Lite": 1543,
+     "ahmed-masry__ChartQAPro": 1948,
+     "lytang__ChartMuseum": 931,
+     "MinhDucBui__Multi3Hate": 1500
+    },
+    "proxy_list_md5": "e7c235107565a29d34afd7810d5ce12e",
+    "rbh_list_md5": "4f4341ab2f29498f1ef57ae39b22646a",
+    "public_hashes_md5": "ac38074e56fee2dcd685abc84f8a1dfe",
+    "phash_threshold": 6,
+    "winoground": "never on disk, never in any list"
+   },
+   "exact_hash_hits_in_manifest_vs_proxy_rbh_charxiv_nevertrain": {},
+   "added_images_missing": 0,
+   "new_sources": [
+    "ade_cnt",
+    "fhm_fg",
+    "gqa_rw",
+    "pixmo_cnt"
+   ],
+   "licences": {
+    "mindcube": [
+     "clean",
+     "MLL-Lab/MindCube train (MIT)"
+    ],
+    "vsr": [
+     "clean",
+     "VSR random-split train (CC BY 4.0); COCO train2017 images; BLINK test images removed at V1 build"
+    ],
+    "aokvqa_rw": [
+     "clean",
+     "A-OKVQA v1p0 train (Apache-2.0, github.com/allenai/aokvqa); COCO train2017 images"
+    ],
+    "gqa_rw": [
+     "clean",
+     "GQA balanced train questions + scene graphs v1.1 (cs.stanford.edu/people/dorarad/gqa, CC BY 4.0); Visual Genome images (CC BY 4.0; Flickr / COCO photos)"
+    ],
+    "oid_scn_cnt": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "ade_cnt": [
+     "nc",
+     "ADE20K SceneParsing training images + instance masks (images: non-commercial research/education; annotations BSD-3)"
+    ],
+    "chartnet": [
+     "clean",
+     "ibm-granite/ChartNet grounded_qa (CDLA-Permissive-2.0; synthetic charts)"
+    ],
+    "chartnet_rb2": [
+     "clean",
+     "ChartNet reasoning_qa (CDLA-Permissive-2.0); A3 'Other' construction"
+    ],
+    "vrd_b": [
+     "clean",
+     "2.5VRD within-image train annotations (CC BY 4.0); Open Images V4 train images (per-image terms, the trawl's CLEAN line)"
+    ],
+    "hs_multiview": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders); camera-motion labels from camera keyframes"
+    ],
+    "oid_rel": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "vizwiz_rw": [
+     "clean",
+     "VizWiz-VQA train (CC BY 4.0, vizwiz.org/tasks-and-datasets/vqa); phone photos by blind users"
+    ],
+    "lvis_cnt": [
+     "clean",
+     "LVIS v1 train annotations (CC BY 4.0); COCO train2017 images"
+    ],
+    "oid_cnt": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "sqa_rb2": [
+     "nc",
+     "ScienceQA train (CC BY-NC-SA 4.0); A3 'Other' construction"
+    ],
+    "coco_b": [
+     "clean",
+     "Nemotron-Image-Training-v3.5 coco_count_spatial_qa (OpenMDW-1.1); COCO train2017 images (V1 precedent)"
+    ],
+    "sqa_mmmu": [
+     "nc",
+     "ScienceQA train (CC BY-NC-SA 4.0)"
+    ],
+    "hs_viscorr": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0); correspondences from per-pixel world positions"
+    ],
+    "pridemm": [
+     "nc",
+     "PrideMM train split (github.com/SiddhantBikram/MemeCLIP, Google Drive file 17WozXiXfq44Z6kkWsPPDHRzqIH2daUaQ); states no licence for the data"
+    ],
+    "paco_func": [
+     "clean",
+     "PACO-LVIS train part masks (MIT) on COCO train2017 images; action/role table written by hand"
+    ],
+    "bdd_drive": [
+     "nc",
+     "BDD100K train (UC Regents: educational, research, not-for-profit only) via dronefreak/BDD100K@69e9f9a6"
+    ],
+    "tally_cnt": [
+     "nc",
+     "TallyQA train (repo LICENSE Apache-2.0; kept NC per the 11-06 coordinator ruling); COCO/VG images"
+    ],
+    "vg_rw": [
+     "clean",
+     "Visual Genome question_answers (CC BY 4.0); Visual Genome images"
+    ],
+    "ai2d_mmmu": [
+     "nc",
+     "AI2D (ai2d-all.zip license.txt: AI2 License for Non-Commercial Use)"
+    ],
+    "docvqa": [
+     "clean",
+     "DocVQA train, pixparse@33136ef4 (MIT; UCSF industry documents)"
+    ],
+    "coco_wino": [
+     "clean",
+     "COCO captions train2017 (CC BY 4.0 annotations); COCO train2017 images; order-swapped negatives"
+    ],
+    "lvis_rel": [
+     "clean",
+     "LVIS v1 train annotations (CC BY 4.0); COCO train2017 images"
+    ],
+    "spair_sem": [
+     "nc",
+     "SPair-71k train pairs (PASCAL VOC / Flickr images, research terms)"
+    ],
+    "coco_count": [
+     "clean",
+     "Nemotron-Image-Training-v3.5 coco_count_spatial_qa (OpenMDW-1.1); COCO train2017 images"
+    ],
+    "m2w": [
+     "clean",
+     "osunlp/Multimodal-Mind2Web train (card: OpenRAIL; Mind2Web annotations CC BY 4.0); website screenshots"
+    ],
+    "pixmo_cnt": [
+     "nc",
+     "PixMo-Points allenai/pixmo-points@2b5c6931 (ODC-BY-1.0, 'intended for research and educational use'), human point annotations; images are third-party web images fetched by URL (bytes = the row's image_sha256), under their own terms"
+    ],
+    "paco_sem": [
+     "clean",
+     "PACO-LVIS train part masks (MIT) on COCO train2017 images"
+    ],
+    "vrd25": [
+     "clean",
+     "2.5VRD (CC BY 4.0); Open Images V4 per-image terms"
+    ],
+    "meme_v1": [
+     "clean",
+     "meme_v1: CC BY 4.0 text (HateCheck, DynaHate, MHS, Gab, CAD) on DOCCI photos (CC BY 4.0)"
+    ],
+    "ml_harmeme_c": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream HarMeme Harm-C (COVID-19)"
+    ],
+    "ai2d_rb2": [
+     "nc",
+     "AI2D (ai2d-all.zip license.txt: AI2 License for Non-Commercial Use); A3 'Other' construction"
+    ],
+    "textvqa_rw": [
+     "clean",
+     "TextVQA train (CC BY 4.0) via lmms-lab-encoder/textvqa@9c0699cd; Open Images photos"
+    ],
+    "chartnet_b": [
+     "clean",
+     "ibm-granite/ChartNet grounded_qa shards 02-05 (CDLA-Permissive-2.0; synthetic charts)"
+    ],
+    "chartnet_mmmu": [
+     "clean",
+     "ChartNet reasoning_qa rendered MMMU-Pro-vision style (CDLA-Permissive-2.0)"
+    ],
+    "hs_dist": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders), official v1 TRAIN scenes; 3-D instance boxes + per-pixel world positions"
+    ],
+    "hm_train": [
+     "nc",
+     "Hateful Memes train via neuralcatcher/hateful_memes (Facebook research licence; Getty images)"
+    ],
+    "cord_train": [
+     "clean",
+     "naver-clova-ix/cord-v2 train (CC BY 4.0)"
+    ],
+    "ml_memotion": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream Memotion offensiveness"
+    ],
+    "oid_street": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "vqa2_rw": [
+     "clean",
+     "VQAv2 train annotations (CC BY 4.0, visualqa.org/terms); COCO train2014 images"
+    ],
+    "lvis_cnt_b": [
+     "clean",
+     "LVIS v1 train annotations (CC BY 4.0); COCO train2017 images"
+    ],
+    "fhm_fg": [
+     "nc",
+     "Fine-grained hateful memes train annotations facebookresearch/fine_grained_hateful_memes@845c5f86 (Apache-2.0) on Hateful Memes TRAIN images (Facebook HM dataset licence: research; Getty images)"
+    ],
+    "ml_harmeme": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream HarMeme Harm-P (US politics)"
+    ],
+    "hs_depth": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders), official v1 TRAIN scenes; per-pixel world positions"
+    ],
+    "sat": [
+     "clean",
+     "Nemotron-Image-Training-v3.5 sat_spatial_qa (OpenMDW-1.1); SAT images"
+    ],
+    "ml_mami": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream MAMI (SemEval-2022 misogyny)"
+    ],
+    "infovqa_train": [
+     "nc",
+     "InfographicVQA train via lmms-lab-encoder/DocVQA (upstream RRC research terms)"
+    ],
+    "hs_rel": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders), official v1 TRAIN scenes; instance masks"
+    ],
+    "funsd_train": [
+     "nc",
+     "FUNSD training_data (non-commercial research/education)"
+    ],
+    "hm_fill": [
+     "nc",
+     "Hateful Memes train (Facebook HM Dataset License: research; Getty images); images via limjiayi/hateful_memes_expanded@9fe4913f"
+    ],
+    "multioff": [
+     "nc",
+     "MultiOFF train via Ibrahim-Alam/multi-modal_offensive_meme@da4633d7; states no licence"
+    ],
+    "ml_mimic": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream MIMIC Islamophobia memes"
+    ]
+   },
+   "notes": [
+    "ade_cnt: 12064 of the 15597 round E list rows that the base does not hold"
+   ]
+  }
+ },
+ "uf2_nc_ade": {
+  "rows": 289200,
+  "ocr_cache": "ug1",
+  "ocr_rows": 207464,
+  "ocr_share": 0.717372060857538,
+  "sources": {
+   "ade_cnt": 6400,
+   "ai2d_mmmu": 13679,
+   "ai2d_rb2": 13717,
+   "aokvqa_rw": 7000,
+   "bdd_drive": 7800,
+   "chartnet": 10249,
+   "chartnet_b": 13751,
+   "chartnet_mmmu": 7811,
+   "chartnet_rb2": 7737,
+   "coco_b": 5327,
+   "coco_count": 7218,
+   "coco_wino": 3414,
+   "cord_train": 9416,
+   "docvqa": 5354,
+   "funsd_train": 4084,
+   "hm_fill": 2166,
+   "hm_train": 8434,
+   "hs_depth": 3000,
+   "hs_dist": 3700,
+   "hs_multiview": 5661,
+   "hs_rel": 2000,
+   "hs_viscorr": 9339,
+   "infovqa_train": 1750,
+   "lvis_cnt": 5900,
+   "lvis_cnt_b": 2400,
+   "lvis_rel": 3300,
+   "m2w": 15000,
+   "meme_v1": 1500,
+   "mindcube": 6403,
+   "ml_harmeme": 1200,
+   "ml_harmeme_c": 1000,
+   "ml_mami": 1800,
+   "ml_memotion": 600,
+   "ml_mimic": 300,
+   "multioff": 360,
+   "oid_cnt": 4700,
+   "oid_rel": 6000,
+   "oid_scn_cnt": 5000,
+   "oid_street": 4000,
+   "paco_func": 3000,
+   "paco_sem": 3000,
+   "pridemm": 3640,
+   "sat": 2558,
+   "spair_sem": 6000,
+   "sqa_mmmu": 5510,
+   "sqa_rb2": 5546,
+   "tally_cnt": 6277,
+   "textvqa_rw": 5000,
+   "vg_rw": 3698,
+   "vizwiz_rw": 7000,
+   "vqa2_rw": 5726,
+   "vrd25": 5178,
+   "vrd_b": 5181,
+   "vsr": 3416
+  },
+  "source_line": {
+   "ade_cnt|nc": 6400,
+   "ai2d_mmmu|nc": 13679,
+   "ai2d_rb2|nc": 13717,
+   "aokvqa_rw|clean": 7000,
+   "bdd_drive|nc": 7800,
+   "chartnet_b|clean": 13751,
+   "chartnet_mmmu|clean": 7811,
+   "chartnet_rb2|clean": 7737,
+   "chartnet|clean": 10249,
+   "coco_b|clean": 5327,
+   "coco_count|clean": 7218,
+   "coco_wino|clean": 3414,
+   "cord_train|clean": 9416,
+   "docvqa|clean": 5354,
+   "funsd_train|nc": 4084,
+   "hm_fill|nc": 2166,
+   "hm_train|nc": 8434,
+   "hs_depth|clean": 3000,
+   "hs_dist|clean": 3700,
+   "hs_multiview|clean": 5661,
+   "hs_rel|clean": 2000,
+   "hs_viscorr|clean": 9339,
+   "infovqa_train|nc": 1750,
+   "lvis_cnt_b|clean": 2400,
+   "lvis_cnt|clean": 5900,
+   "lvis_rel|clean": 3300,
+   "m2w|clean": 15000,
+   "meme_v1|clean": 1500,
+   "mindcube|clean": 6403,
+   "ml_harmeme_c|nc": 1000,
+   "ml_harmeme|nc": 1200,
+   "ml_mami|nc": 1800,
+   "ml_memotion|nc": 600,
+   "ml_mimic|nc": 300,
+   "multioff|nc": 360,
+   "oid_cnt|clean": 4700,
+   "oid_rel|clean": 6000,
+   "oid_scn_cnt|clean": 5000,
+   "oid_street|clean": 4000,
+   "paco_func|clean": 3000,
+   "paco_sem|clean": 3000,
+   "pridemm|nc": 3640,
+   "sat|clean": 2558,
+   "spair_sem|nc": 6000,
+   "sqa_mmmu|nc": 5510,
+   "sqa_rb2|nc": 5546,
+   "tally_cnt|nc": 6277,
+   "textvqa_rw|clean": 5000,
+   "vg_rw|clean": 3698,
+   "vizwiz_rw|clean": 7000,
+   "vqa2_rw|clean": 5726,
+   "vrd25|clean": 5178,
+   "vrd_b|clean": 5181,
+   "vsr|clean": 3416
+  },
+  "keys": {
+   "id": 289200,
+   "family": 289200,
+   "source": 289200,
+   "line": 289200,
+   "licence": 289200,
+   "subtask": 289200,
+   "images": 289200,
+   "question": 289200,
+   "options": 289200,
+   "gold": 289200,
+   "prompt": 289200,
+   "img_src_sha256": 289200,
+   "img_sha256": 289200,
+   "img_phash": 289200,
+   "extra": 100882
+  },
+  "header": {
+   "manifest": "uf2_nc_ade",
+   "rows": 289200,
+   "steps_at_64": 4518.75,
+   "rows_sha256": "df059f4d8aa72f000eabe808025ef89bfb9f3c94fc6a0e93aada174578df15d2",
+   "built_from": {
+    "manifest": "uf1_nc_ade",
+    "rows_sha256": "1af37806a11ecc6b4c9109768f051874403a4835c268842ac68eddfb7dc46986",
+    "dropped": {
+     "arxivqa": 7000,
+     "chartqa": 3000
+    },
+    "note": "uf1_nc_ade with the arxivqa and chartqa rows removed; every other line byte-identical and in the same order; base rows hash to ue2_nc_noade 138540af (asserted)"
+   },
+   "per_family": {
+    "BLINK": 47400,
+    "RealWorldQA": 42782,
+    "CV-Bench": 61000,
+    "CharXiv": 24000,
+    "R-Bench-M": 27000,
+    "MMMU-Pro vision": 27000,
+    "Moderation (Hateful Memes)": 21000,
+    "InfographicVQA": 7104,
+    "Winoground": 3414,
+    "Mind2Web": 15000,
+    "KIE (CORD+FUNSD)": 13500
+   },
+   "per_source": {
+    "ade_cnt": 6400,
+    "ai2d_mmmu": 13679,
+    "ai2d_rb2": 13717,
+    "aokvqa_rw": 7000,
+    "bdd_drive": 7800,
+    "chartnet": 10249,
+    "chartnet_b": 13751,
+    "chartnet_mmmu": 7811,
+    "chartnet_rb2": 7737,
+    "coco_b": 5327,
+    "coco_count": 7218,
+    "coco_wino": 3414,
+    "cord_train": 9416,
+    "docvqa": 5354,
+    "funsd_train": 4084,
+    "hm_fill": 2166,
+    "hm_train": 8434,
+    "hs_depth": 3000,
+    "hs_dist": 3700,
+    "hs_multiview": 5661,
+    "hs_rel": 2000,
+    "hs_viscorr": 9339,
+    "infovqa_train": 1750,
+    "lvis_cnt": 5900,
+    "lvis_cnt_b": 2400,
+    "lvis_rel": 3300,
+    "m2w": 15000,
+    "meme_v1": 1500,
+    "mindcube": 6403,
+    "ml_harmeme": 1200,
+    "ml_harmeme_c": 1000,
+    "ml_mami": 1800,
+    "ml_memotion": 600,
+    "ml_mimic": 300,
+    "multioff": 360,
+    "oid_cnt": 4700,
+    "oid_rel": 6000,
+    "oid_scn_cnt": 5000,
+    "oid_street": 4000,
+    "paco_func": 3000,
+    "paco_sem": 3000,
+    "pridemm": 3640,
+    "sat": 2558,
+    "spair_sem": 6000,
+    "sqa_mmmu": 5510,
+    "sqa_rb2": 5546,
+    "tally_cnt": 6277,
+    "textvqa_rw": 5000,
+    "vg_rw": 3698,
+    "vizwiz_rw": 7000,
+    "vqa2_rw": 5726,
+    "vrd25": 5178,
+    "vrd_b": 5181,
+    "vsr": 3416
+   },
+   "per_line": {
+    "clean": 198937,
+    "nc": 90263
+   },
+   "licences": {
+    "mindcube": [
+     "clean",
+     "MLL-Lab/MindCube train (MIT)"
+    ],
+    "vsr": [
+     "clean",
+     "VSR random-split train (CC BY 4.0); COCO train2017 images; BLINK test images removed at V1 build"
+    ],
+    "aokvqa_rw": [
+     "clean",
+     "A-OKVQA v1p0 train (Apache-2.0, github.com/allenai/aokvqa); COCO train2017 images"
+    ],
+    "oid_scn_cnt": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "chartnet": [
+     "clean",
+     "ibm-granite/ChartNet grounded_qa (CDLA-Permissive-2.0; synthetic charts)"
+    ],
+    "chartnet_rb2": [
+     "clean",
+     "ChartNet reasoning_qa (CDLA-Permissive-2.0); A3 'Other' construction"
+    ],
+    "vrd_b": [
+     "clean",
+     "2.5VRD within-image train annotations (CC BY 4.0); Open Images V4 train images (per-image terms, the trawl's CLEAN line)"
+    ],
+    "hs_multiview": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders); camera-motion labels from camera keyframes"
+    ],
+    "oid_rel": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "vizwiz_rw": [
+     "clean",
+     "VizWiz-VQA train (CC BY 4.0, vizwiz.org/tasks-and-datasets/vqa); phone photos by blind users"
+    ],
+    "lvis_cnt": [
+     "clean",
+     "LVIS v1 train annotations (CC BY 4.0); COCO train2017 images"
+    ],
+    "oid_cnt": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "sqa_rb2": [
+     "nc",
+     "ScienceQA train (CC BY-NC-SA 4.0); A3 'Other' construction"
+    ],
+    "coco_b": [
+     "clean",
+     "Nemotron-Image-Training-v3.5 coco_count_spatial_qa (OpenMDW-1.1); COCO train2017 images (V1 precedent)"
+    ],
+    "sqa_mmmu": [
+     "nc",
+     "ScienceQA train (CC BY-NC-SA 4.0)"
+    ],
+    "hs_viscorr": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0); correspondences from per-pixel world positions"
+    ],
+    "pridemm": [
+     "nc",
+     "PrideMM train split (github.com/SiddhantBikram/MemeCLIP, Google Drive file 17WozXiXfq44Z6kkWsPPDHRzqIH2daUaQ); states no licence for the data"
+    ],
+    "paco_func": [
+     "clean",
+     "PACO-LVIS train part masks (MIT) on COCO train2017 images; action/role table written by hand"
+    ],
+    "bdd_drive": [
+     "nc",
+     "BDD100K train (UC Regents: educational, research, not-for-profit only) via dronefreak/BDD100K@69e9f9a6"
+    ],
+    "tally_cnt": [
+     "nc",
+     "TallyQA train (repo LICENSE Apache-2.0; kept NC per the 11-06 coordinator ruling); COCO/VG images"
+    ],
+    "vg_rw": [
+     "clean",
+     "Visual Genome question_answers (CC BY 4.0); Visual Genome images"
+    ],
+    "ai2d_mmmu": [
+     "nc",
+     "AI2D (ai2d-all.zip license.txt: AI2 License for Non-Commercial Use)"
+    ],
+    "docvqa": [
+     "clean",
+     "DocVQA train, pixparse@33136ef4 (MIT; UCSF industry documents)"
+    ],
+    "coco_wino": [
+     "clean",
+     "COCO captions train2017 (CC BY 4.0 annotations); COCO train2017 images; order-swapped negatives"
+    ],
+    "lvis_rel": [
+     "clean",
+     "LVIS v1 train annotations (CC BY 4.0); COCO train2017 images"
+    ],
+    "spair_sem": [
+     "nc",
+     "SPair-71k train pairs (PASCAL VOC / Flickr images, research terms)"
+    ],
+    "coco_count": [
+     "clean",
+     "Nemotron-Image-Training-v3.5 coco_count_spatial_qa (OpenMDW-1.1); COCO train2017 images"
+    ],
+    "m2w": [
+     "clean",
+     "osunlp/Multimodal-Mind2Web train (card: OpenRAIL; Mind2Web annotations CC BY 4.0); website screenshots"
+    ],
+    "paco_sem": [
+     "clean",
+     "PACO-LVIS train part masks (MIT) on COCO train2017 images"
+    ],
+    "vrd25": [
+     "clean",
+     "2.5VRD (CC BY 4.0); Open Images V4 per-image terms"
+    ],
+    "meme_v1": [
+     "clean",
+     "meme_v1: CC BY 4.0 text (HateCheck, DynaHate, MHS, Gab, CAD) on DOCCI photos (CC BY 4.0)"
+    ],
+    "ml_harmeme_c": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream HarMeme Harm-C (COVID-19)"
+    ],
+    "ade_cnt": [
+     "nc",
+     "ADE20K SceneParsing training images + instance masks (images: non-commercial research/education; annotations BSD-3)"
+    ],
+    "ai2d_rb2": [
+     "nc",
+     "AI2D (ai2d-all.zip license.txt: AI2 License for Non-Commercial Use); A3 'Other' construction"
+    ],
+    "textvqa_rw": [
+     "clean",
+     "TextVQA train (CC BY 4.0) via lmms-lab-encoder/textvqa@9c0699cd; Open Images photos"
+    ],
+    "chartnet_b": [
+     "clean",
+     "ibm-granite/ChartNet grounded_qa shards 02-05 (CDLA-Permissive-2.0; synthetic charts)"
+    ],
+    "chartnet_mmmu": [
+     "clean",
+     "ChartNet reasoning_qa rendered MMMU-Pro-vision style (CDLA-Permissive-2.0)"
+    ],
+    "hs_dist": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders), official v1 TRAIN scenes; 3-D instance boxes + per-pixel world positions"
+    ],
+    "hm_train": [
+     "nc",
+     "Hateful Memes train via neuralcatcher/hateful_memes (Facebook research licence; Getty images)"
+    ],
+    "cord_train": [
+     "clean",
+     "naver-clova-ix/cord-v2 train (CC BY 4.0)"
+    ],
+    "ml_memotion": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream Memotion offensiveness"
+    ],
+    "oid_street": [
+     "clean",
+     "Open Images V6 train boxes (CC BY 4.0); Open Images train images (listed CC BY 2.0)"
+    ],
+    "vqa2_rw": [
+     "clean",
+     "VQAv2 train annotations (CC BY 4.0, visualqa.org/terms); COCO train2014 images"
+    ],
+    "lvis_cnt_b": [
+     "clean",
+     "LVIS v1 train annotations (CC BY 4.0); COCO train2017 images"
+    ],
+    "ml_harmeme": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream HarMeme Harm-P (US politics)"
+    ],
+    "hs_depth": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders), official v1 TRAIN scenes; per-pixel world positions"
+    ],
+    "sat": [
+     "clean",
+     "Nemotron-Image-Training-v3.5 sat_spatial_qa (OpenMDW-1.1); SAT images"
+    ],
+    "ml_mami": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream MAMI (SemEval-2022 misogyny)"
+    ],
+    "infovqa_train": [
+     "nc",
+     "InfographicVQA train via lmms-lab-encoder/DocVQA (upstream RRC research terms)"
+    ],
+    "hs_rel": [
+     "clean",
+     "Hypersim (Apple; CC BY-SA 3.0; synthetic indoor renders), official v1 TRAIN scenes; instance masks"
+    ],
+    "funsd_train": [
+     "nc",
+     "FUNSD training_data (non-commercial research/education)"
+    ],
+    "hm_fill": [
+     "nc",
+     "Hateful Memes train (Facebook HM Dataset License: research; Getty images); images via limjiayi/hateful_memes_expanded@9fe4913f"
+    ],
+    "multioff": [
+     "nc",
+     "MultiOFF train via Ibrahim-Alam/multi-modal_offensive_meme@da4633d7; states no licence"
+    ],
+    "ml_mimic": [
+     "nc",
+     "QCRI/MemeLens@073a78a5 (CC BY-NC 4.0), upstream MIMIC Islamophobia memes"
+    ]
+   }
+  }
+ },
+ "u_union": {
+  "rows": 192000,
+  "ocr_cache": "u",
+  "ocr_rows": 151416,
+  "ocr_share": 0.788625,
+  "sources": {
+   "ai2d_mmmu": 13679,
+   "ai2d_rb2": 13717,
+   "chartnet": 10249,
+   "chartnet_b": 13751,
+   "chartnet_mmmu": 7811,
+   "chartnet_rb2": 7737,
+   "coco_b": 5327,
+   "coco_count": 7218,
+   "coco_wino": 3414,
+   "cord_train": 9416,
+   "docvqa": 5354,
+   "funsd_train": 4084,
+   "hm_train": 6111,
+   "hs_multiview": 5661,
+   "hs_viscorr": 9339,
+   "infovqa_train": 1750,
+   "m2w": 15000,
+   "meme_v1": 2889,
+   "mindcube": 6403,
+   "sat": 2558,
+   "sqa_mmmu": 5510,
+   "sqa_rb2": 5546,
+   "tally_cnt": 6277,
+   "vg_rw": 3698,
+   "vqa2_rw": 5726,
+   "vrd25": 5178,
+   "vrd_b": 5181,
+   "vsr": 3416
+  },
+  "source_line": {
+   "ai2d_mmmu|nc": 13679,
+   "ai2d_rb2|nc": 13717,
+   "chartnet_b|clean": 13751,
+   "chartnet_mmmu|clean": 7811,
+   "chartnet_rb2|clean": 7737,
+   "chartnet|clean": 10249,
+   "coco_b|clean": 5327,
+   "coco_count|clean": 7218,
+   "coco_wino|clean": 3414,
+   "cord_train|clean": 9416,
+   "docvqa|clean": 5354,
+   "funsd_train|nc": 4084,
+   "hm_train|nc": 6111,
+   "hs_multiview|clean": 5661,
+   "hs_viscorr|clean": 9339,
+   "infovqa_train|nc": 1750,
+   "m2w|clean": 15000,
+   "meme_v1|clean": 2889,
+   "mindcube|clean": 6403,
+   "sat|clean": 2558,
+   "sqa_mmmu|nc": 5510,
+   "sqa_rb2|nc": 5546,
+   "tally_cnt|nc": 6277,
+   "vg_rw|clean": 3698,
+   "vqa2_rw|clean": 5726,
+   "vrd25|clean": 5178,
+   "vrd_b|clean": 5181,
+   "vsr|clean": 3416
+  },
+  "keys": {
+   "id": 192000,
+   "family": 192000,
+   "source": 192000,
+   "line": 192000,
+   "licence": 192000,
+   "subtask": 192000,
+   "images": 192000,
+   "question": 192000,
+   "options": 192000,
+   "gold": 192000,
+   "prompt": 192000,
+   "img_src_sha256": 192000,
+   "img_sha256": 192000,
+   "img_phash": 192000,
+   "extra": 24416
+  },
+  "header": {
+   "manifest": "u_union",
+   "rows": 192000,
+   "rows_sha256": "37c60c9aae02d79f93386fe40bb9e7ce6176ccc3853bbedb0f7596ceda5357c3",
+   "per_family": {
+    "Mind2Web": 15000,
+    "RealWorldQA": 11982,
+    "CV-Bench": 24000,
+    "Moderation (Hateful Memes)": 9000,
+    "R-Bench-M": 27000,
+    "BLINK": 30000,
+    "CharXiv": 24000,
+    "KIE (CORD+FUNSD)": 13500,
+    "MMMU-Pro vision": 27000,
+    "Winoground": 3414,
+    "InfographicVQA": 7104
+   },
+   "per_family_share": {
+    "Mind2Web": 0.0781,
+    "RealWorldQA": 0.0624,
+    "CV-Bench": 0.125,
+    "Moderation (Hateful Memes)": 0.0469,
+    "R-Bench-M": 0.1406,
+    "BLINK": 0.1562,
+    "CharXiv": 0.125,
+    "KIE (CORD+FUNSD)": 0.0703,
+    "MMMU-Pro vision": 0.1406,
+    "Winoground": 0.0178,
+    "InfographicVQA": 0.037
+   },
+   "a3_share": {
+    "R-Bench-M": 0.1406,
+    "MMMU-Pro vision": 0.1406,
+    "BLINK": 0.1562,
+    "CharXiv": 0.125,
+    "CV-Bench": 0.125,
+    "Mind2Web": 0.0781,
+    "KIE (CORD+FUNSD)": 0.0703,
+    "RealWorldQA": 0.0624,
+    "Moderation (Hateful Memes)": 0.0469,
+    "InfographicVQA": 0.037,
+    "Winoground": 0.0178
+   },
+   "pool_sizes": {
+    "CharXiv": 31272,
+    "CV-Bench": 26671,
+    "Winoground": 1138,
+    "KIE (CORD+FUNSD)": 8784,
+    "InfographicVQA": 33388,
+    "Moderation (Hateful Memes)": 9358,
+    "Mind2Web": 7311,
+    "BLINK": 33576,
+    "RealWorldQA": 18963,
+    "MMMU-Pro vision": 15153,
+    "R-Bench-M": 15284
+   },
+   "repeat_factor": {
+    "R-Bench-M": 1.77,
+    "MMMU-Pro vision": 1.78,
+    "BLINK:hypersim": 1.48,
+    "BLINK:other": 0.64,
+    "CharXiv": 0.77,
+    "CV-Bench": 0.9,
+    "Mind2Web": 2.05,
+    "KIE (CORD+FUNSD)": 1.54,
+    "RealWorldQA": 0.63,
+    "Moderation (Hateful Memes)": 0.96,
+    "InfographicVQA": 0.21,
+    "Winoground": 3.0
+   },
+   "hypersim_share": 0.0781,
+   "per_source": {
+    "m2w": 15000,
+    "vqa2_rw": 5726,
+    "tally_cnt": 6277,
+    "hm_train": 6111,
+    "vrd25": 5178,
+    "chartnet_rb2": 7737,
+    "mindcube": 6403,
+    "hs_viscorr": 9339,
+    "meme_v1": 2889,
+    "chartnet_b": 13751,
+    "sqa_rb2": 5546,
+    "cord_train": 9416,
+    "coco_b": 5327,
+    "chartnet_mmmu": 7811,
+    "ai2d_rb2": 13717,
+    "chartnet": 10249,
+    "hs_multiview": 5661,
+    "vg_rw": 3698,
+    "ai2d_mmmu": 13679,
+    "coco_count": 7218,
+    "funsd_train": 4084,
+    "coco_wino": 3414,
+    "vsr": 3416,
+    "docvqa": 5354,
+    "vrd_b": 5181,
+    "sat": 2558,
+    "infovqa_train": 1750,
+    "sqa_mmmu": 5510
+   },
+   "per_line": {
+    "clean": 135326,
+    "nc": 56674
+   },
+   "rbench_other_is_gold": 5744
+  }
+ }
+}

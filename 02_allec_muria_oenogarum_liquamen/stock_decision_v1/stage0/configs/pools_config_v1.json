@@ -1,0 +1,152 @@
+{
+ "approved_amendments": {
+  "confirm_seal/tools": 1,
+  "dev_select/tools": 1
+ },
+ "approved_amendments_record": {
+  "A2": {
+   "sha256": "146ea1a71feba5c057f24326781a2188f52dbbdd81d8290bb0e824ccab317e4d",
+   "text": "tools minimum = 1 independent cluster per panel (dev_select, confirm_seal); the unused tools parent quota is reallocated by area weight; both panels and the proxy report carry 'tools: 1 cluster (Tasksource shell/agent safety), transfer unresolved'; the tools area does not count toward any broad-transfer claim. Supply: 2 eligible tools clusters in all pools (shell_safety_v2, agent_action_safety); other tools sources are model-labelled (mghafiri, jebadiah, kaivoss, vagmi), Typed-Decisions imitations (procedural_typed_decisions) or recorded behaviour (open_jev). Follow-up (backlog): acquire verified tool-decision sources."
+  }
+ },
+ "area_weights": {
+  "arts": 0.1,
+  "knowledge": 0.258494,
+  "language": 0.258494,
+  "retrieval": 0.200229,
+  "tools": 0.182783
+ },
+ "cal_frac": 0.03,
+ "cal_parents": 2000,
+ "comp_max_parents": 50,
+ "confirm_reserve_frac": 0.5,
+ "discovery_bad_basis": [
+  "model_or_unverified_synthetic",
+  "rule_synthetic",
+  "recorded_agent_action",
+  "model_labelled_upstream"
+ ],
+ "discovery_frac": 0.1,
+ "discovery_parents": 10000,
+ "head_fit_decisions": 16384,
+ "head_fit_frac": 0.1,
+ "m0_recipeA_roots": {
+  "afd": 1200,
+  "aidev": 1200,
+  "banking77": 2452,
+  "bayes_pref_flights": 1200,
+  "bbq": 2004,
+  "casino": 6000,
+  "circa": 2452,
+  "clinc_oos": 2452,
+  "code_contests": 2683,
+  "commonsense_qa": 465,
+  "cosmos_qa": 974,
+  "courts": 600,
+  "ctgov": 1200,
+  "dmhc": 1200,
+  "e_care": 944,
+  "esci": 1200,
+  "fda": 1200,
+  "folktables": 1200,
+  "gdelt": 3600,
+  "genomics": 1200,
+  "go_emotions": 6000,
+  "gsm8k": 2452,
+  "helpsteer2": 6000,
+  "ibm_argq": 5171,
+  "jebadiah": 6000,
+  "kaivoss": 6000,
+  "lichess": 800,
+  "measuring_hate_speech": 6000,
+  "medmcqa": 1924,
+  "mghafiri": 6000,
+  "nvd_cwe": 1200,
+  "open_jev": 1200,
+  "openreview": 1200,
+  "physics": 1200,
+  "procedural_typed_decisions": 6000,
+  "pubmedqa": 1913,
+  "safety": 1200,
+  "scruples": 4113,
+  "social_i_qa": 962,
+  "stanford_politeness": 3045,
+  "swe_rebench": 1200,
+  "swiss": 600,
+  "synth_beta_rate": 3000,
+  "synth_binary_evidence": 3000,
+  "tabfact": 2452,
+  "vagmi": 2668,
+  "wiki_census": 1200,
+  "wikidata": 1200,
+  "winogrande": 474
+ },
+ "m1_shares": {
+  "human_grounded": 0.25,
+  "probabilistic_disagreement": 0.1,
+  "tasksource_filtered_full": 0.5,
+  "verified_synthetic": 0.15
+ },
+ "max_sib": 4,
+ "min_clusters_note": "minimums count INDEPENDENT family clusters (REVIEW_2026-10-13_2105 finding 3); a shortfall stops the run unless approved_amendments lists it",
+ "min_clusters_per_area": {
+  "confirm_seal": {
+   "arts": 3,
+   "knowledge": 7,
+   "language": 14,
+   "retrieval": 10,
+   "tools": 8
+  },
+  "dev_select": {
+   "arts": 4,
+   "knowledge": 9,
+   "language": 18,
+   "retrieval": 12,
+   "tools": 8
+  }
+ },
+ "min_clusters_total": {
+  "dev_select": 40
+ },
+ "min_parents": 100,
+ "note": "recipe A courts root (1,200) split evenly into courtlistener (courts) and swiss; rules fixed before any draw",
+ "panel_allow": [
+  "courtlistener",
+  "aidev_pr_outcomes"
+ ],
+ "panel_allow_rule": "two real-outcome forecasting families (DI arts includes ForecastBench), the first two of the 12 rd3/gdelt forecasting families in sha256(20261013|panel_allow_forecasting|family) order",
+ "panel_bad_basis": [
+  "model_or_unverified_synthetic",
+  "rule_synthetic",
+  "recorded_agent_action",
+  "model_labelled_upstream"
+ ],
+ "panel_exclude_mechanisms": [
+  "beta_bernoulli_posterior",
+  "binary_likelihood_ratio",
+  "comparative_cost_expected_loss",
+  "grounded_answer_rules",
+  "linked_facts_graph",
+  "normal_mean_posterior",
+  "preference_posterior_bayes_pref",
+  "scope_discrimination_rules",
+  "synthetic_fact_retrieval",
+  "ts_rule/babi",
+  "ts_rule/conceptrules_v2",
+  "ts_rule/corr2cause",
+  "ts_rule/fol_nli",
+  "ts_rule/logical_entailment",
+  "ts_rule/mindgames",
+  "ts_rule/pararule_plus",
+  "ts_rule/probability_words_nli",
+  "ts_rule/ruletaker",
+  "ts_rule/spacenli",
+  "ts_rule/spartqa",
+  "ts_rule/stepgame",
+  "ts_rule/tomi_nli"
+ ],
+ "panel_family_cap": 400,
+ "panel_parents": 6000,
+ "schema": "stock-decision-pools-config-v1",
+ "seed": 20261013
+}

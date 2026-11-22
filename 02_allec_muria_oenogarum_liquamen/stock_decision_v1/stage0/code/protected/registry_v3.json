@@ -1,0 +1,4792 @@
+{
+ "corpus_spec_sha256": "2e1ba926318ca71214058e9a2e6d31d005b1438a82e221e3b14a7b3797ca4534",
+ "coverage_rule": "coverage_complete = every required population staged with every pinned hash matched (or an explicitly recorded current-version substitute) and indexed; supplementary rows never block; sealed rows are covered only through their exclusion indexes",
+ "derived_from": {
+  "registry_v2_sha256": "eb986fa62678712f8c14879bcb01dd227684fd76e84d54ca3a36ba5d68900163"
+ },
+ "historical_files": 976,
+ "historical_source": "research/dataset_curation/garas_gemma_vbll_2026-10-12_v1/audit/known_eval_exclusion_registry_v1.json",
+ "historical_source_sha256": "44c1632dde72038af29e32e5824642411e9a280c77775372ca4d1b8a9b97f067",
+ "historical_tags": 47,
+ "not_included": [
+  {
+   "name": "final_v1 items",
+   "reason": "ledger-gated sealed items; covered by final_v1_hl_index + final_v1_rd_index"
+  },
+  {
+   "name": "CONFIRM-2610 items (rw_v1, bf_v1)",
+   "reason": "sealed; covered by confirm_2610_index (ids, state sha1, clusters)"
+  },
+  {
+   "name": "worlds_v1_2_confirm",
+   "reason": "private-salt confirm split, never fetched, no exclusion index exists; the candidate generators are independent code (no worlds generator) so collisions are not expected but are not checked"
+  },
+  {
+   "name": "Decision Index private / new-domain panels",
+   "reason": "not public; outside any registry"
+  },
+  {
+   "name": "CONFIRM-P1 items (bf_v2, synth_ev_v1, rw_v1)",
+   "reason": "sealed; covered by confirm_p1_index (hashes / ids only)"
+  },
+  {
+   "name": "SCREEN4F / SCREEN4M panels",
+   "reason": "no separate panel object found: SCREEN4F/M read the SCREEN4 panels (screen4_dev) and s4_mixed_v1.tgz is a training mixture, not an evaluation panel"
+  },
+  {
+   "name": "Tasksource heldouts (default/full validation, test)",
+   "reason": "not part of this line's protected set; Tasksource's own filter already protected them for filtered-full"
+  },
+  {
+   "name": "this line's new dev_select / cal_select / confirm_seal panels",
+   "reason": "built later by the parent from candidate pools; split by ancestry components, not by this index"
+  }
+ ],
+ "pack_manifest_sha256": "d39558b78b97a860b42715eb7340c972114b1f28efa04176e2c54d5f6a26f91b",
+ "populations": [
+  {
+   "files": [
+    {
+     "expected_md5": "a56b517d5bb4545d0111cb6f3db6ffa0",
+     "member": "bayes_consistency_v1/test/bc_event_coherence.jsonl"
+    },
+    {
+     "expected_md5": "59839054b41177362bc435364bd7ac08",
+     "member": "bayes_consistency_v1/test/bc_exchangeable_reorder.jsonl"
+    },
+    {
+     "expected_md5": "7410464a7c02e1353868bc8fbf43996a",
+     "member": "bayes_consistency_v1/test/bc_loss_invariance.jsonl"
+    },
+    {
+     "expected_md5": "199b0d80a88c61388134b0b0802daf73",
+     "member": "bayes_consistency_v1/test/bc_posterior_vs_predictive.jsonl"
+    },
+    {
+     "expected_md5": "230c7d5ed14881b94262182f70a5d31e",
+     "member": "bayes_consistency_v1/test/bc_prior_only.jsonl"
+    },
+    {
+     "expected_md5": "27a3fd33c1e2825f3ea11d81e77abb62",
+     "member": "bayes_consistency_v1/test/bc_prior_swap.jsonl"
+    },
+    {
+     "expected_md5": "21dba184d0efe928d602b08a819b9f57",
+     "member": "bayes_consistency_v1/test/bc_raw_vs_sufficient.jsonl"
+    },
+    {
+     "expected_md5": "07569ace85ea5c82dec48d795a9d40f1",
+     "member": "bayes_consistency_v1/test/bc_reparam_units.jsonl"
+    },
+    {
+     "expected_md5": "b4c059dd8e8b89cf205f7d9ca06b6535",
+     "member": "bayes_consistency_v1/test/bc_sequential_vs_batch.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bayes_consistency_v1",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/bayes_consistency_v1.tgz"
+   ],
+   "source_name": "bayes_consistency_v1",
+   "tarball_md5": "3988d60a71893431a13d76c799bab48c"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "02b4fc672a31851b169920676abbc57b",
+     "member": "bayes_consistency_v2/test/bc_event_coherence.jsonl"
+    },
+    {
+     "expected_md5": "56b5cfd962696aa4685faf6d9982dd51",
+     "member": "bayes_consistency_v2/test/bc_exchangeable_reorder.jsonl"
+    },
+    {
+     "expected_md5": "6bef0d3ad60f359b7f9fe3a5b7aeaa62",
+     "member": "bayes_consistency_v2/test/bc_loss_invariance.jsonl"
+    },
+    {
+     "expected_md5": "1245f49d20cb519b8b68db84fe4b3a80",
+     "member": "bayes_consistency_v2/test/bc_posterior_vs_predictive.jsonl"
+    },
+    {
+     "expected_md5": "a66a027157f379fa42234854fc3d6301",
+     "member": "bayes_consistency_v2/test/bc_prior_only.jsonl"
+    },
+    {
+     "expected_md5": "07bb0d26fc7244bc0ac1218756328f44",
+     "member": "bayes_consistency_v2/test/bc_prior_swap.jsonl"
+    },
+    {
+     "expected_md5": "fbc00bd045c945f13bfccf13c5ec8763",
+     "member": "bayes_consistency_v2/test/bc_raw_vs_sufficient.jsonl"
+    },
+    {
+     "expected_md5": "8ec4edcb3503430509b7bb6c28fd0a07",
+     "member": "bayes_consistency_v2/test/bc_reparam_units.jsonl"
+    },
+    {
+     "expected_md5": "89317a943af191a31af6d4b71a44ba94",
+     "member": "bayes_consistency_v2/test/bc_sequential_vs_batch.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bayes_consistency_v2",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/bayes_consistency_v2.tgz"
+   ],
+   "source_name": "bayes_consistency_v2",
+   "tarball_md5": "90416ce3df51800b6a2be6daa31479e6"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "34c5c1887a2e376c173aa2ba2dcd574b",
+     "member": "bayes_pref/eval/bayes_pref__flights.jsonl"
+    },
+    {
+     "expected_md5": "ea1afda268f56466d8c799c856d17daf",
+     "member": "bayes_pref/eval/bayes_pref__hotels.jsonl"
+    },
+    {
+     "expected_md5": "943a8be9f35a539159c4df361f1a9d41",
+     "member": "bayes_pref/eval/bayes_pref__trails.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bayes_pref_v1",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/bayes_pref_v1.tgz"
+   ],
+   "source_name": "bayes_pref_v1",
+   "tarball_md5": "1d494eaa70c18488e3b217115e03e7bd"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "241b2300ad858c81c9c168d9a5e00146",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "4444ca154b4e2c28bec3e1cd8cbcb0ac",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "f24682d74174c186713a03af7809c097",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "bf4e993d2ae164aabcc112cd83ee29f8",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "8f34dfb7e5f2af3646976621f936708a",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "11bd811c6161793f323b07cc0f9641c2",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "cad2fc38e269a180b1dab8dad6640591",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "8952b0bde9273f31748a78dfb06d6fe9",
+     "member": "jev_bayes_worlds_v1_1/test/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "782699276f0dec984ad14de2c245cc52",
+     "member": "jev_bayes_worlds_v1_1/test_heldout_structure/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "286f8c66851df4561ea29dbf694897d2",
+     "member": "jev_bayes_worlds_v1_1/test_heldout_structure/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "b938da87cfe332f823abc0a939832c69",
+     "member": "jev_bayes_worlds_v1_1/test_heldout_structure/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "632fe8af2ac4f974176ff31d754a4632",
+     "member": "jev_bayes_worlds_v1_1/test_heldout_structure/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "8383823b9ca9c18559e630e511f57f55",
+     "member": "jev_bayes_worlds_v1_1/test_heldout_structure/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "3b3360c4c6449631f946eaa5a27464d3",
+     "member": "jev_bayes_worlds_v1_1/test_heldout_structure/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "f7f586d6dfbdc7f6142dd7e61f4dc223",
+     "member": "jev_bayes_worlds_v1_1/test_heldout_structure/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "26c4c1558e58c0f8903d0064e8ac88ad",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "5b0da118a04d287d9230fe1379fb8fec",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "888d1bb6a017ed5c871f2b48cc1439c9",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "c3107e6cbaed55bb0d73cc0013dbfbdd",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "d131a424b89d3f1c0395109ce42a7b6a",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "79d2b1e2f6cfab858d9fef6e1f0f7eb2",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "fae966aeed1a0d45edf28d47fbfcabad",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "cc91126c8c0f80067679bb09bbd084f7",
+     "member": "jev_bayes_worlds_v1_1/test_novel_wording/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "eba3216723a8b9fcb438bf5d8a1f85fb",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "7b664b3c4bf89b16eb978fa9b74b1d8f",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "ab244f14758ec2760fe9671a5e8431f3",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "fa1be464edaa3988917516d4cabcae71",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "3408885e5d66b761e654fe8c8b62f28b",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "e26bb6402aa51ee32820cba18ed8c772",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "5bba6a631d7ed6145462a5bfb66a5e73",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "7d8d5ba5c7d34d85bae3cb47e80776c0",
+     "member": "jev_bayes_worlds_v1_1/val/bayes_worlds_reliability.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bayes_worlds_v1_1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/bayes_worlds/jev_bayes_worlds_v1_1.tgz"
+   ],
+   "source_name": "bayes_worlds_v1_1",
+   "tarball_md5": "c8d4e1d067b956637e30e4f9cfd2b0d6"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "241b2300ad858c81c9c168d9a5e00146",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "4444ca154b4e2c28bec3e1cd8cbcb0ac",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "f24682d74174c186713a03af7809c097",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "bf4e993d2ae164aabcc112cd83ee29f8",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "8f34dfb7e5f2af3646976621f936708a",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "11bd811c6161793f323b07cc0f9641c2",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "cad2fc38e269a180b1dab8dad6640591",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "8952b0bde9273f31748a78dfb06d6fe9",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "137c1dc9ba6aef9a2c52181a2fcc933c",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "494fa83edfa8d20016e9c0efbdd634a8",
+     "member": "jev_bayes_worlds_v1_2d/test/bayes_worlds_v12_reliability.jsonl"
+    },
+    {
+     "expected_md5": "782699276f0dec984ad14de2c245cc52",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "286f8c66851df4561ea29dbf694897d2",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "b938da87cfe332f823abc0a939832c69",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "632fe8af2ac4f974176ff31d754a4632",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "8383823b9ca9c18559e630e511f57f55",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "3b3360c4c6449631f946eaa5a27464d3",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "f7f586d6dfbdc7f6142dd7e61f4dc223",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "b97ebb93b18cb696d5cc7503d4c062cf",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "18438debb455a3c69b00420537015494",
+     "member": "jev_bayes_worlds_v1_2d/test_heldout_structure/bayes_worlds_v12_reliability.jsonl"
+    },
+    {
+     "expected_md5": "26c4c1558e58c0f8903d0064e8ac88ad",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "5b0da118a04d287d9230fe1379fb8fec",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "888d1bb6a017ed5c871f2b48cc1439c9",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "c3107e6cbaed55bb0d73cc0013dbfbdd",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "d131a424b89d3f1c0395109ce42a7b6a",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "79d2b1e2f6cfab858d9fef6e1f0f7eb2",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "fae966aeed1a0d45edf28d47fbfcabad",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "cc91126c8c0f80067679bb09bbd084f7",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "ac3786c10205149f37f5cc7793018c9f",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "f3564b94f36c440bf02c93a0f2fee405",
+     "member": "jev_bayes_worlds_v1_2d/test_novel_wording/bayes_worlds_v12_reliability.jsonl"
+    },
+    {
+     "expected_md5": "eba3216723a8b9fcb438bf5d8a1f85fb",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "7b664b3c4bf89b16eb978fa9b74b1d8f",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "ab244f14758ec2760fe9671a5e8431f3",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "fa1be464edaa3988917516d4cabcae71",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "3408885e5d66b761e654fe8c8b62f28b",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "e26bb6402aa51ee32820cba18ed8c772",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "5bba6a631d7ed6145462a5bfb66a5e73",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "7d8d5ba5c7d34d85bae3cb47e80776c0",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "931af641570c994e889dff5900b2b01a",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "6528015cc35e15c8e957c0e28b616674",
+     "member": "jev_bayes_worlds_v1_2d/val/bayes_worlds_v12_reliability.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bayes_worlds_v1_2d_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/bayes_worlds/jev_bayes_worlds_v1_2d.tgz"
+   ],
+   "source_name": "bayes_worlds_v1_2d",
+   "tarball_md5": "36e0fc3ca17c1ec935c0962fc58d752f"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "241b2300ad858c81c9c168d9a5e00146",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "4444ca154b4e2c28bec3e1cd8cbcb0ac",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "f24682d74174c186713a03af7809c097",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "bf4e993d2ae164aabcc112cd83ee29f8",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "8f34dfb7e5f2af3646976621f936708a",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "11bd811c6161793f323b07cc0f9641c2",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "cad2fc38e269a180b1dab8dad6640591",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "8952b0bde9273f31748a78dfb06d6fe9",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "137c1dc9ba6aef9a2c52181a2fcc933c",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "494fa83edfa8d20016e9c0efbdd634a8",
+     "member": "jev_bayes_worlds_v1_2h/test/bayes_worlds_v12_reliability.jsonl"
+    },
+    {
+     "expected_md5": "782699276f0dec984ad14de2c245cc52",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "286f8c66851df4561ea29dbf694897d2",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "b938da87cfe332f823abc0a939832c69",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "632fe8af2ac4f974176ff31d754a4632",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "8383823b9ca9c18559e630e511f57f55",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "3b3360c4c6449631f946eaa5a27464d3",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "f7f586d6dfbdc7f6142dd7e61f4dc223",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "b97ebb93b18cb696d5cc7503d4c062cf",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "18438debb455a3c69b00420537015494",
+     "member": "jev_bayes_worlds_v1_2h/test_heldout_structure/bayes_worlds_v12_reliability.jsonl"
+    },
+    {
+     "expected_md5": "26c4c1558e58c0f8903d0064e8ac88ad",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "5b0da118a04d287d9230fe1379fb8fec",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "888d1bb6a017ed5c871f2b48cc1439c9",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "c3107e6cbaed55bb0d73cc0013dbfbdd",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "d131a424b89d3f1c0395109ce42a7b6a",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "79d2b1e2f6cfab858d9fef6e1f0f7eb2",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "fae966aeed1a0d45edf28d47fbfcabad",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "cc91126c8c0f80067679bb09bbd084f7",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "ac3786c10205149f37f5cc7793018c9f",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "f3564b94f36c440bf02c93a0f2fee405",
+     "member": "jev_bayes_worlds_v1_2h/test_novel_wording/bayes_worlds_v12_reliability.jsonl"
+    },
+    {
+     "expected_md5": "eba3216723a8b9fcb438bf5d8a1f85fb",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "7b664b3c4bf89b16eb978fa9b74b1d8f",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "ab244f14758ec2760fe9671a5e8431f3",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "fa1be464edaa3988917516d4cabcae71",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "3408885e5d66b761e654fe8c8b62f28b",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "e26bb6402aa51ee32820cba18ed8c772",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "5bba6a631d7ed6145462a5bfb66a5e73",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "7d8d5ba5c7d34d85bae3cb47e80776c0",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "931af641570c994e889dff5900b2b01a",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_v12_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "6528015cc35e15c8e957c0e28b616674",
+     "member": "jev_bayes_worlds_v1_2h/val/bayes_worlds_v12_reliability.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bayes_worlds_v1_2h_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/bayes_worlds/jev_bayes_worlds_v1_2h.tgz"
+   ],
+   "source_name": "bayes_worlds_v1_2h",
+   "tarball_md5": "e865bb412fd6020a23ce91f122fa905c"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "39db68de9b98560d660a3ab6922eb72e",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "0dd0138088ef460f27337bf636ecc747",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "1cd9c257a00cc70700c6878e2e2f1649",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "c82d778afad9bb18b4ebb12644aac38d",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "aa712633a361a38d5a6ecf0da5576185",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "5e979822a60e8de008555e4c3ea682c6",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "add9a62cbd0df48e63fe3fa8b759001c",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "21dd1f3cb6021e42ea6b677266d2f6e5",
+     "member": "jev_bayes_worlds_v1/test/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "2bfb29878eee592318fe02c2f4bff6f7",
+     "member": "jev_bayes_worlds_v1/test_heldout_structure/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "35a0f76971ea2e2427e941fecceab909",
+     "member": "jev_bayes_worlds_v1/test_heldout_structure/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "4ebd8b32199784f9297e448b7ff11371",
+     "member": "jev_bayes_worlds_v1/test_heldout_structure/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "9602d550db71fee9302277904d069b3c",
+     "member": "jev_bayes_worlds_v1/test_heldout_structure/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "219eea915a0333b2beae1950854a1166",
+     "member": "jev_bayes_worlds_v1/test_heldout_structure/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "1fba751423811a8820c922da47d650e1",
+     "member": "jev_bayes_worlds_v1/test_heldout_structure/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "beabbb95b6c34e02a85f547f70a799a6",
+     "member": "jev_bayes_worlds_v1/test_heldout_structure/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "ec1b139bc1c15938e8780ad0e0c8db8e",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "bd91b99e39e316d876883c7f70f0ec3c",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "8fea03f93a182379d750f37c9e4edf17",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "30d117dcba28ae5f929aba7a001b655f",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "3547d0cd86162f80f8ded47e648090a3",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_hierarchical.jsonl"
+    },
+    {
+     "expected_md5": "2b43898f199fdcf5be90151a0bad1b0f",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "0ae82e48a49abc7c2d1afd4f257c39c4",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_multimodal.jsonl"
+    },
+    {
+     "expected_md5": "89a407f0e7f81a55851188f91d6ed2d7",
+     "member": "jev_bayes_worlds_v1/val/bayes_worlds_reliability.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bayes_worlds_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/bayes_worlds/jev_bayes_worlds_v1.tgz"
+   ],
+   "source_name": "bayes_worlds_v1",
+   "tarball_md5": "ae47059ad780d40c3e11a2c9a8e855ce"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "79146c7e6dc878ed81366c16705b1f1a",
+     "member": "bc_val_v1/val/bc_event_coherence.jsonl"
+    },
+    {
+     "expected_md5": "b22fb0a944dad825b14ca6b39a79c26a",
+     "member": "bc_val_v1/val/bc_exchangeable_reorder.jsonl"
+    },
+    {
+     "expected_md5": "f977acf8448ba1f5a207725fa62b6147",
+     "member": "bc_val_v1/val/bc_loss_invariance.jsonl"
+    },
+    {
+     "expected_md5": "58ba4ff3c33fe3ca2665150d66e21934",
+     "member": "bc_val_v1/val/bc_posterior_vs_predictive.jsonl"
+    },
+    {
+     "expected_md5": "b65092f5cdad23f56f8ac9f94a113ede",
+     "member": "bc_val_v1/val/bc_prior_only.jsonl"
+    },
+    {
+     "expected_md5": "b19f67826a2af84ac9d45d15f9dbf83b",
+     "member": "bc_val_v1/val/bc_prior_swap.jsonl"
+    },
+    {
+     "expected_md5": "8de4f0283d7da0939f10600d7089a09b",
+     "member": "bc_val_v1/val/bc_raw_vs_sufficient.jsonl"
+    },
+    {
+     "expected_md5": "4f9e94740177a98ab7854e8734ef11d3",
+     "member": "bc_val_v1/val/bc_reparam_units.jsonl"
+    },
+    {
+     "expected_md5": "f4d10d18dd130fa9f7a2cc367efeaac9",
+     "member": "bc_val_v1/val/bc_sequential_vs_batch.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bc_val_v1",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/bc_val_v1.tgz"
+   ],
+   "source_name": "bc_val_v1",
+   "tarball_md5": "5d0d66a00eff60cd1466851156f43e91"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "5f8c82d25fba68251db0c8f8c885fbbf",
+     "member": "bc_val_v2/val/bc_event_coherence.jsonl"
+    },
+    {
+     "expected_md5": "249f506970252a368260bb22a54c26c7",
+     "member": "bc_val_v2/val/bc_exchangeable_reorder.jsonl"
+    },
+    {
+     "expected_md5": "6af26cd2f8492998849e5e2865b134d8",
+     "member": "bc_val_v2/val/bc_loss_invariance.jsonl"
+    },
+    {
+     "expected_md5": "6228ecdfdeaa9e7dbf35ab9ca46099d2",
+     "member": "bc_val_v2/val/bc_posterior_vs_predictive.jsonl"
+    },
+    {
+     "expected_md5": "19a2369b4c3905e4593887a4c9dd133e",
+     "member": "bc_val_v2/val/bc_prior_only.jsonl"
+    },
+    {
+     "expected_md5": "51cf06cc398f73d7bfa730eaef4dd222",
+     "member": "bc_val_v2/val/bc_prior_swap.jsonl"
+    },
+    {
+     "expected_md5": "fda256e3333dfae2e6c738784fd7cb7e",
+     "member": "bc_val_v2/val/bc_raw_vs_sufficient.jsonl"
+    },
+    {
+     "expected_md5": "05ada609547edfdb3f65c941e517f238",
+     "member": "bc_val_v2/val/bc_reparam_units.jsonl"
+    },
+    {
+     "expected_md5": "2e42268cd659d8d5d6afac61769e24fe",
+     "member": "bc_val_v2/val/bc_sequential_vs_batch.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "bc_val_v2",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/bc_val_v2.tgz"
+   ],
+   "source_name": "bc_val_v2",
+   "tarball_md5": "a12285e5fe39f0a51779fa1a404254a4"
+  },
+  {
+   "files": [],
+   "historical": true,
+   "kind": "tarball",
+   "note": "no evaluation-split files in this corpus (train-only); tag covered with zero files",
+   "population": "bp_train_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/bp_train_v1.tgz"
+   ],
+   "source_name": "bp_train_v1",
+   "tarball_md5": "63d0de53fa83c9f4161fdbf2984f5b80"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "ab28f0e4aef9dc4a0a9c3c3d5a5d9962",
+     "member": "di_v021/01_bfcl/eval/01_bfcl.jsonl"
+    },
+    {
+     "expected_md5": "ae40dc270bcf57c3de6c64a158e29d65",
+     "member": "di_v021/02_toolret/eval/02_toolret.jsonl"
+    },
+    {
+     "expected_md5": "cd6a3cd27255f323a87ef846c6660c62",
+     "member": "di_v021/03_apibank/eval/03_apibank.jsonl"
+    },
+    {
+     "expected_md5": "06ae2c0c216aff232f5c9c3f89bd33c2",
+     "member": "di_v021/04_banking77/eval/04_banking77.jsonl"
+    },
+    {
+     "expected_md5": "da0b410f83498e250903e57aca904562",
+     "member": "di_v021/05_clinc150/eval/05_clinc150.jsonl"
+    },
+    {
+     "expected_md5": "897c3ece3b768699007a52469808ec83",
+     "member": "di_v021/06_routerbench/eval/06_routerbench.jsonl"
+    },
+    {
+     "expected_md5": "81328bec9d56b35ccdbce17137afdd0c",
+     "member": "di_v021/09_home_appliances/eval/09_home_appliances.jsonl"
+    },
+    {
+     "expected_md5": "53ceed3d3268bbd8f89705e5b4b34ad4",
+     "member": "di_v021/10_sgd/eval/10_sgd.jsonl"
+    },
+    {
+     "expected_md5": "faa2958d0a635b304a31cdb1810774bc",
+     "member": "di_v021/11_contractnli/eval/11_contractnli.jsonl"
+    },
+    {
+     "expected_md5": "9eda20598245c8f51f56fe7d5b6212d1",
+     "member": "di_v021/12_anli/eval/12_anli.jsonl"
+    },
+    {
+     "expected_md5": "d45a4ca1de6ab87fcf6578d286a01814",
+     "member": "di_v021/20_bpomp/eval/20_bpomp.jsonl"
+    },
+    {
+     "expected_md5": "7b9928c016cd606e73b199c29df242bb",
+     "member": "di_v021/21_humicroedit/eval/21_humicroedit.jsonl"
+    },
+    {
+     "expected_md5": "1a7675981af7223faf9d2cad99851fb3",
+     "member": "di_v021/22_pop909/eval/22_pop909.jsonl"
+    },
+    {
+     "expected_md5": "275325e21b1c0945c55b6e21009cfbda",
+     "member": "di_v021/23_cfcolor/eval/23_cfcolor.jsonl"
+    },
+    {
+     "expected_md5": "08637dee3d658dc63ae002798b006339",
+     "member": "di_v021/24_mmlu/eval/24_mmlu.jsonl"
+    },
+    {
+     "expected_md5": "362a53e2cc71fc0863c938dbca807f6e",
+     "member": "di_v021/25_gpqa_diamond/eval/25_gpqa_diamond.jsonl"
+    },
+    {
+     "expected_md5": "286f11821d19ad5f7679397050c5270a",
+     "member": "di_v021/26_arc_easy/eval/26_arc_easy.jsonl"
+    },
+    {
+     "expected_md5": "b8710f0bbff0e5ea6f5dd9cae107e74a",
+     "member": "di_v021/27_arc_challenge/eval/27_arc_challenge.jsonl"
+    },
+    {
+     "expected_md5": "460c948418f59b8fcf42db1259977dd7",
+     "member": "di_v021/28_winogrande/eval/28_winogrande.jsonl"
+    },
+    {
+     "expected_md5": "31924dc54e84641d82187730a4d7cc0d",
+     "member": "di_v021/29_hellaswag/eval/29_hellaswag.jsonl"
+    },
+    {
+     "expected_md5": "2f1b4559cde629f50716ded8669ab030",
+     "member": "di_v021/30_gsm8k/eval/30_gsm8k.jsonl"
+    },
+    {
+     "expected_md5": "6c2a5d587d5f00278f5afd72cd179665",
+     "member": "di_v021/31_chessbench/eval/31_chessbench.jsonl"
+    },
+    {
+     "expected_md5": "d2d1ac7e0aca0d6dd52f9b83ab0b1094",
+     "member": "di_v021/32_musr/eval/32_musr.jsonl"
+    },
+    {
+     "expected_md5": "b3fc549b68e5e7fe7761d208e929ebeb",
+     "member": "di_v021/33_sata_bench/eval/33_sata_bench.jsonl"
+    },
+    {
+     "expected_md5": "6fe40129308a395c645ffdc04f2df2fb",
+     "member": "di_v021/34_simplebench/eval/34_simplebench.jsonl"
+    },
+    {
+     "expected_md5": "16bf04ae031aa8c5fd34a5dcd0f6a517",
+     "member": "di_v021/36_bright/eval/36_bright.jsonl"
+    },
+    {
+     "expected_md5": "4779b8fef76cf44558e2b3c0ce0ef009",
+     "member": "di_v021/37_esci/eval/37_esci.jsonl"
+    },
+    {
+     "expected_md5": "c21d4a37462971e1fe7bbb2a33534fca",
+     "member": "di_v021/38_acos/eval/38_acos.jsonl"
+    },
+    {
+     "expected_md5": "827b3490dad0cf6f70a0bab1b6662c23",
+     "member": "di_v021/39_finentity/eval/39_finentity.jsonl"
+    },
+    {
+     "expected_md5": "ea7bb1506aa1126044353a59d0c05501",
+     "member": "di_v021/40_isarcasmeval/eval/40_isarcasmeval.jsonl"
+    },
+    {
+     "expected_md5": "384b53d82b65854121186762b6557594",
+     "member": "di_v021/41_vast/eval/41_vast.jsonl"
+    },
+    {
+     "expected_md5": "98c6049fbb1402eac19806c689641148",
+     "member": "di_v021/42_nli4ct/eval/42_nli4ct.jsonl"
+    },
+    {
+     "expected_md5": "3c971103fa21e57233b6c256534c86d4",
+     "member": "di_v021/43_cruxeval/eval/43_cruxeval.jsonl"
+    },
+    {
+     "expected_md5": "82e58e84f3436ae74f3611c885c58f44",
+     "member": "di_v021/44_cladder/eval/44_cladder.jsonl"
+    },
+    {
+     "expected_md5": "bebdd707973ac2862d45b4eef701c728",
+     "member": "di_v021/45_hle/eval/45_hle.jsonl"
+    },
+    {
+     "expected_md5": "ff4c885cf52e0cd55e6c6d548f46da2f",
+     "member": "di_v021/48_forecastbench/eval/48_forecastbench.jsonl"
+    },
+    {
+     "expected_md5": "8dbb3e5200022a9a52484d43a543000d",
+     "member": "di_v021/50_habermas/eval/50_habermas.jsonl"
+    },
+    {
+     "expected_md5": "ededfabe025c7e1bf58b6063b0e41a23",
+     "member": "di_v021/56_phishnchips/eval/56_phishnchips.jsonl"
+    },
+    {
+     "expected_md5": "7033bdccaabf874b43e46f50e53285eb",
+     "member": "di_v021/57_mmlu_pro/eval/57_mmlu_pro.jsonl"
+    },
+    {
+     "expected_md5": "9028cb1c2eb06fce84db659fcb1d95d9",
+     "member": "di_v021/58_bbh/eval/58_bbh.jsonl"
+    },
+    {
+     "expected_md5": "2042068aa6d48d298a2a04ca5405daf3",
+     "member": "di_v021/59_ragtruth/eval/59_ragtruth.jsonl"
+    },
+    {
+     "expected_md5": "5e890ed60d830ea2f1fca597b9b7e14d",
+     "member": "di_v021/61_hover/eval/61_hover.jsonl"
+    },
+    {
+     "expected_md5": "a5a02c71604034d9793447f909b66b26",
+     "member": "di_v021/62_when2call/eval/62_when2call.jsonl"
+    },
+    {
+     "expected_md5": "1a0d76afbf600ea578769d788f77690a",
+     "member": "di_v021/64_newyorker/eval/64_newyorker.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "decision_index_v021",
+   "required": true,
+   "s3_candidates": [
+    "data/decision_index_v021.tgz",
+    "fleetq/data/decision_index_v021.tgz"
+   ],
+   "source_name": "decision_index_v021",
+   "tarball_md5": "d023674a8e8c654e650cc5d34a0e7079"
+  },
+  {
+   "expected_md5": "f047836e7cf6be1f9dcde484d1318676",
+   "fields": {
+    "clusters": 11582,
+    "entity_keys": 0,
+    "ids": 15624,
+    "state_sha1": 15317,
+    "unassigned_eval_only_ids": 0
+   },
+   "historical": true,
+   "kind": "opaque_index",
+   "population": "final_v1_hl_index",
+   "required": true,
+   "s3_candidates": [
+    "sealed/final_v1/hl_exclusion_index.json.gz"
+   ],
+   "source_name": "final_v1_hl_index"
+  },
+  {
+   "expected_md5": "28a13a92edc55b38da3db5d4f5f93ef5",
+   "fields": {
+    "clusters": 18661,
+    "entity_keys": 44337,
+    "ids": 19887,
+    "state_sha1": 19885,
+    "unassigned_eval_only_ids": 21427
+   },
+   "historical": true,
+   "kind": "opaque_index",
+   "population": "final_v1_rd_index",
+   "required": true,
+   "s3_candidates": [
+    "sealed/final_v1/rd_exclusion_index.json.gz"
+   ],
+   "source_name": "final_v1_rd_index"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "c5f693fe6324b069b16381d81744c948",
+     "member": "gde1_outcomes2/aidev_prs/eval/aidev__pr_merge.jsonl"
+    },
+    {
+     "expected_md5": "58ab53f9570dc4b37d72e2b4aa0fd4ba",
+     "member": "gde1_outcomes2/ecthr/eval/ecthr__lexglue.jsonl"
+    },
+    {
+     "expected_md5": "009a28bd7f06cb2c3021375849e0d1e5",
+     "member": "gde1_outcomes2/forecastbench_market/dev/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "c3ae3c4cc513b84cfbc66f86df16dd9c",
+     "member": "gde1_outcomes2/forecastbench_market/dev/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "13551534b836cff71d70337b281cb6b3",
+     "member": "gde1_outcomes2/forecastbench_market/eval/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "37113cf8b725b5077f478f193260327b",
+     "member": "gde1_outcomes2/forecastbench_market/eval/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "82273c839b2f4d2c0a95c147c827743b",
+     "member": "gde1_outcomes2/swe_agent/eval/swe__agent_trajectories.jsonl"
+    },
+    {
+     "expected_md5": "b657738bd28a01ee15385dfacbdd1fd2",
+     "member": "gde1_outcomes2/swe_rebench_oh/eval/swe__rebench_openhands.jsonl"
+    },
+    {
+     "expected_md5": "adce9c1b17fb38c0615aeb23a11f3e9a",
+     "member": "gde1_outcomes2/swiss_judgment/eval/swiss__fscs.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "gde1_outcomes2",
+   "required": true,
+   "s3_candidates": [
+    "data/gde1_outcomes2.tgz"
+   ],
+   "source_name": "gde1_outcomes2",
+   "tarball_md5": "66ee719ddb53b9da943cd1a59ffe62f0"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "9f468b918cc3c8727755e21dcea4104e",
+     "member": "gde1/community_alignment/eval/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "10e2c86a68a296d89468767e1d8857ae",
+     "member": "gde1/community_alignment/extended/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "0d1346712f7ed04b16c826edd0bf84b2",
+     "member": "gde1/dices/eval/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "4e3d3a924ff327ccc3c9ea75a23b534b",
+     "member": "gde1/dices/eval/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "4eae584eaeee4a807125030420af5446",
+     "member": "gde1/dices/extended/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "6cf6abec18bbf6101897b38a6ff391e7",
+     "member": "gde1/dices/extended/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "2567da7750b6ba238f2af92da1d102b3",
+     "member": "gde1/forecastbench/dev/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "5e78e16dc4d8d157b1f8c9b5a38ff0d9",
+     "member": "gde1/forecastbench/dev/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "60de62f382e67943c8d48f6c96ea967d",
+     "member": "gde1/forecastbench/dev/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "9cfc8027d58765dc0de29ce8434d367b",
+     "member": "gde1/forecastbench/eval/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "8ec98f9f63dbd681e2f5b4d4f8f6d703",
+     "member": "gde1/forecastbench/eval/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "d6e50905eb0afb4932d61a9b37a36a76",
+     "member": "gde1/forecastbench/eval/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "0a049d668adea484f07dc5de830bf709",
+     "member": "gde1/healthbench/eval/gde1__healthbench_meta.jsonl"
+    },
+    {
+     "expected_md5": "60b67fef6f23f66a371c1c5856b81226",
+     "member": "gde1/helpsteer2_votes/eval/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "0d61667eb123b2aadead87d1176309b6",
+     "member": "gde1/helpsteer2_votes/overlap/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "b1f4b396d2de603ab33a6e8dd5f91751",
+     "member": "gde1/hle/eval/hle__text_mc.jsonl"
+    },
+    {
+     "expected_md5": "3e06cedf0dc40cdae8dac57be7f439c2",
+     "member": "gde1/kev/eval/kev__cve.jsonl"
+    },
+    {
+     "expected_md5": "e61c938660bf15bfb7221fb4287a2a3c",
+     "member": "gde1/multipref/eval/gde1__multipref.jsonl"
+    },
+    {
+     "expected_md5": "71c74a4b615fda0c28770e104b3135a6",
+     "member": "gde1/subpop/eval/gde1__subpop_gss2022.jsonl"
+    },
+    {
+     "expected_md5": "82f3a527c93c932b4788e4366b37ab24",
+     "member": "gde1/sys1cal/eval/sys1cal__v1.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "gde1_v2_gated",
+   "required": true,
+   "s3_candidates": [
+    "data/gde1_v2_gated.tgz"
+   ],
+   "source_name": "gde1_v2_gated",
+   "tarball_md5": "c4aeb37f8de8354ba698cafdf52bb847"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "c5f693fe6324b069b16381d81744c948",
+     "member": "gde1/aidev_prs/eval/aidev__pr_merge.jsonl"
+    },
+    {
+     "expected_md5": "00b04202341daad1d9f5e42ce1ff98bf",
+     "member": "gde1/civil_comments_votes/eval/gde1__civil_comments_votes.jsonl"
+    },
+    {
+     "expected_md5": "9f468b918cc3c8727755e21dcea4104e",
+     "member": "gde1/community_alignment/eval/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "10e2c86a68a296d89468767e1d8857ae",
+     "member": "gde1/community_alignment/extended/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "1c39296a16fcbe1361d803c3b69f2acf",
+     "member": "gde1/ctgov/eval/ctgov__final_status.jsonl"
+    },
+    {
+     "expected_md5": "a16df82139f08b84f87903e1fcdb4b10",
+     "member": "gde1/ctgov/eval/ctgov__results_posted.jsonl"
+    },
+    {
+     "expected_md5": "0d1346712f7ed04b16c826edd0bf84b2",
+     "member": "gde1/dices/eval/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "4e3d3a924ff327ccc3c9ea75a23b534b",
+     "member": "gde1/dices/eval/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "4eae584eaeee4a807125030420af5446",
+     "member": "gde1/dices/extended/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "6cf6abec18bbf6101897b38a6ff391e7",
+     "member": "gde1/dices/extended/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "e4393d2d4681ddebeaa4a1726100b56d",
+     "member": "gde1/ecthr/eval/ecthr__lexglue.jsonl"
+    },
+    {
+     "expected_md5": "5c17e757351ce8224b1b0894b769a6ad",
+     "member": "gde1/esci/eval/gde1__esci.jsonl"
+    },
+    {
+     "expected_md5": "a3b41bfb193d93e0e8bb970ecfb362a3",
+     "member": "gde1/folio/eval/gde1__folio.jsonl"
+    },
+    {
+     "expected_md5": "c755859844428f1d464f8dbcadf9b00f",
+     "member": "gde1/folktables_acs/eval/gde1__folktables_acs.jsonl"
+    },
+    {
+     "expected_md5": "2567da7750b6ba238f2af92da1d102b3",
+     "member": "gde1/forecastbench/dev/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "5e78e16dc4d8d157b1f8c9b5a38ff0d9",
+     "member": "gde1/forecastbench/dev/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "60de62f382e67943c8d48f6c96ea967d",
+     "member": "gde1/forecastbench/dev/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "9cfc8027d58765dc0de29ce8434d367b",
+     "member": "gde1/forecastbench/eval/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "8ec98f9f63dbd681e2f5b4d4f8f6d703",
+     "member": "gde1/forecastbench/eval/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "d6e50905eb0afb4932d61a9b37a36a76",
+     "member": "gde1/forecastbench/eval/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "009a28bd7f06cb2c3021375849e0d1e5",
+     "member": "gde1/forecastbench_market/dev/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "c3ae3c4cc513b84cfbc66f86df16dd9c",
+     "member": "gde1/forecastbench_market/dev/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "13551534b836cff71d70337b281cb6b3",
+     "member": "gde1/forecastbench_market/eval/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "37113cf8b725b5077f478f193260327b",
+     "member": "gde1/forecastbench_market/eval/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "0a049d668adea484f07dc5de830bf709",
+     "member": "gde1/healthbench/eval/gde1__healthbench_meta.jsonl"
+    },
+    {
+     "expected_md5": "60b67fef6f23f66a371c1c5856b81226",
+     "member": "gde1/helpsteer2_votes/eval/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "0d61667eb123b2aadead87d1176309b6",
+     "member": "gde1/helpsteer2_votes/overlap/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "b1f4b396d2de603ab33a6e8dd5f91751",
+     "member": "gde1/hle_v3/eval/hle__text_mc.jsonl"
+    },
+    {
+     "expected_md5": "3e06cedf0dc40cdae8dac57be7f439c2",
+     "member": "gde1/kev/eval/kev__cve.jsonl"
+    },
+    {
+     "expected_md5": "8c36bfa5b113c732cadf32fbabb20a6b",
+     "member": "gde1/lichess_puzzles/eval/gde1__lichess_puzzles.jsonl"
+    },
+    {
+     "expected_md5": "5075159a0a93db52ad1d21ca48ff9653",
+     "member": "gde1/medqa_usmle/eval/gde1__medqa_usmle.jsonl"
+    },
+    {
+     "expected_md5": "e61c938660bf15bfb7221fb4287a2a3c",
+     "member": "gde1/multipref/eval/gde1__multipref.jsonl"
+    },
+    {
+     "expected_md5": "2451fecb182985d9868c11de49f3eb0f",
+     "member": "gde1/nvd_cwe/eval/nvd_cwe__cna_assigned.jsonl"
+    },
+    {
+     "expected_md5": "1ea79c63e2ed1eec19208208657abbb5",
+     "member": "gde1/nvd_cwe/eval/nvd_cwe__nvd_analyst.jsonl"
+    },
+    {
+     "expected_md5": "46659f83db2323aaf95fd4fdddf28b29",
+     "member": "gde1/scdb/dev/scdb__case_disposition.jsonl"
+    },
+    {
+     "expected_md5": "cc53df45a4696623899ca4375fe96eb2",
+     "member": "gde1/scdb/eval/scdb__case_disposition.jsonl"
+    },
+    {
+     "expected_md5": "71c74a4b615fda0c28770e104b3135a6",
+     "member": "gde1/subpop/eval/gde1__subpop_gss2022.jsonl"
+    },
+    {
+     "expected_md5": "b580dba675fc33fc6885150fcda7b6c5",
+     "member": "gde1/swe_agent/eval/swe__agent_trajectories.jsonl"
+    },
+    {
+     "expected_md5": "b657738bd28a01ee15385dfacbdd1fd2",
+     "member": "gde1/swe_rebench_oh/eval/swe__rebench_openhands.jsonl"
+    },
+    {
+     "expected_md5": "0926d824be1b0e880878ef4d6b3c0a3f",
+     "member": "gde1/swiss_judgment/eval/swiss__fscs.jsonl"
+    },
+    {
+     "expected_md5": "82f3a527c93c932b4788e4366b37ab24",
+     "member": "gde1/sys1cal/eval/sys1cal__v1.jsonl"
+    },
+    {
+     "expected_md5": "904ccc4f8c96458f3b7d0c5cb832325b",
+     "member": "gde1/tutormoments/eval/gde1__tutormoments.jsonl"
+    },
+    {
+     "expected_md5": "c1e55336ba18d522204f8c7b65602679",
+     "member": "gde1/tutormoments/extended/gde1__tutormoments.jsonl"
+    },
+    {
+     "expected_md5": "635f51895f525640f36f9f7b4001e555",
+     "member": "gde1/wd_athlete_team/eval/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "255c7a233a896d55d7bcc0b8c9744dbf",
+     "member": "gde1/wd_athlete_team/probe/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "48a333f1d6feeaea7fae80e02fa3bf78",
+     "member": "gde1/wd_classify/eval/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "6bbe5e9f214df811091fe7e119784355",
+     "member": "gde1/wd_classify/eval_name_only/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "5abd6c9748b4b026edfb5c1cd5a9b123",
+     "member": "gde1/wd_classify/eval_state_removed/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "468322b11db1867b3698df3b79e1bd2a",
+     "member": "gde1/wd_compare/eval/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "323eb2350539c35a07e8de2162957faf",
+     "member": "gde1/wd_compare/eval/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "d9620823f0456bb244bb46b7bcb11c7e",
+     "member": "gde1/wd_compare/eval/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "0320e9a1b19134787c2f6953c32018b9",
+     "member": "gde1/wd_compare/eval/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "bdaccf869dacb0e6e531e4c59b75a775",
+     "member": "gde1/wd_compare/eval/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "6589a3e7b8f5d268ba848be7043dd48e",
+     "member": "gde1/wd_compare/eval/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "5e321c5ac2f2d2b5d558c14d0cb95c9e",
+     "member": "gde1/wd_compare/eval/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "9cb88d9f9dd85c9d92e7769105452f5e",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "b485510b77a3fc68b198b0d5752d229b",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "155cff361042e9a39bbd3726a1f2c91b",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "4e9283ce3b0a73a03d422ee938206212",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "ad3883837a796bbb49501fb196a14877",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "5bae3f51bf4afea5a674225bfb5ead4e",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "dc4f3e2dbfa4faeb665ae79711d11248",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "c2bbda6bd0db7bbef05a115fc27f1ceb",
+     "member": "gde1/wd_iucn_status/eval/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "4c40c55e5ede39d5ec07ed838747c32c",
+     "member": "gde1/wd_iucn_status/probe/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "a5f475190c9a50e4a620fc43040d6b30",
+     "member": "gde1/wd_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "d36465a6e7c1c297dc49ccc43c75e883",
+     "member": "gde1/wd_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "c0b516a1f62a660598ba9ce3253b6a5f",
+     "member": "gde1/wd_org_dissolved/eval/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "d5eb5c81ff8201274ee79a5477ede28d",
+     "member": "gde1/wd_org_dissolved/probe/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "5793579a6e734f29789c9e12b80d8f32",
+     "member": "gde1/wd_property_proposal/eval/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "c1d821438484a73358f2ad6c28b223ea",
+     "member": "gde1/wd_property_proposal/probe/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "3e4f349e70ec3abcd6a2489a996b039c",
+     "member": "gde1/wd_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "65a92077649e0ed069dd3dabfa7635d6",
+     "member": "gde1/wd_rfd/probe/wikidata__rfd.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "gde1_v3",
+   "required": true,
+   "s3_candidates": [
+    "data/gde1_v3.tgz"
+   ],
+   "source_name": "gde1_v3",
+   "tarball_md5": "1698eff2938f8abdcf235c3607c01391"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "c5f693fe6324b069b16381d81744c948",
+     "member": "gde1/aidev_prs/eval/aidev__pr_merge.jsonl"
+    },
+    {
+     "expected_md5": "00b04202341daad1d9f5e42ce1ff98bf",
+     "member": "gde1/civil_comments_votes/eval/gde1__civil_comments_votes.jsonl"
+    },
+    {
+     "expected_md5": "9f468b918cc3c8727755e21dcea4104e",
+     "member": "gde1/community_alignment/eval/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "10e2c86a68a296d89468767e1d8857ae",
+     "member": "gde1/community_alignment/extended/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "1c39296a16fcbe1361d803c3b69f2acf",
+     "member": "gde1/ctgov/eval/ctgov__final_status.jsonl"
+    },
+    {
+     "expected_md5": "a16df82139f08b84f87903e1fcdb4b10",
+     "member": "gde1/ctgov/eval/ctgov__results_posted.jsonl"
+    },
+    {
+     "expected_md5": "0d1346712f7ed04b16c826edd0bf84b2",
+     "member": "gde1/dices/eval/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "4e3d3a924ff327ccc3c9ea75a23b534b",
+     "member": "gde1/dices/eval/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "4eae584eaeee4a807125030420af5446",
+     "member": "gde1/dices/extended/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "6cf6abec18bbf6101897b38a6ff391e7",
+     "member": "gde1/dices/extended/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "e4393d2d4681ddebeaa4a1726100b56d",
+     "member": "gde1/ecthr/eval/ecthr__lexglue.jsonl"
+    },
+    {
+     "expected_md5": "5c17e757351ce8224b1b0894b769a6ad",
+     "member": "gde1/esci/eval/gde1__esci.jsonl"
+    },
+    {
+     "expected_md5": "a3b41bfb193d93e0e8bb970ecfb362a3",
+     "member": "gde1/folio/eval/gde1__folio.jsonl"
+    },
+    {
+     "expected_md5": "c755859844428f1d464f8dbcadf9b00f",
+     "member": "gde1/folktables_acs/eval/gde1__folktables_acs.jsonl"
+    },
+    {
+     "expected_md5": "2567da7750b6ba238f2af92da1d102b3",
+     "member": "gde1/forecastbench/dev/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "5e78e16dc4d8d157b1f8c9b5a38ff0d9",
+     "member": "gde1/forecastbench/dev/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "60de62f382e67943c8d48f6c96ea967d",
+     "member": "gde1/forecastbench/dev/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "9cfc8027d58765dc0de29ce8434d367b",
+     "member": "gde1/forecastbench/eval/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "8ec98f9f63dbd681e2f5b4d4f8f6d703",
+     "member": "gde1/forecastbench/eval/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "d6e50905eb0afb4932d61a9b37a36a76",
+     "member": "gde1/forecastbench/eval/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "009a28bd7f06cb2c3021375849e0d1e5",
+     "member": "gde1/forecastbench_market/dev/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "c3ae3c4cc513b84cfbc66f86df16dd9c",
+     "member": "gde1/forecastbench_market/dev/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "13551534b836cff71d70337b281cb6b3",
+     "member": "gde1/forecastbench_market/eval/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "37113cf8b725b5077f478f193260327b",
+     "member": "gde1/forecastbench_market/eval/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "0a049d668adea484f07dc5de830bf709",
+     "member": "gde1/healthbench/eval/gde1__healthbench_meta.jsonl"
+    },
+    {
+     "expected_md5": "60b67fef6f23f66a371c1c5856b81226",
+     "member": "gde1/helpsteer2_votes/eval/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "0d61667eb123b2aadead87d1176309b6",
+     "member": "gde1/helpsteer2_votes/overlap/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "96344c612da38982f95531aa228f65bc",
+     "member": "gde1/hle_v3/eval/hle__text_mc.jsonl"
+    },
+    {
+     "expected_md5": "3e06cedf0dc40cdae8dac57be7f439c2",
+     "member": "gde1/kev/eval/kev__cve.jsonl"
+    },
+    {
+     "expected_md5": "8c36bfa5b113c732cadf32fbabb20a6b",
+     "member": "gde1/lichess_puzzles/eval/gde1__lichess_puzzles.jsonl"
+    },
+    {
+     "expected_md5": "5075159a0a93db52ad1d21ca48ff9653",
+     "member": "gde1/medqa_usmle/eval/gde1__medqa_usmle.jsonl"
+    },
+    {
+     "expected_md5": "e61c938660bf15bfb7221fb4287a2a3c",
+     "member": "gde1/multipref/eval/gde1__multipref.jsonl"
+    },
+    {
+     "expected_md5": "2451fecb182985d9868c11de49f3eb0f",
+     "member": "gde1/nvd_cwe/eval/nvd_cwe__cna_assigned.jsonl"
+    },
+    {
+     "expected_md5": "1ea79c63e2ed1eec19208208657abbb5",
+     "member": "gde1/nvd_cwe/eval/nvd_cwe__nvd_analyst.jsonl"
+    },
+    {
+     "expected_md5": "46659f83db2323aaf95fd4fdddf28b29",
+     "member": "gde1/scdb/dev/scdb__case_disposition.jsonl"
+    },
+    {
+     "expected_md5": "cc53df45a4696623899ca4375fe96eb2",
+     "member": "gde1/scdb/eval/scdb__case_disposition.jsonl"
+    },
+    {
+     "expected_md5": "71c74a4b615fda0c28770e104b3135a6",
+     "member": "gde1/subpop/eval/gde1__subpop_gss2022.jsonl"
+    },
+    {
+     "expected_md5": "b580dba675fc33fc6885150fcda7b6c5",
+     "member": "gde1/swe_agent/eval/swe__agent_trajectories.jsonl"
+    },
+    {
+     "expected_md5": "9c336dc0d03f1305815dbea7e32bea0a",
+     "member": "gde1/swe_rebench_oh/eval/swe__rebench_openhands.jsonl"
+    },
+    {
+     "expected_md5": "0926d824be1b0e880878ef4d6b3c0a3f",
+     "member": "gde1/swiss_judgment/eval/swiss__fscs.jsonl"
+    },
+    {
+     "expected_md5": "82f3a527c93c932b4788e4366b37ab24",
+     "member": "gde1/sys1cal/eval/sys1cal__v1.jsonl"
+    },
+    {
+     "expected_md5": "904ccc4f8c96458f3b7d0c5cb832325b",
+     "member": "gde1/tutormoments/eval/gde1__tutormoments.jsonl"
+    },
+    {
+     "expected_md5": "c1e55336ba18d522204f8c7b65602679",
+     "member": "gde1/tutormoments/extended/gde1__tutormoments.jsonl"
+    },
+    {
+     "expected_md5": "635f51895f525640f36f9f7b4001e555",
+     "member": "gde1/wd_athlete_team/eval/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "255c7a233a896d55d7bcc0b8c9744dbf",
+     "member": "gde1/wd_athlete_team/probe/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "0f794d2bc425a2fc3b39d64b15ec9ab3",
+     "member": "gde1/wd_classify/eval/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "7fd3e182b22d1371fb3f299709124758",
+     "member": "gde1/wd_classify/eval_name_only/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "1ae04e6986b830ceb98449226b8b05dd",
+     "member": "gde1/wd_classify/eval_state_removed/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "468322b11db1867b3698df3b79e1bd2a",
+     "member": "gde1/wd_compare/eval/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "323eb2350539c35a07e8de2162957faf",
+     "member": "gde1/wd_compare/eval/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "d9620823f0456bb244bb46b7bcb11c7e",
+     "member": "gde1/wd_compare/eval/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "0320e9a1b19134787c2f6953c32018b9",
+     "member": "gde1/wd_compare/eval/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "bdaccf869dacb0e6e531e4c59b75a775",
+     "member": "gde1/wd_compare/eval/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "6589a3e7b8f5d268ba848be7043dd48e",
+     "member": "gde1/wd_compare/eval/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "5e321c5ac2f2d2b5d558c14d0cb95c9e",
+     "member": "gde1/wd_compare/eval/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "9cb88d9f9dd85c9d92e7769105452f5e",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "b485510b77a3fc68b198b0d5752d229b",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "155cff361042e9a39bbd3726a1f2c91b",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "4e9283ce3b0a73a03d422ee938206212",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "ad3883837a796bbb49501fb196a14877",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "5bae3f51bf4afea5a674225bfb5ead4e",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "dc4f3e2dbfa4faeb665ae79711d11248",
+     "member": "gde1/wd_compare/eval_state_removed/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "c2bbda6bd0db7bbef05a115fc27f1ceb",
+     "member": "gde1/wd_iucn_status/eval/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "4c40c55e5ede39d5ec07ed838747c32c",
+     "member": "gde1/wd_iucn_status/probe/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "a5f475190c9a50e4a620fc43040d6b30",
+     "member": "gde1/wd_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "d36465a6e7c1c297dc49ccc43c75e883",
+     "member": "gde1/wd_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "c0b516a1f62a660598ba9ce3253b6a5f",
+     "member": "gde1/wd_org_dissolved/eval/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "d5eb5c81ff8201274ee79a5477ede28d",
+     "member": "gde1/wd_org_dissolved/probe/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "cc518e065fdfa9b75f9e381a106252b3",
+     "member": "gde1/wd_property_proposal/eval/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "744a2c5d9dea407fa39a5db1c89e356e",
+     "member": "gde1/wd_property_proposal/probe/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "3e4f349e70ec3abcd6a2489a996b039c",
+     "member": "gde1/wd_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "65a92077649e0ed069dd3dabfa7635d6",
+     "member": "gde1/wd_rfd/probe/wikidata__rfd.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "gde1_v3_gated",
+   "required": true,
+   "s3_candidates": [
+    "data/gde1_v3_gated.tgz"
+   ],
+   "source_name": "gde1_v3_gated",
+   "tarball_md5": "7bd4f39c86e67dfad7206494fa23d094"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "ec6fbc539e81fb5d211b2d471bd8012c",
+     "member": "jev_d89rdval/val/afd.jsonl"
+    },
+    {
+     "expected_md5": "5f09cb5579da103b96b4509f80f0ad7d",
+     "member": "jev_d89rdval/val/aidev.jsonl"
+    },
+    {
+     "expected_md5": "4fdc318810f03cf175f865922f1ffa52",
+     "member": "jev_d89rdval/val/courts.jsonl"
+    },
+    {
+     "expected_md5": "bd105ff497095740cbc2fa8154eb1f41",
+     "member": "jev_d89rdval/val/ctgov.jsonl"
+    },
+    {
+     "expected_md5": "814cb12f96fa694a292b67a9271faf1f",
+     "member": "jev_d89rdval/val/dmhc.jsonl"
+    },
+    {
+     "expected_md5": "905b1dfdb2d8d5baea3e78d6a6b70ad9",
+     "member": "jev_d89rdval/val/esci.jsonl"
+    },
+    {
+     "expected_md5": "961de71e64016267ae3ce6fb8b8a2856",
+     "member": "jev_d89rdval/val/fda.jsonl"
+    },
+    {
+     "expected_md5": "8c902b4986f4a540d015d11ebe470d2e",
+     "member": "jev_d89rdval/val/folktables.jsonl"
+    },
+    {
+     "expected_md5": "9220c23a1e970bc5e8bc7f627d4d105e",
+     "member": "jev_d89rdval/val/genomics.jsonl"
+    },
+    {
+     "expected_md5": "0a6c923be91c7c0e77198813012f6aa9",
+     "member": "jev_d89rdval/val/lichess.jsonl"
+    },
+    {
+     "expected_md5": "53dcaffc2eeedadf259258f9250639b3",
+     "member": "jev_d89rdval/val/nvd_cwe.jsonl"
+    },
+    {
+     "expected_md5": "0e6aae60d86eac82ac64dde4d6a537e1",
+     "member": "jev_d89rdval/val/openjev.jsonl"
+    },
+    {
+     "expected_md5": "7e4d585ae92067201c8c2496bda40acb",
+     "member": "jev_d89rdval/val/openreview.jsonl"
+    },
+    {
+     "expected_md5": "f5c0439abf112cba3e4d9944e3d9da31",
+     "member": "jev_d89rdval/val/physics.jsonl"
+    },
+    {
+     "expected_md5": "bc1bfdc625cc67f5b3772410108bf300",
+     "member": "jev_d89rdval/val/safety.jsonl"
+    },
+    {
+     "expected_md5": "b8743a0d6c7a126186d99a1ef4f4c0e3",
+     "member": "jev_d89rdval/val/swe_rebench.jsonl"
+    },
+    {
+     "expected_md5": "57578b1795614c58c0425f0c787120ec",
+     "member": "jev_d89rdval/val/swiss.jsonl"
+    },
+    {
+     "expected_md5": "ba6cb817a54ead5631d05f6e061e9d2a",
+     "member": "jev_d89rdval/val/wd_classify.jsonl"
+    },
+    {
+     "expected_md5": "93560a1b0f8038bf1474610c822c136b",
+     "member": "jev_d89rdval/val/wiki_census.jsonl"
+    },
+    {
+     "expected_md5": "017d4ff97b7104d8fde51acb415fe9db",
+     "member": "jev_d89rdval/val/wikidata_s1.jsonl"
+    },
+    {
+     "expected_md5": "b02b775f534d5f9d4bd219d342380a93",
+     "member": "jev_d89rdval/val/wikidata_s2.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_d89rdval",
+   "required": true,
+   "s3_candidates": [
+    "results89/jev_d89rdval.tgz"
+   ],
+   "source_name": "jev_d89rdval",
+   "tarball_md5": "70d57abbffdedd2579f1920e237a0e1c"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "48628421079d3c40db8760873938bafd",
+     "member": "jev_data/test/banking77.jsonl"
+    },
+    {
+     "expected_md5": "5b29ed3462d95afbcb0a0b09acf39f47",
+     "member": "jev_data/test/clinc.jsonl"
+    },
+    {
+     "expected_md5": "a81104b024acc571449ab3fdd33d579e",
+     "member": "jev_data/test/go_emotions.jsonl"
+    },
+    {
+     "expected_md5": "2652bf6d6f726793d15af7c3bd0cf01f",
+     "member": "jev_data/test/gsm8k.jsonl"
+    },
+    {
+     "expected_md5": "3194abadc85a6da8f78af885f3082b7d",
+     "member": "jev_data/test/helpsteer2.jsonl"
+    },
+    {
+     "expected_md5": "620e7008748a8fe7c171791ab00ff5ef",
+     "member": "jev_data/test/mhs.jsonl"
+    },
+    {
+     "expected_md5": "790ed9a5222d3846e831c1bbfe9be89a",
+     "member": "jev_data/test/ms_marco.jsonl"
+    },
+    {
+     "expected_md5": "5e36b39d64810e6f5349ba27992db6bb",
+     "member": "jev_data/val/banking77.jsonl"
+    },
+    {
+     "expected_md5": "c2d800360e53fbae85d09a403e403cc0",
+     "member": "jev_data/val/clinc.jsonl"
+    },
+    {
+     "expected_md5": "05f171da2c5846df89793e6cdf30f5af",
+     "member": "jev_data/val/go_emotions.jsonl"
+    },
+    {
+     "expected_md5": "6b025a724bc9e88a69a4ec221856e200",
+     "member": "jev_data/val/gsm8k.jsonl"
+    },
+    {
+     "expected_md5": "a75b71b3b012b28f4019a65825bd1b3a",
+     "member": "jev_data/val/helpsteer2.jsonl"
+    },
+    {
+     "expected_md5": "c49414f59aed44e2342e95c9f439c2d7",
+     "member": "jev_data/val/mhs.jsonl"
+    },
+    {
+     "expected_md5": "fb9e73db262996507d37043b651389a9",
+     "member": "jev_data/val/ms_marco.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_data_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_data_ref.tgz"
+   ],
+   "source_name": "jev_data",
+   "tarball_md5": "8459f2d4c09ad25567ffe09665e9789f"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "65b3084f1ff79194517d293e08eaec28",
+     "member": "jev_dist46pool/val/pool.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_dist46pool_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "results46/jev_dist46pool.tgz"
+   ],
+   "source_name": "jev_dist46pool",
+   "tarball_md5": "7d7546fae22ed15a3b080e531d29844e"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "95dacee84b9cf5f7e018851011046be0",
+     "member": "jev_ext2/val/argq.jsonl"
+    },
+    {
+     "expected_md5": "b8f9e1f2a561bdcf8a9edc06e371fc2d",
+     "member": "jev_ext2/val/bbq.jsonl"
+    },
+    {
+     "expected_md5": "baf67f6e6380115b06e5572850a766f7",
+     "member": "jev_ext2/val/casino__outcomes.jsonl"
+    },
+    {
+     "expected_md5": "28577148ffe9f979f3d2b4d73b00f268",
+     "member": "jev_ext2/val/casino__strategies.jsonl"
+    },
+    {
+     "expected_md5": "7b4ebc2143ed041c71593b158f69bf0b",
+     "member": "jev_ext2/val/circa.jsonl"
+    },
+    {
+     "expected_md5": "2cb93dd37dc39ad86f7b019149736425",
+     "member": "jev_ext2/val/code_contests.jsonl"
+    },
+    {
+     "expected_md5": "938faadc7b5d6eecc61f19c17a7584f9",
+     "member": "jev_ext2/val/commonsense__cosmosqa.jsonl"
+    },
+    {
+     "expected_md5": "1933dbfe884107678ab8a650fbef45c4",
+     "member": "jev_ext2/val/commonsense__csqa.jsonl"
+    },
+    {
+     "expected_md5": "6df62a07ce37c280e19a86a7983114b1",
+     "member": "jev_ext2/val/commonsense__ecare.jsonl"
+    },
+    {
+     "expected_md5": "09ce519604e234c758875cd8156137d4",
+     "member": "jev_ext2/val/commonsense__siqa.jsonl"
+    },
+    {
+     "expected_md5": "2045320a61ea977d014b30292272dd39",
+     "member": "jev_ext2/val/commonsense__winogrande.jsonl"
+    },
+    {
+     "expected_md5": "9dfdf2038e2cce2d3ba3644c3585487c",
+     "member": "jev_ext2/val/medical__medmcqa.jsonl"
+    },
+    {
+     "expected_md5": "f76cf81e03a19b05650f5fd1a4f18755",
+     "member": "jev_ext2/val/medical__pubmedqa.jsonl"
+    },
+    {
+     "expected_md5": "9e4527c8cdfe314e5958c39fafd4ecc4",
+     "member": "jev_ext2/val/politeness__stackexchange.jsonl"
+    },
+    {
+     "expected_md5": "f180aada877e946d1d8dbf24ee2667e3",
+     "member": "jev_ext2/val/politeness__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "dbacc4782903e1543af27a50717f4e77",
+     "member": "jev_ext2/val/scruples__anecdotes.jsonl"
+    },
+    {
+     "expected_md5": "2be655be1d8ce343a67b99d0758bb630",
+     "member": "jev_ext2/val/scruples__dilemmas.jsonl"
+    },
+    {
+     "expected_md5": "ca41226c568016befaa14cfd8cb5e1f5",
+     "member": "jev_ext2/val/tabfact.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_ext2_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_ext2.tgz"
+   ],
+   "source_name": "jev_ext2",
+   "tarball_md5": "ca43f76a09b4d0071f7d23c105aa714d"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "ebbaa7cb4e403cf726d8a44ccaf46bd6",
+     "member": "jev_ext3/val/tsgraded__acceptability.jsonl"
+    },
+    {
+     "expected_md5": "7e006af7913db473a7379a6179a9b52c",
+     "member": "jev_ext3/val/tsgraded__dynasent.jsonl"
+    },
+    {
+     "expected_md5": "27ec3aedbc1d7e28935bc28150f6436f",
+     "member": "jev_ext3/val/tsgraded__oasst2.jsonl"
+    },
+    {
+     "expected_md5": "56c1dbfb16ffb001761f70ceffd6fa0c",
+     "member": "jev_ext3/val/tsgraded__protoqa.jsonl"
+    },
+    {
+     "expected_md5": "0fbf162b2dc8d7d449775ab8617531ab",
+     "member": "jev_ext3/val/tsgraded__sts.jsonl"
+    },
+    {
+     "expected_md5": "cf20f21d13967104b559b12898d15c05",
+     "member": "jev_ext3/val/tsgraded__unli.jsonl"
+    },
+    {
+     "expected_md5": "72a04b1d928080b18b87aacee5396ea7",
+     "member": "jev_ext3/val/tsgraded__wellformed.jsonl"
+    },
+    {
+     "expected_md5": "6919dd8656412316d10ce9574bed964c",
+     "member": "jev_ext3/val/typed__tds.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_ext3_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_ext3.tgz"
+   ],
+   "source_name": "jev_ext3",
+   "tarball_md5": "1a498898f918b476060e6d7f8ea634de"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "274fe7ba30e0408e820478fd188d5691",
+     "member": "jev_ext4/val/openjev__browser.jsonl"
+    },
+    {
+     "expected_md5": "c1e89b93dedd20b444ce018b04f55d31",
+     "member": "jev_ext4/val/openjev__citation.jsonl"
+    },
+    {
+     "expected_md5": "6cf61b50ee4bffd51dcd1195b5a216fb",
+     "member": "jev_ext4/val/openjev__drone.jsonl"
+    },
+    {
+     "expected_md5": "08f12274d471c2f9a9f840af42ff9fc7",
+     "member": "jev_ext4/val/openjev__entity.jsonl"
+    },
+    {
+     "expected_md5": "980ea19ecad98bcf6a6ffbafe39b6c52",
+     "member": "jev_ext4/val/openjev__extraction.jsonl"
+    },
+    {
+     "expected_md5": "fa5cd33865f354a71789affcd20e5cb2",
+     "member": "jev_ext4/val/openjev__games.jsonl"
+    },
+    {
+     "expected_md5": "1e9dd7a5a07b1bbd9fad4068ad4249b1",
+     "member": "jev_ext4/val/openjev__ir.jsonl"
+    },
+    {
+     "expected_md5": "e2dc350cc679a87241b7e32a58337756",
+     "member": "jev_ext4/val/openjev__painting.jsonl"
+    },
+    {
+     "expected_md5": "e0418d4ca729fb98d3d3914d754c87ae",
+     "member": "jev_ext4/val/openjev__reasoning.jsonl"
+    },
+    {
+     "expected_md5": "7c7f1d600743066e739c3e04d0978b8c",
+     "member": "jev_ext4/val/openjev__sponsor.jsonl"
+    },
+    {
+     "expected_md5": "027fdce55963286525ff0b448d901828",
+     "member": "jev_ext4/val/wiki__census.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_ext4_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_ext4.tgz"
+   ],
+   "source_name": "jev_ext4",
+   "tarball_md5": "9fa464d7fc0e3a4a51f420a7f9488bca"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "70b253b1d1a7a3ba31bd8a73f2a52781",
+     "member": "jev_ext_strict/val/jebadiah.jsonl"
+    },
+    {
+     "expected_md5": "a423df2657f6fbdfc4c7152cc5571724",
+     "member": "jev_ext_strict/val/kaivoss.jsonl"
+    },
+    {
+     "expected_md5": "441c0e696afd9e9df85795948c1e3d4e",
+     "member": "jev_ext_strict/val/mghafiri.jsonl"
+    },
+    {
+     "expected_md5": "e1a41a45a40e0f4813141e270758e1cc",
+     "member": "jev_ext_strict/val/procedural__arithmetic.jsonl"
+    },
+    {
+     "expected_md5": "013989f04df695c7493fc61d904cf7aa",
+     "member": "jev_ext_strict/val/procedural__entity_belief_tracking.jsonl"
+    },
+    {
+     "expected_md5": "9cd76dc20661214186720e9820a04347",
+     "member": "jev_ext_strict/val/procedural__event_state_reconstruction.jsonl"
+    },
+    {
+     "expected_md5": "85d32548f1c17ead8259ff3c5b4eb9af",
+     "member": "jev_ext_strict/val/procedural__evidence_sufficiency.jsonl"
+    },
+    {
+     "expected_md5": "4fd35313c3aa702d2c33469816e7d2fc",
+     "member": "jev_ext_strict/val/procedural__needle_retrieval.jsonl"
+    },
+    {
+     "expected_md5": "76229d129dee1d150c0611f602cf8e47",
+     "member": "jev_ext_strict/val/procedural__partial_observation_calibration.jsonl"
+    },
+    {
+     "expected_md5": "6c2b166b679c944bfc808838d9e5f308",
+     "member": "jev_ext_strict/val/procedural__policy_applicability.jsonl"
+    },
+    {
+     "expected_md5": "06d2a6d7c4c4c3d6bbbd657811f2b1f2",
+     "member": "jev_ext_strict/val/procedural__policy_under_uncertainty.jsonl"
+    },
+    {
+     "expected_md5": "518a4200c565ed16d428da12bb94c484",
+     "member": "jev_ext_strict/val/procedural__record_aggregation.jsonl"
+    },
+    {
+     "expected_md5": "a8790bda3f59cfb9f285dad22290db01",
+     "member": "jev_ext_strict/val/procedural__state_perturbation.jsonl"
+    },
+    {
+     "expected_md5": "4253e19bd5715e20093fef36540deccb",
+     "member": "jev_ext_strict/val/procedural__table_lookup.jsonl"
+    },
+    {
+     "expected_md5": "3bc88b9d95035325caecfcdf464eb83d",
+     "member": "jev_ext_strict/val/vagmi.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_ext_strict_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_ext_strict.tgz"
+   ],
+   "source_name": "jev_ext_strict",
+   "tarball_md5": "a3369fcde32a97039d1ccfe7734a017a"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "37dbf71b9394e6406299e0d9207a6e8d",
+     "member": "jev_gdelt_v1/test/gdelt_f1_count.jsonl"
+    },
+    {
+     "expected_md5": "b97186437cb8b40637006924bc600742",
+     "member": "jev_gdelt_v1/test/gdelt_f2_exceed.jsonl"
+    },
+    {
+     "expected_md5": "1ab92ab848fb1afe6c83ccd018a53916",
+     "member": "jev_gdelt_v1/test/gdelt_f3_goldstein.jsonl"
+    },
+    {
+     "expected_md5": "a3d2292fad23b281dbdd0186938ffec6",
+     "member": "jev_gdelt_v1/test/gdelt_f4_tone.jsonl"
+    },
+    {
+     "expected_md5": "a10bf99e72a073dc100bb25796eca739",
+     "member": "jev_gdelt_v1/test_recent/gdelt_f1_count.jsonl"
+    },
+    {
+     "expected_md5": "e8c4931b82c4201d32b22ef0fd1c38fe",
+     "member": "jev_gdelt_v1/test_recent/gdelt_f2_exceed.jsonl"
+    },
+    {
+     "expected_md5": "3b31f71318101974ac15f6f691fc61ff",
+     "member": "jev_gdelt_v1/test_recent/gdelt_f3_goldstein.jsonl"
+    },
+    {
+     "expected_md5": "88aaa8f57b384bd761f81010b4c271f6",
+     "member": "jev_gdelt_v1/test_recent/gdelt_f4_tone.jsonl"
+    },
+    {
+     "expected_md5": "056d6d9740d5a78effa37e9c0eac9ef7",
+     "member": "jev_gdelt_v1/val/gdelt_f1_count.jsonl"
+    },
+    {
+     "expected_md5": "ae5b825ec9274033cd95dd2374e5c31e",
+     "member": "jev_gdelt_v1/val/gdelt_f2_exceed.jsonl"
+    },
+    {
+     "expected_md5": "5d9c3b5932d7dfeb80b0406685a9244e",
+     "member": "jev_gdelt_v1/val/gdelt_f3_goldstein.jsonl"
+    },
+    {
+     "expected_md5": "35d1c429e089a440d4d4ee16bfaa50a8",
+     "member": "jev_gdelt_v1/val/gdelt_f4_tone.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_gdelt_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/gdelt/jev_gdelt_v1.tgz"
+   ],
+   "source_name": "jev_gdelt_v1",
+   "tarball_md5": "b77bb5ae946b7f4b7456ddb73fea06ce"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "a71b1c511f491915d412102a587c025c",
+     "member": "jev_rd1/val/afd.jsonl"
+    },
+    {
+     "expected_md5": "893276277cd5f094dbec6ace87fd3978",
+     "member": "jev_rd1/val/aidev.jsonl"
+    },
+    {
+     "expected_md5": "e94dbd12e328a1b508432fd112fb5705",
+     "member": "jev_rd1/val/courts.jsonl"
+    },
+    {
+     "expected_md5": "0227e8618978052e4384f2f68ee86617",
+     "member": "jev_rd1/val/ctgov.jsonl"
+    },
+    {
+     "expected_md5": "cd2c937c47a272315b6a937c30c66309",
+     "member": "jev_rd1/val/dmhc.jsonl"
+    },
+    {
+     "expected_md5": "cf1672b21d194fff4839a2b16cbfd01e",
+     "member": "jev_rd1/val/esci.jsonl"
+    },
+    {
+     "expected_md5": "8e63f7339302e3272d0c2d638e3ab800",
+     "member": "jev_rd1/val/fda.jsonl"
+    },
+    {
+     "expected_md5": "59c9d548c5c46f654af0b0409c5b954f",
+     "member": "jev_rd1/val/folktables.jsonl"
+    },
+    {
+     "expected_md5": "829610f798d015e6956d3f1890dc6759",
+     "member": "jev_rd1/val/genomics.jsonl"
+    },
+    {
+     "expected_md5": "59ad70e469d5f256769a9b7c23a98e2b",
+     "member": "jev_rd1/val/lichess.jsonl"
+    },
+    {
+     "expected_md5": "d1c89f7db7f20f0a36ee375247db9b15",
+     "member": "jev_rd1/val/nvd_cwe.jsonl"
+    },
+    {
+     "expected_md5": "11280db81335162ccadac502e2ac6c2a",
+     "member": "jev_rd1/val/openjev.jsonl"
+    },
+    {
+     "expected_md5": "72a32d3ee32dc1dc9298bb2c2ef2a76d",
+     "member": "jev_rd1/val/openreview.jsonl"
+    },
+    {
+     "expected_md5": "a9bca011fceb5fb383ec7b982453df57",
+     "member": "jev_rd1/val/physics.jsonl"
+    },
+    {
+     "expected_md5": "a23687b768e9d0167c7145bb75c57aa4",
+     "member": "jev_rd1/val/safety.jsonl"
+    },
+    {
+     "expected_md5": "7df6f0409f86d9b6d90f1a4963c60a1c",
+     "member": "jev_rd1/val/swe_rebench.jsonl"
+    },
+    {
+     "expected_md5": "3c2fd2f34210f303364561dbaef155ea",
+     "member": "jev_rd1/val/swiss.jsonl"
+    },
+    {
+     "expected_md5": "e8528e9b3bd9f00fc6df18a7ad63592b",
+     "member": "jev_rd1/val/wd_classify.jsonl"
+    },
+    {
+     "expected_md5": "b16a8f2ae3edb0533b6128d4bda7dca2",
+     "member": "jev_rd1/val/wiki_census.jsonl"
+    },
+    {
+     "expected_md5": "69721265abbe77d769f5d9f7b31e65ba",
+     "member": "jev_rd1/val/wikidata_s1.jsonl"
+    },
+    {
+     "expected_md5": "d37706f1e9c87e9edd3aa7bc24f6a13e",
+     "member": "jev_rd1/val/wikidata_s2.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_rd1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_rd1.tgz"
+   ],
+   "source_name": "jev_rd1",
+   "tarball_md5": "e572a12b6c511e23cfaab7b62a881749"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "25f64084098b87499e355488d8b87f94",
+     "member": "jev_rd2/val/afd.jsonl"
+    },
+    {
+     "expected_md5": "0692adf5b0177eac7d5de45d7c8ef28d",
+     "member": "jev_rd2/val/aidev.jsonl"
+    },
+    {
+     "expected_md5": "dd9553c992e15ea72e2de54d0e8b1d2c",
+     "member": "jev_rd2/val/courts.jsonl"
+    },
+    {
+     "expected_md5": "0d689b076d9ae741dbb26238ec9efbab",
+     "member": "jev_rd2/val/ctgov.jsonl"
+    },
+    {
+     "expected_md5": "cc689676efe2f74c9f4801b311f63d9a",
+     "member": "jev_rd2/val/dmhc.jsonl"
+    },
+    {
+     "expected_md5": "ccd1337b0545d24bbf7fb84c8ad02c8e",
+     "member": "jev_rd2/val/esci.jsonl"
+    },
+    {
+     "expected_md5": "2ca8b5592721895df8f850294cb4dd6b",
+     "member": "jev_rd2/val/fda.jsonl"
+    },
+    {
+     "expected_md5": "84bebf3af16112f9bb63544c85a2c43a",
+     "member": "jev_rd2/val/folktables.jsonl"
+    },
+    {
+     "expected_md5": "6eb18e576178a183b750936e750ea693",
+     "member": "jev_rd2/val/genomics.jsonl"
+    },
+    {
+     "expected_md5": "e6e46af5495f7f19d5f376fcc03fb0ec",
+     "member": "jev_rd2/val/lichess.jsonl"
+    },
+    {
+     "expected_md5": "0656e0aecf95383fbbc37331bfd01c76",
+     "member": "jev_rd2/val/nvd_cwe.jsonl"
+    },
+    {
+     "expected_md5": "c59da2f7c699a3171c0ee57d92545760",
+     "member": "jev_rd2/val/openjev.jsonl"
+    },
+    {
+     "expected_md5": "88bc835dd2e84a197f087ec6ffa4b0d6",
+     "member": "jev_rd2/val/openreview.jsonl"
+    },
+    {
+     "expected_md5": "8e39d6abc28f2b88661ff3bf6cc239a5",
+     "member": "jev_rd2/val/physics.jsonl"
+    },
+    {
+     "expected_md5": "3efa36ee44de040b05584e363a5e9b25",
+     "member": "jev_rd2/val/safety.jsonl"
+    },
+    {
+     "expected_md5": "9d92775a9eb2f787c1560366c7e5c39b",
+     "member": "jev_rd2/val/swe_rebench.jsonl"
+    },
+    {
+     "expected_md5": "cac5535e2692af354b709cce3ad2695e",
+     "member": "jev_rd2/val/swiss.jsonl"
+    },
+    {
+     "expected_md5": "2fbf191aa7dad0b5f60b7f38f4223a5a",
+     "member": "jev_rd2/val/wd_classify.jsonl"
+    },
+    {
+     "expected_md5": "7a5145c2fd015e4888d1744241f33793",
+     "member": "jev_rd2/val/wiki_census.jsonl"
+    },
+    {
+     "expected_md5": "34b01c67f0753cf8099b47cebf31644f",
+     "member": "jev_rd2/val/wikidata_s1.jsonl"
+    },
+    {
+     "expected_md5": "a1f15c80a5d74be6871a3036c665493c",
+     "member": "jev_rd2/val/wikidata_s2.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_rd2_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_rd2.tgz"
+   ],
+   "source_name": "jev_rd2",
+   "tarball_md5": "904e5e792565f275b8e31c9b97e89a23"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "8864f2225e306b4261ccc5db153c5710",
+     "member": "jev_rd3/val/afd.jsonl"
+    },
+    {
+     "expected_md5": "ac31a69ae757d7dcda58cce72908f82a",
+     "member": "jev_rd3/val/aidev.jsonl"
+    },
+    {
+     "expected_md5": "71be6b7f8a5604cbf45257f884431267",
+     "member": "jev_rd3/val/courts.jsonl"
+    },
+    {
+     "expected_md5": "70ff7c6d3ef58d56ef88c042c05a2444",
+     "member": "jev_rd3/val/ctgov.jsonl"
+    },
+    {
+     "expected_md5": "b848ba43627d635dd2e1c205e45caf98",
+     "member": "jev_rd3/val/dmhc.jsonl"
+    },
+    {
+     "expected_md5": "502dbaf400bcdd5900a4879dbaea1306",
+     "member": "jev_rd3/val/esci.jsonl"
+    },
+    {
+     "expected_md5": "ded3f3830ca3da4ace9eb0959e8526c1",
+     "member": "jev_rd3/val/fda.jsonl"
+    },
+    {
+     "expected_md5": "ab6ec6bb03f3d639af5c1ba7f3f77fdf",
+     "member": "jev_rd3/val/folktables.jsonl"
+    },
+    {
+     "expected_md5": "e36fbe2362ad1f618b3bf1386a8c84d2",
+     "member": "jev_rd3/val/genomics.jsonl"
+    },
+    {
+     "expected_md5": "d24e3d79a332c512636af589a1a3e0c2",
+     "member": "jev_rd3/val/lichess.jsonl"
+    },
+    {
+     "expected_md5": "a2ada897a9c9fa56a0f8e3d839bf58c2",
+     "member": "jev_rd3/val/nvd_cwe.jsonl"
+    },
+    {
+     "expected_md5": "1739049928f9ccefdf29f3d40eb0286e",
+     "member": "jev_rd3/val/openjev.jsonl"
+    },
+    {
+     "expected_md5": "a35363c7eced6233d0a5a6da0dabee98",
+     "member": "jev_rd3/val/openreview.jsonl"
+    },
+    {
+     "expected_md5": "42a563030a3d26100921aa0be2445293",
+     "member": "jev_rd3/val/physics.jsonl"
+    },
+    {
+     "expected_md5": "8c506bef4beb928d95658f9ac45e2245",
+     "member": "jev_rd3/val/safety.jsonl"
+    },
+    {
+     "expected_md5": "42d277d1966f91f7f2385816bc30deab",
+     "member": "jev_rd3/val/swe_rebench.jsonl"
+    },
+    {
+     "expected_md5": "7f9fbe2ad2a5efb17ccb06d32d728fdd",
+     "member": "jev_rd3/val/swiss.jsonl"
+    },
+    {
+     "expected_md5": "7e7a817c0062e4e8be1f2769afd78ebb",
+     "member": "jev_rd3/val/wd_classify.jsonl"
+    },
+    {
+     "expected_md5": "93ab11792cf9431e306f1b8c969e8e87",
+     "member": "jev_rd3/val/wiki_census.jsonl"
+    },
+    {
+     "expected_md5": "0a9fb4fd8df742ef1933244b6fe2743a",
+     "member": "jev_rd3/val/wikidata_s1.jsonl"
+    },
+    {
+     "expected_md5": "49a55d9a222cdc24408ddf8ead2b5296",
+     "member": "jev_rd3/val/wikidata_s2.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_rd3_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_rd3.tgz"
+   ],
+   "source_name": "jev_rd3",
+   "tarball_md5": "32677581cc3e4b74f10c89108e44d94c"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "a51603df0d7498529cc12c5cc18ebfad",
+     "member": "jev_rd3_stackpool/train/afd.jsonl"
+    },
+    {
+     "expected_md5": "352c9f217ec53f960fd743038eeb6064",
+     "member": "jev_rd3_stackpool/train/courts.jsonl"
+    },
+    {
+     "expected_md5": "480d7d1c8ebdf745e2e6742d306d04ec",
+     "member": "jev_rd3_stackpool/train/dmhc.jsonl"
+    },
+    {
+     "expected_md5": "daf014903cfc780f4de78dc2e424dea0",
+     "member": "jev_rd3_stackpool/train/fda.jsonl"
+    },
+    {
+     "expected_md5": "51f36fde0ece03e806882c9b46d902d1",
+     "member": "jev_rd3_stackpool/train/genomics.jsonl"
+    },
+    {
+     "expected_md5": "8e61caec58518888f84aea1b7c3f7c32",
+     "member": "jev_rd3_stackpool/train/openreview.jsonl"
+    },
+    {
+     "expected_md5": "5edd60b92eed6791a72de847f4e4d930",
+     "member": "jev_rd3_stackpool/train/physics.jsonl"
+    },
+    {
+     "expected_md5": "47e874c9540c4e510e419342aa192848",
+     "member": "jev_rd3_stackpool/train/safety.jsonl"
+    },
+    {
+     "expected_md5": "b567594cb7c927d7678a74a82c54fc9a",
+     "member": "jev_rd3_stackpool/train/wikidata_s2.jsonl"
+    },
+    {
+     "expected_md5": "2d7ecaf2667c9fd698cfc827c8c97901",
+     "member": "jev_rd3_stackpool/val/afd.jsonl"
+    },
+    {
+     "expected_md5": "8efc7f0def5012aada0a8f645927b4f1",
+     "member": "jev_rd3_stackpool/val/courts.jsonl"
+    },
+    {
+     "expected_md5": "e777099438d7f64b5a13d0f85c99c082",
+     "member": "jev_rd3_stackpool/val/ctgov.jsonl"
+    },
+    {
+     "expected_md5": "bcba398ad6f315b19a1ae32ca788be1c",
+     "member": "jev_rd3_stackpool/val/dmhc.jsonl"
+    },
+    {
+     "expected_md5": "1c6fe9781b11a1c985d0fb57b84a353b",
+     "member": "jev_rd3_stackpool/val/esci.jsonl"
+    },
+    {
+     "expected_md5": "cb96c404a42d6f569bd21c096cbd7e52",
+     "member": "jev_rd3_stackpool/val/fda.jsonl"
+    },
+    {
+     "expected_md5": "8ecb23232cb06427d44d88b2c956e010",
+     "member": "jev_rd3_stackpool/val/folktables.jsonl"
+    },
+    {
+     "expected_md5": "0fae6d636a8e87642bae9ad572770e52",
+     "member": "jev_rd3_stackpool/val/genomics.jsonl"
+    },
+    {
+     "expected_md5": "2f0deb5726110fe15077d02efacb16d7",
+     "member": "jev_rd3_stackpool/val/nvd_cwe.jsonl"
+    },
+    {
+     "expected_md5": "ebb5ba1b9240bacb152c19c866ca3419",
+     "member": "jev_rd3_stackpool/val/openjev.jsonl"
+    },
+    {
+     "expected_md5": "6e97981377899eb3925acc305e81ef18",
+     "member": "jev_rd3_stackpool/val/openreview.jsonl"
+    },
+    {
+     "expected_md5": "ac023640dca4dda41039166e67f5a45b",
+     "member": "jev_rd3_stackpool/val/physics.jsonl"
+    },
+    {
+     "expected_md5": "0c6ef6c3340cde02be8fccb7e36b30df",
+     "member": "jev_rd3_stackpool/val/safety.jsonl"
+    },
+    {
+     "expected_md5": "e21d5de0a42501aa3927f3996f65c53c",
+     "member": "jev_rd3_stackpool/val/swiss.jsonl"
+    },
+    {
+     "expected_md5": "d40e95cec195a09e11d1f7a2f27e31a0",
+     "member": "jev_rd3_stackpool/val/wd_classify.jsonl"
+    },
+    {
+     "expected_md5": "8d01cfb11980847eee8d09bb0c0cc3bf",
+     "member": "jev_rd3_stackpool/val/wiki_census.jsonl"
+    },
+    {
+     "expected_md5": "1785702efbb2dd9e0a1c877115261add",
+     "member": "jev_rd3_stackpool/val/wikidata_s1.jsonl"
+    },
+    {
+     "expected_md5": "446b75cbcd66f13ddb63afd27c79be25",
+     "member": "jev_rd3_stackpool/val/wikidata_s2.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "jev_rd3_stackpool",
+   "required": true,
+   "s3_candidates": [
+    "data/jev_rd3_stackpool.tgz"
+   ],
+   "source_name": "jev_rd3_stackpool",
+   "tarball_md5": "3c52345eb0d0c04794d29f66723945a7"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "25d5442b23403fe4bd3e3bb8d748000f",
+     "member": "test/real.jsonl"
+    },
+    {
+     "expected_md5": "4000368b8de727f8cea4d73cb3ded4eb",
+     "member": "val/real.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "build_jevbench",
+   "population": "jev_real_valtest",
+   "required": true,
+   "source_name": "jev_real_valtest"
+  },
+  {
+   "files": [],
+   "historical": true,
+   "kind": "tarball",
+   "note": "no evaluation-split files in this corpus (train-only); tag covered with zero files",
+   "population": "l1_fitwc_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/l1_panel/l1_fitwc_v1.tgz"
+   ],
+   "source_name": "l1_fitwc_v1",
+   "tarball_md5": "0899f029206d121202dc7ea17e994776"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "1bf19eab653345b15aa9cd95facd9571",
+     "member": "l1_panel/dev_familiar/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "be1290f03031e9d2bd3aa457936866d1",
+     "member": "l1_panel/dev_familiar/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "3cec4508d639abce9ba9de1284586d80",
+     "member": "l1_panel/dev_familiar/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "db81ebe123b8ae929bf98661f3749bb1",
+     "member": "l1_panel/dev_familiar/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "e3a15e381c134cad95f80bae169f3482",
+     "member": "l1_panel/dev_familiar/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "90177a53b190d00dede256717102a49b",
+     "member": "l1_panel/dev_familiar/bayes_worlds_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "c62c2265dc5e9311d9b7c7ad456a1435",
+     "member": "l1_panel/dev_familiar/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "d0a37e500e8a6471a3f7378109b340bf",
+     "member": "l1_panel/dev_heldout/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "e108b7a59a2c8cf1c990202aa28f6877",
+     "member": "l1_panel/dev_heldout/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "45048542b5f10bf94d7de62725f35b70",
+     "member": "l1_panel/dev_heldout/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "7bfc62d824acd2ba72cf9c3ddc072d9c",
+     "member": "l1_panel/dev_heldout/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "d6c57b2af76fc5adb2c456527c168faf",
+     "member": "l1_panel/dev_heldout/bayes_worlds_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "46cb9ce26a9eda07ec43f978138e5ae9",
+     "member": "l1_panel/dev_heldout/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "12d6ceda747c43222b6ab38b4fb686a0",
+     "member": "l1_panel/dev_novel/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "a5de0f8287574302e47ce3abd2e78689",
+     "member": "l1_panel/dev_novel/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "5993aa12617617508f23a5bdfc0632e5",
+     "member": "l1_panel/dev_novel/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "df30b7604848828406a9bae4c3f9fc6a",
+     "member": "l1_panel/dev_novel/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "47d712337ce6ab6b1591a6aba35731b8",
+     "member": "l1_panel/dev_novel/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "ad23ba3aec2ec8781d64b24f5b17087c",
+     "member": "l1_panel/dev_novel/bayes_worlds_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "3ac72754622a3b4e9c428f2288088050",
+     "member": "l1_panel/dev_novel/bayes_worlds_reliability.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "l1_panel_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/l1_panel/l1_panel.tgz"
+   ],
+   "source_name": "l1_panel_v1",
+   "tarball_md5": "fcf6c41204b81bb11b2209013f12f02c"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "608bee062caf4c49c02f45ae59e7d572",
+     "member": "l1_panel_v2/dev_coupled/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "6bdbe2ba6e2849d3cd11e0c04eb53993",
+     "member": "l1_panel_v2/dev_coupled/bayes_worlds_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "1bf19eab653345b15aa9cd95facd9571",
+     "member": "l1_panel_v2/dev_familiar/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "be1290f03031e9d2bd3aa457936866d1",
+     "member": "l1_panel_v2/dev_familiar/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "3cec4508d639abce9ba9de1284586d80",
+     "member": "l1_panel_v2/dev_familiar/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "db81ebe123b8ae929bf98661f3749bb1",
+     "member": "l1_panel_v2/dev_familiar/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "e3a15e381c134cad95f80bae169f3482",
+     "member": "l1_panel_v2/dev_familiar/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "90177a53b190d00dede256717102a49b",
+     "member": "l1_panel_v2/dev_familiar/bayes_worlds_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "c62c2265dc5e9311d9b7c7ad456a1435",
+     "member": "l1_panel_v2/dev_familiar/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "d0a37e500e8a6471a3f7378109b340bf",
+     "member": "l1_panel_v2/dev_heldout/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "e108b7a59a2c8cf1c990202aa28f6877",
+     "member": "l1_panel_v2/dev_heldout/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "45048542b5f10bf94d7de62725f35b70",
+     "member": "l1_panel_v2/dev_heldout/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "7bfc62d824acd2ba72cf9c3ddc072d9c",
+     "member": "l1_panel_v2/dev_heldout/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "d6c57b2af76fc5adb2c456527c168faf",
+     "member": "l1_panel_v2/dev_heldout/bayes_worlds_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "46cb9ce26a9eda07ec43f978138e5ae9",
+     "member": "l1_panel_v2/dev_heldout/bayes_worlds_reliability.jsonl"
+    },
+    {
+     "expected_md5": "12d6ceda747c43222b6ab38b4fb686a0",
+     "member": "l1_panel_v2/dev_novel/bayes_worlds_acquisition.jsonl"
+    },
+    {
+     "expected_md5": "a5de0f8287574302e47ce3abd2e78689",
+     "member": "l1_panel_v2/dev_novel/bayes_worlds_copied.jsonl"
+    },
+    {
+     "expected_md5": "5993aa12617617508f23a5bdfc0632e5",
+     "member": "l1_panel_v2/dev_novel/bayes_worlds_decision.jsonl"
+    },
+    {
+     "expected_md5": "df30b7604848828406a9bae4c3f9fc6a",
+     "member": "l1_panel_v2/dev_novel/bayes_worlds_diagnosis.jsonl"
+    },
+    {
+     "expected_md5": "47d712337ce6ab6b1591a6aba35731b8",
+     "member": "l1_panel_v2/dev_novel/bayes_worlds_missingness.jsonl"
+    },
+    {
+     "expected_md5": "ad23ba3aec2ec8781d64b24f5b17087c",
+     "member": "l1_panel_v2/dev_novel/bayes_worlds_missingness2.jsonl"
+    },
+    {
+     "expected_md5": "3ac72754622a3b4e9c428f2288088050",
+     "member": "l1_panel_v2/dev_novel/bayes_worlds_reliability.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "l1_panel_v2_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/l1_panel/l1_panel_v2.tgz"
+   ],
+   "source_name": "l1_panel_v2",
+   "tarball_md5": "7c6ee2bb34d4cedcaa3f356e097e7f29"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "c5f693fe6324b069b16381d81744c948",
+     "member": "gde1/aidev_prs/eval/aidev__pr_merge.jsonl"
+    },
+    {
+     "expected_md5": "00b04202341daad1d9f5e42ce1ff98bf",
+     "member": "gde1/civil_comments_votes/eval/gde1__civil_comments_votes.jsonl"
+    },
+    {
+     "expected_md5": "9f468b918cc3c8727755e21dcea4104e",
+     "member": "gde1/community_alignment/eval/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "10e2c86a68a296d89468767e1d8857ae",
+     "member": "gde1/community_alignment/extended/gde1__community_alignment.jsonl"
+    },
+    {
+     "expected_md5": "1c39296a16fcbe1361d803c3b69f2acf",
+     "member": "gde1/ctgov/eval/ctgov__final_status.jsonl"
+    },
+    {
+     "expected_md5": "a16df82139f08b84f87903e1fcdb4b10",
+     "member": "gde1/ctgov/eval/ctgov__results_posted.jsonl"
+    },
+    {
+     "expected_md5": "0d1346712f7ed04b16c826edd0bf84b2",
+     "member": "gde1/dices/eval/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "4e3d3a924ff327ccc3c9ea75a23b534b",
+     "member": "gde1/dices/eval/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "4eae584eaeee4a807125030420af5446",
+     "member": "gde1/dices/extended/gde1__dices350.jsonl"
+    },
+    {
+     "expected_md5": "6cf6abec18bbf6101897b38a6ff391e7",
+     "member": "gde1/dices/extended/gde1__dices990.jsonl"
+    },
+    {
+     "expected_md5": "58ab53f9570dc4b37d72e2b4aa0fd4ba",
+     "member": "gde1/ecthr/eval/ecthr__lexglue.jsonl"
+    },
+    {
+     "expected_md5": "5c17e757351ce8224b1b0894b769a6ad",
+     "member": "gde1/esci/eval/gde1__esci.jsonl"
+    },
+    {
+     "expected_md5": "a3b41bfb193d93e0e8bb970ecfb362a3",
+     "member": "gde1/folio/eval/gde1__folio.jsonl"
+    },
+    {
+     "expected_md5": "c755859844428f1d464f8dbcadf9b00f",
+     "member": "gde1/folktables_acs/eval/gde1__folktables_acs.jsonl"
+    },
+    {
+     "expected_md5": "2567da7750b6ba238f2af92da1d102b3",
+     "member": "gde1/forecastbench/dev/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "5e78e16dc4d8d157b1f8c9b5a38ff0d9",
+     "member": "gde1/forecastbench/dev/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "60de62f382e67943c8d48f6c96ea967d",
+     "member": "gde1/forecastbench/dev/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "9cfc8027d58765dc0de29ce8434d367b",
+     "member": "gde1/forecastbench/eval/forecastbench__dbnomics.jsonl"
+    },
+    {
+     "expected_md5": "8ec98f9f63dbd681e2f5b4d4f8f6d703",
+     "member": "gde1/forecastbench/eval/forecastbench__fred.jsonl"
+    },
+    {
+     "expected_md5": "d6e50905eb0afb4932d61a9b37a36a76",
+     "member": "gde1/forecastbench/eval/forecastbench__wikipedia.jsonl"
+    },
+    {
+     "expected_md5": "009a28bd7f06cb2c3021375849e0d1e5",
+     "member": "gde1/forecastbench_market/dev/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "c3ae3c4cc513b84cfbc66f86df16dd9c",
+     "member": "gde1/forecastbench_market/dev/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "13551534b836cff71d70337b281cb6b3",
+     "member": "gde1/forecastbench_market/eval/forecastbench_market__manifold.jsonl"
+    },
+    {
+     "expected_md5": "f52de11cdfd7a22537606b1517bf1159",
+     "member": "gde1/forecastbench_market/eval/forecastbench_market__metaculus.jsonl"
+    },
+    {
+     "expected_md5": "719c8781daa1ff5850367bf75e5d6cd5",
+     "member": "gde1/healthbench/eval/gde1__healthbench_meta.jsonl"
+    },
+    {
+     "expected_md5": "26ca2104c23b1de56ecab31d1cc96481",
+     "member": "gde1/helpsteer2_votes/eval/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "0d61667eb123b2aadead87d1176309b6",
+     "member": "gde1/helpsteer2_votes/overlap/gde1__helpsteer2_votes.jsonl"
+    },
+    {
+     "expected_md5": "b1f4b396d2de603ab33a6e8dd5f91751",
+     "member": "gde1/hle/eval/hle__text_mc.jsonl"
+    },
+    {
+     "expected_md5": "3e06cedf0dc40cdae8dac57be7f439c2",
+     "member": "gde1/kev/eval/kev__cve.jsonl"
+    },
+    {
+     "expected_md5": "8c36bfa5b113c732cadf32fbabb20a6b",
+     "member": "gde1/lichess_puzzles/eval/gde1__lichess_puzzles.jsonl"
+    },
+    {
+     "expected_md5": "5075159a0a93db52ad1d21ca48ff9653",
+     "member": "gde1/medqa_usmle/eval/gde1__medqa_usmle.jsonl"
+    },
+    {
+     "expected_md5": "1eebaa63a3bfb234373fd7fbfb051ab5",
+     "member": "gde1/multipref/eval/gde1__multipref.jsonl"
+    },
+    {
+     "expected_md5": "2451fecb182985d9868c11de49f3eb0f",
+     "member": "gde1/nvd_cwe/eval/nvd_cwe__cna_assigned.jsonl"
+    },
+    {
+     "expected_md5": "1ea79c63e2ed1eec19208208657abbb5",
+     "member": "gde1/nvd_cwe/eval/nvd_cwe__nvd_analyst.jsonl"
+    },
+    {
+     "expected_md5": "46659f83db2323aaf95fd4fdddf28b29",
+     "member": "gde1/scdb/dev/scdb__case_disposition.jsonl"
+    },
+    {
+     "expected_md5": "cc53df45a4696623899ca4375fe96eb2",
+     "member": "gde1/scdb/eval/scdb__case_disposition.jsonl"
+    },
+    {
+     "expected_md5": "71c74a4b615fda0c28770e104b3135a6",
+     "member": "gde1/subpop/eval/gde1__subpop_gss2022.jsonl"
+    },
+    {
+     "expected_md5": "a42f12ffccc652f798ebcd08e682f918",
+     "member": "gde1/swe_agent/eval/swe__agent_trajectories.jsonl"
+    },
+    {
+     "expected_md5": "2bbeb13eeebacafd447b94fd764232c0",
+     "member": "gde1/swe_rebench_oh/eval/swe__rebench_openhands.jsonl"
+    },
+    {
+     "expected_md5": "e70710527a2d4001a903f221b055e4ac",
+     "member": "gde1/swiss_judgment/eval/swiss__fscs.jsonl"
+    },
+    {
+     "expected_md5": "82f3a527c93c932b4788e4366b37ab24",
+     "member": "gde1/sys1cal/eval/sys1cal__v1.jsonl"
+    },
+    {
+     "expected_md5": "904ccc4f8c96458f3b7d0c5cb832325b",
+     "member": "gde1/tutormoments/eval/gde1__tutormoments.jsonl"
+    },
+    {
+     "expected_md5": "c1e55336ba18d522204f8c7b65602679",
+     "member": "gde1/tutormoments/extended/gde1__tutormoments.jsonl"
+    },
+    {
+     "expected_md5": "b860a8e8cdde0458b01f2796502fd0d5",
+     "member": "misc2_jev/esci/val/esci.jsonl"
+    },
+    {
+     "expected_md5": "9f4c510bf6ee85657104fd5b8b53ffb7",
+     "member": "misc2_jev/folktables/val/folktables__acs_employment.jsonl"
+    },
+    {
+     "expected_md5": "746f9fd49e2f50e59a9641782f147c10",
+     "member": "misc2_jev/folktables/val/folktables__acs_income.jsonl"
+    },
+    {
+     "expected_md5": "2ef10f674a24c01264c68e57843b5e2d",
+     "member": "misc2_jev/folktables/val/folktables__acs_mobility.jsonl"
+    },
+    {
+     "expected_md5": "0b7e74b7130c329db7cdb8b37cb20aae",
+     "member": "misc2_jev/folktables/val/folktables__acs_public_coverage.jsonl"
+    },
+    {
+     "expected_md5": "50d12987589587c108dce9e73718d343",
+     "member": "misc2_jev/folktables/val/folktables__acs_travel_time.jsonl"
+    },
+    {
+     "expected_md5": "ea345965aae14c126c160747fda1a44f",
+     "member": "misc2_jev/lichess/val/lichess.jsonl"
+    },
+    {
+     "expected_md5": "cd166565cde348ae1df5323894bb498e",
+     "member": "outcomes2_jev/afd/val/afd__nomination.jsonl"
+    },
+    {
+     "expected_md5": "8f1e5ebd5f0a6e50cd70eace921ca97e",
+     "member": "outcomes2_jev/afd/val/afd__nomination_votes.jsonl"
+    },
+    {
+     "expected_md5": "c701a65186731420a8a0d9fa16d817cb",
+     "member": "outcomes2_jev/aidev/val/aidev__pr_merge.jsonl"
+    },
+    {
+     "expected_md5": "5dfa346179ba7f85f65e62ba8b36bd24",
+     "member": "outcomes2_jev/swe_rebench/val/swe__rebench_openhands.jsonl"
+    },
+    {
+     "expected_md5": "7d53aaad70c313e2f76175c136871cff",
+     "member": "outcomes2_jev/swiss/val/swiss__fscs.jsonl"
+    },
+    {
+     "expected_md5": "9e85e1f1c7c69b1af1a88b4831516606",
+     "member": "rawsrc2_jev/ctgov/val/ctgov__final_status.jsonl"
+    },
+    {
+     "expected_md5": "439ec4f6842579d6fb5cecf0a3d12c47",
+     "member": "rawsrc2_jev/ctgov/val/ctgov__results_posted.jsonl"
+    },
+    {
+     "expected_md5": "4260093b33e4fcfdd5b74e8b512e6db2",
+     "member": "rawsrc2_jev/nvd_cwe/val/nvd_cwe__cwe_class.jsonl"
+    },
+    {
+     "expected_md5": "e00ed5ed408ce2d44e0e330bf30aa463",
+     "member": "wikidata_jev/gde1/wd_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "d36465a6e7c1c297dc49ccc43c75e883",
+     "member": "wikidata_jev/gde1/wd_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "3e4f349e70ec3abcd6a2489a996b039c",
+     "member": "wikidata_jev/gde1/wd_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "65a92077649e0ed069dd3dabfa7635d6",
+     "member": "wikidata_jev/gde1/wd_rfd/probe/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "f459edb8e3b1b2afc3597492298a091c",
+     "member": "wikidata_jev/s1_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "5494fa33dde6d9a27ce131f899f0cf0f",
+     "member": "wikidata_jev/s1_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "c65d9bf1f88dd66a56c96983c7088f71",
+     "member": "wikidata_jev/s1_office_end/val/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "109bda8a1d172902905b5d428f834fcb",
+     "member": "wikidata_jev/s2_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "d4c4abcc9fba26c51401d845a837b448",
+     "member": "wikidata_jev/s2_rfd/probe/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "ada4fd920cb3630cc71bda7c4aac41ab",
+     "member": "wikidata_jev/s2_rfd/val/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "7ab064862ad46a1957caf8ec74f019f2",
+     "member": "wikidata_jev/wd_classify/eval/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "d5f7ee67c571b8e864c98fd46711b10c",
+     "member": "wikidata_jev/wd_classify/eval_name_only/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "a5af28e8275573cd19b33b8320e4055b",
+     "member": "wikidata_jev/wd_classify/eval_state_removed/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "9fdd3ddd0c592e72869787af555d65bf",
+     "member": "wikidata_jev/wd_classify/val/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "468322b11db1867b3698df3b79e1bd2a",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "323eb2350539c35a07e8de2162957faf",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "d9620823f0456bb244bb46b7bcb11c7e",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "0320e9a1b19134787c2f6953c32018b9",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "bdaccf869dacb0e6e531e4c59b75a775",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "6589a3e7b8f5d268ba848be7043dd48e",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "5e321c5ac2f2d2b5d558c14d0cb95c9e",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "9cb88d9f9dd85c9d92e7769105452f5e",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "b485510b77a3fc68b198b0d5752d229b",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "155cff361042e9a39bbd3726a1f2c91b",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "4e9283ce3b0a73a03d422ee938206212",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "ad3883837a796bbb49501fb196a14877",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "5bae3f51bf4afea5a674225bfb5ead4e",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "dc4f3e2dbfa4faeb665ae79711d11248",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "881cdf6688d8bafbc508aaf53d435045",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "a10d47d68ac28598e752d03e9b27887c",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "d1895598ee8c9e11a2fd0c54418e5710",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "e5966d8614e8dcf2ffa25398d8bbc32d",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "0deb2a8fce7fadbaf0cd013bac86c4a4",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "f25050e783cf587ed5b49d0b2d83958e",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "0617a720f7d814801919086e99bcbc53",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__population.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "laptop_data_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/laptop_data_2026-10-01.tgz"
+   ],
+   "source_name": "laptop_data",
+   "tarball_md5": "191b88ed56eb0a85e5ce1a34f4fb5f4a"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "065326eab8bb12061fbe1fd6b4e5efd6",
+     "member": "numeric_p101/numeric_ev/test/numeric_ab_diff.jsonl"
+    },
+    {
+     "expected_md5": "ab321dd37b235e8ab764d6a139fa552f",
+     "member": "numeric_p101/numeric_ev/test/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "4f4454c56d8bdb45e24b6d4af9a612b0",
+     "member": "numeric_p101/numeric_ev/test/numeric_coin_seq.jsonl"
+    },
+    {
+     "expected_md5": "d0eec58e223b2d9ef18ca727b5a87d7b",
+     "member": "numeric_p101/numeric_ev/test/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "2695ed2b1e67c8b17997a9524f5dcd7a",
+     "member": "numeric_p101/numeric_ev/test/numeric_normal_pred.jsonl"
+    },
+    {
+     "expected_md5": "7ea7e384afc0e141ad9c9804d3e58036",
+     "member": "numeric_p101/numeric_ev/test/numeric_probe.jsonl"
+    },
+    {
+     "expected_md5": "8664bd01ebf799fb184ce14fd28ad4a3",
+     "member": "numeric_p101/numeric_ev/test/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "d609e288969f28e979ebea678fb6ee9e",
+     "member": "numeric_p101/numeric_ev/val/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "b3b923860438ecb4e81535b0d271ab8a",
+     "member": "numeric_p101/numeric_ev/val/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "11f919b7ae6985d40ae909bc74f24c9f",
+     "member": "numeric_p101/numeric_ev/val/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "ccdc1fc330a5ec80cb3e5eb1af6f45b3",
+     "member": "numeric_p101/numeric_pt/test/numeric_ab_diff.jsonl"
+    },
+    {
+     "expected_md5": "b0c68b9cfb67ef7ff0de280eb3dc8b10",
+     "member": "numeric_p101/numeric_pt/test/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "d7762b7bb429ccd07b2c9f4d8db88515",
+     "member": "numeric_p101/numeric_pt/test/numeric_coin_seq.jsonl"
+    },
+    {
+     "expected_md5": "d5aff7d147d1e1d9a16263d232a86925",
+     "member": "numeric_p101/numeric_pt/test/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "3ef1cea84a218ebd710fd5639062359f",
+     "member": "numeric_p101/numeric_pt/test/numeric_normal_pred.jsonl"
+    },
+    {
+     "expected_md5": "a546262b648f0ec20717bf1880d3c971",
+     "member": "numeric_p101/numeric_pt/test/numeric_probe.jsonl"
+    },
+    {
+     "expected_md5": "34a562a310dba50cefa5236f4a98c83c",
+     "member": "numeric_p101/numeric_pt/test/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "cb91395eee8ba25423fb7a5c00d3bdfe",
+     "member": "numeric_p101/numeric_pt/val/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "c35f75b61d184d6d4c65032c8744c1f4",
+     "member": "numeric_p101/numeric_pt/val/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "f263ed0d1bbb7e55ce09da7eb7d23a1a",
+     "member": "numeric_p101/numeric_pt/val/numeric_rate.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "numeric_p101_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/numeric_p101.tgz"
+   ],
+   "source_name": "numeric_p101",
+   "tarball_md5": "e911411ff7d2e467b43e292aedd09a32"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "d234c5a0e99a406733bcdc3078ae28a8",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_ab_diff.jsonl"
+    },
+    {
+     "expected_md5": "97a015f6a61c4d5209fbf857812da31a",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "42a0bf4680449f08442040e01c9fe594",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_coin_seq.jsonl"
+    },
+    {
+     "expected_md5": "72d2de3054431d75e502399b5952b6d9",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "193357f392a4eaca685c36843ab2bd81",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_normal_pred.jsonl"
+    },
+    {
+     "expected_md5": "b77f4cd18eadce566d2c98c2a7742296",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_probe.jsonl"
+    },
+    {
+     "expected_md5": "ece1a564a8ca48e9c41841da1730f4f7",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "f5f60232e05e00242dd7fe268084293c",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_stress_offc.jsonl"
+    },
+    {
+     "expected_md5": "93077e87fdfb50d0ca6ba1eec27040bf",
+     "member": "numeric_p101_v2/numeric_ev/test/numeric_stress_wide.jsonl"
+    },
+    {
+     "expected_md5": "00e39e74f41ecdcfd2cb2009992c5530",
+     "member": "numeric_p101_v2/numeric_ev/val/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "e231a9b99ef7e9ae99531ae22ac31a68",
+     "member": "numeric_p101_v2/numeric_ev/val/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "6910dd040c3a726d37850667d187a737",
+     "member": "numeric_p101_v2/numeric_ev/val/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "d3debfa85c338d3a408b97ae2a574bb1",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_ab_diff.jsonl"
+    },
+    {
+     "expected_md5": "22ed22b9aaea42034623a1c058280828",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "69de0fe2b7cd93526913592e1cd8d026",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_coin_seq.jsonl"
+    },
+    {
+     "expected_md5": "b3f56cdf3306aaff7073b97d85f48371",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "e190fb8f2f9d1d917bc1ee52b70944de",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_normal_pred.jsonl"
+    },
+    {
+     "expected_md5": "fec3bc6702a17d89f790e7b0833af768",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_probe.jsonl"
+    },
+    {
+     "expected_md5": "7e652169c2e59ee9632eb4f66a1a1a17",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "f3524ebadb2e80b97c7b4877088c2f01",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_stress_offc.jsonl"
+    },
+    {
+     "expected_md5": "4498a198058bd09064eced6a1f51114f",
+     "member": "numeric_p101_v2/numeric_pt/test/numeric_stress_wide.jsonl"
+    },
+    {
+     "expected_md5": "1f5449d43671951d5b82e519ec058c00",
+     "member": "numeric_p101_v2/numeric_pt/val/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "e466908c3b64d55834d88266ac73afcc",
+     "member": "numeric_p101_v2/numeric_pt/val/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "3ac61109d1d57faaab0afb4ac107d1ad",
+     "member": "numeric_p101_v2/numeric_pt/val/numeric_rate.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "numeric_p101_v2_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/numeric_p101_v2.tgz"
+   ],
+   "source_name": "numeric_p101_v2",
+   "tarball_md5": "cf00e0c4380784cf4e096818fc69f09a"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "ad83bf139fbc3960af84b85d6f6d2025",
+     "member": "numeric_v1/test/numeric_ab_diff.jsonl"
+    },
+    {
+     "expected_md5": "45f445af79ebbd9c9527cbae11db1922",
+     "member": "numeric_v1/test/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "037b440a62b66f83aa672983b2978245",
+     "member": "numeric_v1/test/numeric_coin_seq.jsonl"
+    },
+    {
+     "expected_md5": "81465045ae7e035996b6a8af096b18fa",
+     "member": "numeric_v1/test/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "05862e9f8f1f95c255de9eb74c555888",
+     "member": "numeric_v1/test/numeric_normal_pred.jsonl"
+    },
+    {
+     "expected_md5": "b2d640a6c00d802b4867bd040edef76c",
+     "member": "numeric_v1/test/numeric_probe.jsonl"
+    },
+    {
+     "expected_md5": "c668395fdec2715f5bf7144801d271f8",
+     "member": "numeric_v1/test/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "060e2e8456a71418b5c49f2f15279144",
+     "member": "numeric_v1/val/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "50e1c4e88f019f50799ff1c2d2e8445e",
+     "member": "numeric_v1/val/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "19ac71cca5939ca0612f73d58aa734a4",
+     "member": "numeric_v1/val/numeric_rate.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "numeric_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/numeric_v1.tgz"
+   ],
+   "source_name": "numeric_v1",
+   "tarball_md5": "b345c9de24941164d1f6222223db2566"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "3400c6d9e01764e52ae0e2674776ca67",
+     "member": "numeric_v2/test/numeric_ab_diff.jsonl"
+    },
+    {
+     "expected_md5": "03b45dc44c3cdd772150890ea649568b",
+     "member": "numeric_v2/test/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "92e84586540a784dfc7c24822990aef6",
+     "member": "numeric_v2/test/numeric_coin_seq.jsonl"
+    },
+    {
+     "expected_md5": "457d374650981be023d7370a572aa2f9",
+     "member": "numeric_v2/test/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "1bfad6f7babd3d42cb4c76e36a13d22d",
+     "member": "numeric_v2/test/numeric_normal_pred.jsonl"
+    },
+    {
+     "expected_md5": "b085a1316fe0be35101403d551fb177d",
+     "member": "numeric_v2/test/numeric_probe.jsonl"
+    },
+    {
+     "expected_md5": "687a0f03a9f48f9130d2ea5534463e92",
+     "member": "numeric_v2/test/numeric_rate.jsonl"
+    },
+    {
+     "expected_md5": "2c9de42a347b1ae40eeb2e2051fd209e",
+     "member": "numeric_v2/test/numeric_stress_offc.jsonl"
+    },
+    {
+     "expected_md5": "a7d4645c37873bcd35af74f2713fc85f",
+     "member": "numeric_v2/test/numeric_stress_wide.jsonl"
+    },
+    {
+     "expected_md5": "b8b15c40992b3a60210b08e0d4d09855",
+     "member": "numeric_v2/val/numeric_coin.jsonl"
+    },
+    {
+     "expected_md5": "82e0010427a91449216d4cd617734acd",
+     "member": "numeric_v2/val/numeric_normal_mean.jsonl"
+    },
+    {
+     "expected_md5": "e7bb8fef7d1a25874b5ff6820f363860",
+     "member": "numeric_v2/val/numeric_rate.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "numeric_v2_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/numeric_v2.tgz"
+   ],
+   "source_name": "numeric_v2",
+   "tarball_md5": "5b7c4cb5e1eb168ee1f4dbfadcefceb0"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "a41b621bd26310c5748f5deeac110000",
+     "member": "outcomes2_jev/afd/val/afd__nomination.jsonl"
+    },
+    {
+     "expected_md5": "d3e1876bc84e056ebc375bb2a20c849c",
+     "member": "outcomes2_jev/afd/val/afd__nomination_votes.jsonl"
+    },
+    {
+     "expected_md5": "c701a65186731420a8a0d9fa16d817cb",
+     "member": "outcomes2_jev/aidev/val/aidev__pr_merge.jsonl"
+    },
+    {
+     "expected_md5": "5dfa346179ba7f85f65e62ba8b36bd24",
+     "member": "outcomes2_jev/swe_rebench/val/swe__rebench_openhands.jsonl"
+    },
+    {
+     "expected_md5": "7d53aaad70c313e2f76175c136871cff",
+     "member": "outcomes2_jev/swiss/val/swiss__fscs.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "outcomes2_jev_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/outcomes2_jev.tgz"
+   ],
+   "source_name": "outcomes2_jev",
+   "tarball_md5": "49a3e4534c099c6aced6b183c3590446"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "46bce81d4d8e7a8c342e83e4eae108e4",
+     "member": "dmhc_jev/eval/dmhc_imr.jsonl"
+    },
+    {
+     "expected_md5": "c68ea8337a6457d7c9788089905f1456",
+     "member": "dmhc_jev/eval_cf/dmhc_imr.jsonl"
+    },
+    {
+     "expected_md5": "6962ec0d7e21fb514ca7a83d2466b144",
+     "member": "dmhc_jev/teacher_fill/val/dmhc_imr.jsonl"
+    },
+    {
+     "expected_md5": "29cd567909e12709c76a45debd1b421c",
+     "member": "dmhc_jev/val/dmhc_imr.jsonl"
+    },
+    {
+     "expected_md5": "8d71a3b4e5567eb6a9bd8f3f0d3d61d5",
+     "member": "fda_jev/eval/fda_recalls__device.jsonl"
+    },
+    {
+     "expected_md5": "d8a0985a0e97f47789577d35c90beb1a",
+     "member": "fda_jev/eval/fda_recalls__drug.jsonl"
+    },
+    {
+     "expected_md5": "3baf0a6fa475ea36f0da3288a899535e",
+     "member": "fda_jev/eval/fda_recalls__food.jsonl"
+    },
+    {
+     "expected_md5": "ce608b90f30242be2ae5ed9a3bad0750",
+     "member": "fda_jev/teacher_fill/val/fda_recalls__device.jsonl"
+    },
+    {
+     "expected_md5": "278832ea83947d62b8533fe595d93b64",
+     "member": "fda_jev/teacher_fill/val/fda_recalls__drug.jsonl"
+    },
+    {
+     "expected_md5": "d398c366d9bca3e74ac60c550e6e06e8",
+     "member": "fda_jev/teacher_fill/val/fda_recalls__food.jsonl"
+    },
+    {
+     "expected_md5": "1b0c4896d8529cf4a636775653a18d39",
+     "member": "fda_jev/val/fda_recalls__device.jsonl"
+    },
+    {
+     "expected_md5": "414c6222abce22a6225c023a3176b49f",
+     "member": "fda_jev/val/fda_recalls__drug.jsonl"
+    },
+    {
+     "expected_md5": "ba3ce07f7e6581c9ebeaa9a178c57e3c",
+     "member": "fda_jev/val/fda_recalls__food.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "realdata_fda_dmhc_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/realdata_fda_dmhc_v1.tgz"
+   ],
+   "source_name": "realdata_fda_dmhc_v1",
+   "tarball_md5": "2ac884648d6a7fd4ccbc9c84b0c77dca"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "3dba7384167f91a29d1c47b26287e020",
+     "member": "courts_jev/val/courts__ala.jsonl"
+    },
+    {
+     "expected_md5": "dd17dcbeed5af7a6bd7694f74b7565df",
+     "member": "courts_jev/val/courts__alaska.jsonl"
+    },
+    {
+     "expected_md5": "c315a288dd641f266188e15d043c75b6",
+     "member": "courts_jev/val/courts__ariz.jsonl"
+    },
+    {
+     "expected_md5": "13955734e780e33c94a41dd13473969a",
+     "member": "courts_jev/val/courts__ark.jsonl"
+    },
+    {
+     "expected_md5": "6920e662abcebf9fccb4ff1cee23ea15",
+     "member": "courts_jev/val/courts__ca1.jsonl"
+    },
+    {
+     "expected_md5": "151b79e996c6fb7575a93b71a5722677",
+     "member": "courts_jev/val/courts__ca10.jsonl"
+    },
+    {
+     "expected_md5": "14adfe3f9ade4fa02e40c97f1b776591",
+     "member": "courts_jev/val/courts__ca11.jsonl"
+    },
+    {
+     "expected_md5": "b3bcc6eae89d20fcfe61544d3f1b5707",
+     "member": "courts_jev/val/courts__ca2.jsonl"
+    },
+    {
+     "expected_md5": "0b72a04570558e1347cb46a4ab9d8c7a",
+     "member": "courts_jev/val/courts__ca3.jsonl"
+    },
+    {
+     "expected_md5": "4800030ec980f15387033314eb4eee47",
+     "member": "courts_jev/val/courts__ca4.jsonl"
+    },
+    {
+     "expected_md5": "2f01b6c2f4afd9a43d6761b98bcdf6fb",
+     "member": "courts_jev/val/courts__ca5.jsonl"
+    },
+    {
+     "expected_md5": "abc3e8eb540f9fc848213923a116ee07",
+     "member": "courts_jev/val/courts__ca6.jsonl"
+    },
+    {
+     "expected_md5": "44878a59d660b9829c03ad369fc584a8",
+     "member": "courts_jev/val/courts__ca7.jsonl"
+    },
+    {
+     "expected_md5": "ae7b850d0e71628b1de80a0ab68fa8b8",
+     "member": "courts_jev/val/courts__ca8.jsonl"
+    },
+    {
+     "expected_md5": "bcb58475e5ae81186a338eb481819eb3",
+     "member": "courts_jev/val/courts__ca9.jsonl"
+    },
+    {
+     "expected_md5": "d51d92e1b255c91a0c27e8496e444e13",
+     "member": "courts_jev/val/courts__cadc.jsonl"
+    },
+    {
+     "expected_md5": "830bf90cc78aa33311ac1396b88fe490",
+     "member": "courts_jev/val/courts__cal.jsonl"
+    },
+    {
+     "expected_md5": "64728fe2256d67c59844910725592239",
+     "member": "courts_jev/val/courts__colo.jsonl"
+    },
+    {
+     "expected_md5": "9ad77d55f60216a442ec77d84fcfd8b0",
+     "member": "courts_jev/val/courts__conn.jsonl"
+    },
+    {
+     "expected_md5": "2919b2b9bb19691b9b227261c936690b",
+     "member": "courts_jev/val/courts__del.jsonl"
+    },
+    {
+     "expected_md5": "d667ca8d4ed0483f0bcf49bc078ce802",
+     "member": "courts_jev/val/courts__fla.jsonl"
+    },
+    {
+     "expected_md5": "61a7996964b94a537a5ee4479f99483c",
+     "member": "courts_jev/val/courts__ga.jsonl"
+    },
+    {
+     "expected_md5": "f15387099f96e89e87d87a52623a1941",
+     "member": "courts_jev/val/courts__haw.jsonl"
+    },
+    {
+     "expected_md5": "ce242339be2d02bda944edfffc5fa003",
+     "member": "courts_jev/val/courts__idaho.jsonl"
+    },
+    {
+     "expected_md5": "9941465f815ee338ef368eb800b9cfd5",
+     "member": "courts_jev/val/courts__ill.jsonl"
+    },
+    {
+     "expected_md5": "9ffa202442f6c1c0cab202c7bdd78adc",
+     "member": "courts_jev/val/courts__ind.jsonl"
+    },
+    {
+     "expected_md5": "1785e66bcaeeefb83722500b26160c03",
+     "member": "courts_jev/val/courts__iowa.jsonl"
+    },
+    {
+     "expected_md5": "116f0220598afac48829ece6076d595f",
+     "member": "courts_jev/val/courts__kan.jsonl"
+    },
+    {
+     "expected_md5": "fedf0b067adfc842c9de612a510cbc01",
+     "member": "courts_jev/val/courts__ky.jsonl"
+    },
+    {
+     "expected_md5": "17e6e040aba9d3e4941fd5867ad5bf64",
+     "member": "courts_jev/val/courts__la.jsonl"
+    },
+    {
+     "expected_md5": "ec031faddd6007bbbaa7aff3e1af90fd",
+     "member": "courts_jev/val/courts__mass.jsonl"
+    },
+    {
+     "expected_md5": "480d9db903c1c1a1d3cd160618aa9618",
+     "member": "courts_jev/val/courts__md.jsonl"
+    },
+    {
+     "expected_md5": "772151ab631fb36e794a29c7bb4f3955",
+     "member": "courts_jev/val/courts__me.jsonl"
+    },
+    {
+     "expected_md5": "d3f1d31f05ea4d5085d2c09f86067fe8",
+     "member": "courts_jev/val/courts__mich.jsonl"
+    },
+    {
+     "expected_md5": "90072d1a3163cc30694a63b43fc49860",
+     "member": "courts_jev/val/courts__minn.jsonl"
+    },
+    {
+     "expected_md5": "413e92a26858579a190dc3e244d20374",
+     "member": "courts_jev/val/courts__miss.jsonl"
+    },
+    {
+     "expected_md5": "7d02cf8fbda9d532b98d8e7513fb6947",
+     "member": "courts_jev/val/courts__mo.jsonl"
+    },
+    {
+     "expected_md5": "827ee741690ab4c2e4bfee54195f5c45",
+     "member": "courts_jev/val/courts__mont.jsonl"
+    },
+    {
+     "expected_md5": "29b7a79da86675836e30ff4fc8cf208b",
+     "member": "courts_jev/val/courts__nc.jsonl"
+    },
+    {
+     "expected_md5": "d4997d3432ac885c2f852329de7da6b5",
+     "member": "courts_jev/val/courts__nd.jsonl"
+    },
+    {
+     "expected_md5": "50b7be75a844d77b7e9acbe6d7aaaa1d",
+     "member": "courts_jev/val/courts__neb.jsonl"
+    },
+    {
+     "expected_md5": "17624a43bb1245a0443de42024b5f6c0",
+     "member": "courts_jev/val/courts__nev.jsonl"
+    },
+    {
+     "expected_md5": "7f3c2eaa78ec26b256fdba194424532b",
+     "member": "courts_jev/val/courts__nh.jsonl"
+    },
+    {
+     "expected_md5": "43040078233edd6d0f38a64319cd65e5",
+     "member": "courts_jev/val/courts__nj.jsonl"
+    },
+    {
+     "expected_md5": "f6ac9d9c02099f5b79865a66e996e1f1",
+     "member": "courts_jev/val/courts__nm.jsonl"
+    },
+    {
+     "expected_md5": "4b5af57b4bf69eb3f14a4337869f5547",
+     "member": "courts_jev/val/courts__ny.jsonl"
+    },
+    {
+     "expected_md5": "8281343d193b47d6843c9e8ed4932c56",
+     "member": "courts_jev/val/courts__ohio.jsonl"
+    },
+    {
+     "expected_md5": "1b8a25af55e8198b710a0f4dac8cc783",
+     "member": "courts_jev/val/courts__okla.jsonl"
+    },
+    {
+     "expected_md5": "ea4435ae07c1432fab12581911baf39c",
+     "member": "courts_jev/val/courts__or.jsonl"
+    },
+    {
+     "expected_md5": "11a8bbab7963b6732fc6cce3cae1187d",
+     "member": "courts_jev/val/courts__pa.jsonl"
+    },
+    {
+     "expected_md5": "230f518babd49cd446511075439ea028",
+     "member": "courts_jev/val/courts__ri.jsonl"
+    },
+    {
+     "expected_md5": "e445de02195a5f11fdcfdc4ff4acb9ef",
+     "member": "courts_jev/val/courts__sc.jsonl"
+    },
+    {
+     "expected_md5": "d0b59446b75e86455baee6222b80523f",
+     "member": "courts_jev/val/courts__sd.jsonl"
+    },
+    {
+     "expected_md5": "620d78001956a8ae8eeb17de4419e267",
+     "member": "courts_jev/val/courts__tenn.jsonl"
+    },
+    {
+     "expected_md5": "5b01c6704d377f06282c861c8c3d3762",
+     "member": "courts_jev/val/courts__tex.jsonl"
+    },
+    {
+     "expected_md5": "40dbab1d35c2d51002b33e231e54fab3",
+     "member": "courts_jev/val/courts__utah.jsonl"
+    },
+    {
+     "expected_md5": "7ad44300558288598533169a5ad57173",
+     "member": "courts_jev/val/courts__va.jsonl"
+    },
+    {
+     "expected_md5": "d699a80927ea497ea33448b244b60e1e",
+     "member": "courts_jev/val/courts__vt.jsonl"
+    },
+    {
+     "expected_md5": "3c0942249e6379cf9648da25990315b5",
+     "member": "courts_jev/val/courts__wash.jsonl"
+    },
+    {
+     "expected_md5": "b13e4c5d34e8e77f76cb1756e99c35ec",
+     "member": "courts_jev/val/courts__wis.jsonl"
+    },
+    {
+     "expected_md5": "618882af2064a535575dd1d1f1d0fe58",
+     "member": "courts_jev/val/courts__wva.jsonl"
+    },
+    {
+     "expected_md5": "c0e2206f8669e056f009629332f22787",
+     "member": "courts_jev/val/courts__wyo.jsonl"
+    },
+    {
+     "expected_md5": "d47fd0419dedb2aec4a83dade7c09e62",
+     "member": "genomics_jev/val/civic.jsonl"
+    },
+    {
+     "expected_md5": "5328dd72b5a1a8cc9684b2724bd500a2",
+     "member": "genomics_jev/val/clinvar.jsonl"
+    },
+    {
+     "expected_md5": "0d342bb6ac11b176d6fe57955f6a55ab",
+     "member": "openreview_jev/val/openreview__iclr2024.jsonl"
+    },
+    {
+     "expected_md5": "724b43dbf1f0dc7af576adfa5b0e3a9f",
+     "member": "openreview_jev/val/openreview__iclr2025.jsonl"
+    },
+    {
+     "expected_md5": "b7863427a50f50e956a169f505032328",
+     "member": "physics_jev/val/physics__gw_alert.jsonl"
+    },
+    {
+     "expected_md5": "b5fa5ceca570e61ba1e64b61003dac53",
+     "member": "physics_jev/val/physics__pager.jsonl"
+    },
+    {
+     "expected_md5": "50dff960681aa66d598154dc8df317c6",
+     "member": "physics_jev/val/physics__spc_mcd.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "realdata_rw_trainval_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/realdata_rw_trainval_v1.tgz"
+   ],
+   "source_name": "realdata_rw_trainval_v1",
+   "tarball_md5": "395e43035eb38bd9cfc7b35e8ba34994"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "857f7fbc75664a91a4b166739b8b6c6a",
+     "member": "safety_jev/eval/nhtsa__investigations.jsonl"
+    },
+    {
+     "expected_md5": "1051bdef11a2adcb82beae633e4f48e9",
+     "member": "safety_jev/eval/ntsb__aviation.jsonl"
+    },
+    {
+     "expected_md5": "0899a0d73a87a4dc684add62f1de427d",
+     "member": "safety_jev/eval/osha_enforcement__construction_inspections.jsonl"
+    },
+    {
+     "expected_md5": "239665e1c08f6b9b443c3c0ef73cf527",
+     "member": "safety_jev/eval/osha_enforcement__fatality_investigations.jsonl"
+    },
+    {
+     "expected_md5": "464a715baad255ce2b732608fe369795",
+     "member": "safety_jev/eval/osha_sir__coded.jsonl"
+    },
+    {
+     "expected_md5": "af933d36b286d266cb69e07a6994a7d5",
+     "member": "safety_jev/eval/osha_sir__severity.jsonl"
+    },
+    {
+     "expected_md5": "1648419fad795dabdd02a9187c3094bb",
+     "member": "safety_jev/val/nhtsa__investigations.jsonl"
+    },
+    {
+     "expected_md5": "e1cb851e98f0d19b5b70b8022f2444a3",
+     "member": "safety_jev/val/ntsb__aviation.jsonl"
+    },
+    {
+     "expected_md5": "7cd0e2b1fdae76708e31429a95efb1df",
+     "member": "safety_jev/val/osha_enforcement__construction_inspections.jsonl"
+    },
+    {
+     "expected_md5": "dfaff0e3dd6963a87e84978cb0fe707d",
+     "member": "safety_jev/val/osha_enforcement__fatality_investigations.jsonl"
+    },
+    {
+     "expected_md5": "c333f1bee90679b1f97653f271b34bb2",
+     "member": "safety_jev/val/osha_sir__coded.jsonl"
+    },
+    {
+     "expected_md5": "b598692673c4e4b298e6fe5cfca94dcb",
+     "member": "safety_jev/val/osha_sir__severity.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "realdata_safety_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/realdata_safety_v1.tgz"
+   ],
+   "source_name": "realdata_safety_v1",
+   "tarball_md5": "3e90b8ad71c65903107de4f3cdf13a91"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "da4aa8b4a877d0cfdb2875df7cb0a1ac",
+     "member": "courts_jev/eval/courts__ca1.jsonl"
+    },
+    {
+     "expected_md5": "3be54935260200a216058030a54aa317",
+     "member": "courts_jev/eval/courts__ca10.jsonl"
+    },
+    {
+     "expected_md5": "cef2228b86979a1c4124a559468fd083",
+     "member": "courts_jev/eval/courts__ca11.jsonl"
+    },
+    {
+     "expected_md5": "4c7070ca329a0abb392af91f6e17de23",
+     "member": "courts_jev/eval/courts__ca2.jsonl"
+    },
+    {
+     "expected_md5": "9fd756821d07228af93518a2302f14b7",
+     "member": "courts_jev/eval/courts__ca3.jsonl"
+    },
+    {
+     "expected_md5": "11f07091f40144798fe9be5fea3a90b6",
+     "member": "courts_jev/eval/courts__ca4.jsonl"
+    },
+    {
+     "expected_md5": "309b5358a442b331e0ce6dea26094293",
+     "member": "courts_jev/eval/courts__ca5.jsonl"
+    },
+    {
+     "expected_md5": "714540118e711bfed49c98caed8d69e8",
+     "member": "courts_jev/eval/courts__ca6.jsonl"
+    },
+    {
+     "expected_md5": "44a9cf3504229347c2906d70c83a2fca",
+     "member": "courts_jev/eval/courts__ca7.jsonl"
+    },
+    {
+     "expected_md5": "9db9bc26442d858ee01582e91d9f1386",
+     "member": "courts_jev/eval/courts__ca8.jsonl"
+    },
+    {
+     "expected_md5": "ebcbced626a88ff3d58822e98fedb60f",
+     "member": "courts_jev/eval/courts__ca9.jsonl"
+    },
+    {
+     "expected_md5": "1a717cc8028ea26b98d015bd432449f9",
+     "member": "courts_jev/eval/courts__cadc.jsonl"
+    },
+    {
+     "expected_md5": "fd399ae845ed7935c832f18b094f74e8",
+     "member": "genomics_jev/test/civic.jsonl"
+    },
+    {
+     "expected_md5": "13ab3e3b19b3270b8304d962f2fc155e",
+     "member": "genomics_jev/test/clinvar.jsonl"
+    },
+    {
+     "expected_md5": "ad0dc664823b993454db5279bd5a3e8a",
+     "member": "genomics_jev/test_temporal/civic.jsonl"
+    },
+    {
+     "expected_md5": "1c002bc9309c3d575badab42ab127321",
+     "member": "genomics_jev/test_temporal/clinvar.jsonl"
+    },
+    {
+     "expected_md5": "e83707ab431673e0b76ab8d7e7b7430e",
+     "member": "openreview_jev/eval/test/openreview__iclr2026.jsonl"
+    },
+    {
+     "expected_md5": "75c4d696951f25fb81dc074460583e2a",
+     "member": "physics_jev/eval/physics__gw_alert.jsonl"
+    },
+    {
+     "expected_md5": "7ac07f83104bd5f07d50f0ecd60efd1b",
+     "member": "physics_jev/eval/physics__pager.jsonl"
+    },
+    {
+     "expected_md5": "1909c43e7c8433a9d9f1df6eaa1a0a9b",
+     "member": "physics_jev/eval/physics__spc_mcd.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "rw_eval_v1",
+   "required": true,
+   "s3_candidates": [
+    "data/rw_eval_v1.tgz"
+   ],
+   "source_name": "rw_eval_v1",
+   "tarball_md5": "a700f892335fd2246c2f78abf124083b"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "922d4caa4c2e110a2fd0fe686eb697d3",
+     "member": "train/td.jsonl"
+    },
+    {
+     "expected_md5": "9126346588dd9e18a4d9a0baeaa1baf2",
+     "member": "val/td.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "derive_td",
+   "population": "td_train",
+   "required": true,
+   "source_name": "td_train"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "48d6021d8e39c018f25da31aa534e888",
+     "member": "typed_synth_v1_labelled/val/typed_synth__cicd_failure_triage.jsonl"
+    },
+    {
+     "expected_md5": "c5a7b3d3e464a8c22b38f2b111c9e8f7",
+     "member": "typed_synth_v1_labelled/val/typed_synth__loan_hardship_requests.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "typed_synth_v1_labelled_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/typed_synth_v1_labelled.tgz"
+   ],
+   "source_name": "typed_synth_v1_labelled",
+   "tarball_md5": "d9e686242dd72a6ca0dba4a638962a7d"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "635f51895f525640f36f9f7b4001e555",
+     "member": "gde1/wd_athlete_team/eval/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "255c7a233a896d55d7bcc0b8c9744dbf",
+     "member": "gde1/wd_athlete_team/probe/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "c2bbda6bd0db7bbef05a115fc27f1ceb",
+     "member": "gde1/wd_iucn_status/eval/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "4c40c55e5ede39d5ec07ed838747c32c",
+     "member": "gde1/wd_iucn_status/probe/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "a5f475190c9a50e4a620fc43040d6b30",
+     "member": "gde1/wd_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "d36465a6e7c1c297dc49ccc43c75e883",
+     "member": "gde1/wd_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "c0b516a1f62a660598ba9ce3253b6a5f",
+     "member": "gde1/wd_org_dissolved/eval/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "d5eb5c81ff8201274ee79a5477ede28d",
+     "member": "gde1/wd_org_dissolved/probe/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "5793579a6e734f29789c9e12b80d8f32",
+     "member": "gde1/wd_property_proposal/eval/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "c1d821438484a73358f2ad6c28b223ea",
+     "member": "gde1/wd_property_proposal/probe/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "3e4f349e70ec3abcd6a2489a996b039c",
+     "member": "gde1/wd_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "65a92077649e0ed069dd3dabfa7635d6",
+     "member": "gde1/wd_rfd/probe/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "1da8a793975b831cd4f1adb393345c9d",
+     "member": "s1_athlete_team/eval/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "6fda811fb4c319a0722dfe483be409e9",
+     "member": "s1_athlete_team/probe/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "d9989079cba82adbd234657ebabfe7cd",
+     "member": "s1_athlete_team/val/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "1d6c507ed27861108b51aa213560ce29",
+     "member": "s1_iucn_status/eval/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "74a820106dfb472c84235635302c280a",
+     "member": "s1_iucn_status/probe/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "06d612d9de68239e1a09c608fa480796",
+     "member": "s1_iucn_status/val/wikidata__iucn_status.jsonl"
+    },
+    {
+     "expected_md5": "42cec514da777746e627bb2bf6c240ed",
+     "member": "s1_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "5494fa33dde6d9a27ce131f899f0cf0f",
+     "member": "s1_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "9101c8ca71b2a53ee4f231f7538fbb1e",
+     "member": "s1_office_end/val/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "f46b162456e81e6c0595102099da002d",
+     "member": "s1_org_dissolved/eval/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "417374b1878b2e272c1736e77eb02c50",
+     "member": "s1_org_dissolved/probe/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "df55afcb85e68ed407d8c30f1af53ad5",
+     "member": "s1_org_dissolved/val/wikidata__org_dissolved.jsonl"
+    },
+    {
+     "expected_md5": "b58aed6f60adc1f09bbf51f1e205b0af",
+     "member": "s2_property_proposal/eval/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "48163b43626f3792162d43e391a43136",
+     "member": "s2_property_proposal/probe/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "f6a92469001c3f8eece5c92edaa52466",
+     "member": "s2_property_proposal/val/wikidata__property_proposal.jsonl"
+    },
+    {
+     "expected_md5": "109bda8a1d172902905b5d428f834fcb",
+     "member": "s2_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "d4c4abcc9fba26c51401d845a837b448",
+     "member": "s2_rfd/probe/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "ada4fd920cb3630cc71bda7c4aac41ab",
+     "member": "s2_rfd/val/wikidata__rfd.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "wikidata_A_v1_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/wikidata_A_v1.tgz"
+   ],
+   "source_name": "wikidata_A_v1",
+   "tarball_md5": "c5b33149010eb399545bebb93ddaf576"
+  },
+  {
+   "files": [
+    {
+     "expected_md5": "1a855b9a5ce01db499f5dfe4894a961f",
+     "member": "wikidata_jev/gde1/wd_athlete_team/eval/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "77e3c2f9fbb819360562be36b42d64e8",
+     "member": "wikidata_jev/gde1/wd_athlete_team/probe/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "e00ed5ed408ce2d44e0e330bf30aa463",
+     "member": "wikidata_jev/gde1/wd_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "d36465a6e7c1c297dc49ccc43c75e883",
+     "member": "wikidata_jev/gde1/wd_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "3e4f349e70ec3abcd6a2489a996b039c",
+     "member": "wikidata_jev/gde1/wd_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "65a92077649e0ed069dd3dabfa7635d6",
+     "member": "wikidata_jev/gde1/wd_rfd/probe/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "af93d762d0d3655b9314a7c91136c1f0",
+     "member": "wikidata_jev/s1_athlete_team/eval/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "159b0f2daa48d923100c7c0298f2d7cc",
+     "member": "wikidata_jev/s1_athlete_team/probe/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "e3c6ffc16d572c63e7d74c32fe749707",
+     "member": "wikidata_jev/s1_athlete_team/val/wikidata__athlete_team.jsonl"
+    },
+    {
+     "expected_md5": "f459edb8e3b1b2afc3597492298a091c",
+     "member": "wikidata_jev/s1_office_end/eval/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "5494fa33dde6d9a27ce131f899f0cf0f",
+     "member": "wikidata_jev/s1_office_end/probe/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "c65d9bf1f88dd66a56c96983c7088f71",
+     "member": "wikidata_jev/s1_office_end/val/wikidata__office_end.jsonl"
+    },
+    {
+     "expected_md5": "109bda8a1d172902905b5d428f834fcb",
+     "member": "wikidata_jev/s2_rfd/eval/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "d4c4abcc9fba26c51401d845a837b448",
+     "member": "wikidata_jev/s2_rfd/probe/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "ada4fd920cb3630cc71bda7c4aac41ab",
+     "member": "wikidata_jev/s2_rfd/val/wikidata__rfd.jsonl"
+    },
+    {
+     "expected_md5": "48a333f1d6feeaea7fae80e02fa3bf78",
+     "member": "wikidata_jev/wd_classify/eval/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "6bbe5e9f214df811091fe7e119784355",
+     "member": "wikidata_jev/wd_classify/eval_name_only/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "5abd6c9748b4b026edfb5c1cd5a9b123",
+     "member": "wikidata_jev/wd_classify/eval_state_removed/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "5e1c926ef73399414275c02712573474",
+     "member": "wikidata_jev/wd_classify/val/wd_classify__lead.jsonl"
+    },
+    {
+     "expected_md5": "468322b11db1867b3698df3b79e1bd2a",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "323eb2350539c35a07e8de2162957faf",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "d9620823f0456bb244bb46b7bcb11c7e",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "0320e9a1b19134787c2f6953c32018b9",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "bdaccf869dacb0e6e531e4c59b75a775",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "6589a3e7b8f5d268ba848be7043dd48e",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "5e321c5ac2f2d2b5d558c14d0cb95c9e",
+     "member": "wikidata_jev/wd_compare/eval/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "9cb88d9f9dd85c9d92e7769105452f5e",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "b485510b77a3fc68b198b0d5752d229b",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "155cff361042e9a39bbd3726a1f2c91b",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "4e9283ce3b0a73a03d422ee938206212",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "ad3883837a796bbb49501fb196a14877",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "5bae3f51bf4afea5a674225bfb5ead4e",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "dc4f3e2dbfa4faeb665ae79711d11248",
+     "member": "wikidata_jev/wd_compare/eval_state_removed/wd_compare__population.jsonl"
+    },
+    {
+     "expected_md5": "881cdf6688d8bafbc508aaf53d435045",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__area.jsonl"
+    },
+    {
+     "expected_md5": "a10d47d68ac28598e752d03e9b27887c",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__country.jsonl"
+    },
+    {
+     "expected_md5": "d1895598ee8c9e11a2fd0c54418e5710",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__elevation.jsonl"
+    },
+    {
+     "expected_md5": "e5966d8614e8dcf2ffa25398d8bbc32d",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__height.jsonl"
+    },
+    {
+     "expected_md5": "0deb2a8fce7fadbaf0cd013bac86c4a4",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__inception.jsonl"
+    },
+    {
+     "expected_md5": "f25050e783cf587ed5b49d0b2d83958e",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__length.jsonl"
+    },
+    {
+     "expected_md5": "0617a720f7d814801919086e99bcbc53",
+     "member": "wikidata_jev/wd_compare/val/wd_compare__population.jsonl"
+    }
+   ],
+   "historical": true,
+   "kind": "tarball",
+   "population": "wikidata_jev_B_evalsplits",
+   "required": true,
+   "s3_candidates": [
+    "data/wikidata_jev_B_final_2026-10-01.tgz"
+   ],
+   "source_name": "wikidata_jev_B",
+   "tarball_md5": "af0e29ffe622da901847bad9a38a33a0"
+  },
+  {
+   "inputs": {
+    "convert_decision_index_md5": "dc22d68350c28a6c23ba3a1adcc8c75a",
+    "convert_di03_md5": "818e49ad77b3063db5999b78d556d3d1",
+    "di_v021": "fleetq/data/decision_index_v021.tgz",
+    "di_v021_md5": "d023674a8e8c654e650cc5d34a0e7079",
+    "gsm8k_parquet": "openai/gsm8k@740312add88f781978c0658806c59bc2815b9866 main/test-00000-of-00001.parquet",
+    "kit": "fleetq/code/di03/kit_9eb2dbe2a358004c8782c66e40a83ac07b953fec.tgz",
+    "kit_md5": "1ec1274c4adccb55b25c2ba88fd87c75"
+   },
+   "kind": "build_di03_gsm8k",
+   "note": "Decision Index 0.3 public panel = the 0.2.1 converted files (historical decision_index_v021) + this rebuilt GSM8K set (kit README 'What changed in 0.3'); the kit's own sha256 gate must pass, and the converted file must hold 2,638 requests",
+   "population": "di03_gsm8k_v3",
+   "required": true
+  },
+  {
+   "inputs": {
+    "di_v021": "fleetq/data/decision_index_v021.tgz",
+    "di_v021_md5": "d023674a8e8c654e650cc5d34a0e7079",
+    "members": [
+     "suite-0.2/selected-rows.jsonl.gz",
+     "suite-0.2/added-rows.jsonl.gz"
+    ]
+   },
+   "kind": "di_raw_rows",
+   "note": "every raw public suite row (all benchmarks incl. sets not converted / K>52 / excluded): state-level fingerprints only",
+   "population": "di_suite02_rows",
+   "required": true
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "^bayes_families_v1/(val|test_dom|test_gen|test_id|test_reg)/[^/]+\\.jsonl$",
+   "population": "bayes_families_v1_heldout",
+   "required": true,
+   "s3_candidates": [
+    "fleetq/data/bayes_families_v1.tgz"
+   ],
+   "tarball_md5": "395c88a148614a4cc5cabaa453e9d867"
+  },
+  {
+   "expected_md5": "06f9215999e6a51991a94120b1744671",
+   "kind": "opaque_index",
+   "note": "CONFIRM-2610 exclusion index (ids, state_sha1, clusters; no labels). The sealed items themselves are never fetched",
+   "population": "confirm_2610_index",
+   "required": true,
+   "s3_candidates": [
+    "sealed/confirm_2610/index/confirm_2610_exclusion_index.json.gz"
+   ]
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "^s4_prep_v1/(didev/test|eg/val|caldev/test)/[^/]+\\.jsonl$",
+   "note": "SCREEN4 selection panels (didev, EG val, caldev). EG train / arms train are training data, not indexed",
+   "population": "screen4_dev",
+   "required": true,
+   "s3_candidates": [
+    "results_screen4/data/s4_prep_v1.tgz"
+   ],
+   "tarball_md5": "f4bb81bc9dadc2892e3f44c0479b4a02"
+  },
+  {
+   "code_md5": {
+    "analysis/claude_overlap.py": "0bcf9b1ff942fd62808f646627da8e59",
+    "trainers/convert_extevals.py": "23cce7db3ad527fe57195a1191bb5558",
+    "build_jev_data.py": "c9d4570b000aa39b6aca792947c6a145",
+    "build_jev_ext.py": "41271b13bca9c87550cd791ea16f0f07",
+    "build_jev_ext2.py": "8ac5de094bdc7747e47f229e9b968176",
+    "build_jev_ext3.py": "61585da5ee80bc2d3267aa0efbd952a2"
+   },
+   "families": [
+    "jevbench",
+    "typed_decisions",
+    "tdb",
+    "mmlu_arc",
+    "legalbench",
+    "community",
+    "dices",
+    "chaosnli"
+   ],
+   "kind": "ext2_fetch",
+   "note": "jev-bench (incl. extevals b / community), typed-decisions test, TDB, MMLU/ARC test, LegalBench test, DICES, ChaosNLI: the pinned fetchers SCREEN4 used (build_jev_ext2 --fetch-evals); state-level fingerprints. Covers the corpus spec's 'extevals: NOT checked -- a gap' row",
+   "population": "ext2_fetched_evals",
+   "required": true
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "EVALSPLITS",
+   "note": "supplementary: exposed eval splits not in the 10-10 manifest; tarball md5 recorded at staging (no prior pin)",
+   "population": "gde1_v1",
+   "required": false,
+   "s3_candidates": [
+    "data/gde1_v1.tgz"
+   ],
+   "tarball_md5": null
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "EVALSPLITS",
+   "note": "supplementary: exposed eval splits not in the 10-10 manifest; tarball md5 recorded at staging (no prior pin)",
+   "population": "gde1_v1_gated",
+   "required": false,
+   "s3_candidates": [
+    "data/gde1_v1_gated.tgz"
+   ],
+   "tarball_md5": null
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "EVALSPLITS",
+   "note": "supplementary: exposed eval splits not in the 10-10 manifest; tarball md5 recorded at staging (no prior pin)",
+   "population": "gde1_v2",
+   "required": false,
+   "s3_candidates": [
+    "data/gde1_v2.tgz"
+   ],
+   "tarball_md5": null
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "EVALSPLITS",
+   "note": "supplementary: exposed eval splits not in the 10-10 manifest; tarball md5 recorded at staging (no prior pin)",
+   "population": "jev_ext5_evalsplits",
+   "required": false,
+   "s3_candidates": [
+    "data/jev_ext5.tgz"
+   ],
+   "tarball_md5": null
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "EVALSPLITS",
+   "note": "supplementary: exposed eval splits not in the 10-10 manifest; tarball md5 recorded at staging (no prior pin)",
+   "population": "pc_numeric_v1_evalsplits",
+   "required": false,
+   "s3_candidates": [
+    "fleetq/data/pc_numeric_v1.tgz"
+   ],
+   "tarball_md5": null
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "EVALSPLITS",
+   "note": "supplementary: exposed eval splits not in the 10-10 manifest; tarball md5 recorded at staging (no prior pin)",
+   "population": "bp_ssval_v1",
+   "required": false,
+   "s3_candidates": [
+    "fleetq/data/bp_ssval_v1.tgz"
+   ],
+   "tarball_md5": null
+  },
+  {
+   "expected_md5": "25950115cea0cb543a042685efe1cf12",
+   "kind": "opaque_index",
+   "note": "CONFIRM-P1 exclusion index (ids, state_sha1, clusters, entity keys of bf_v2 / synth_ev_v1 / rw_v1). Items, salts and keys are never fetched (sealed/confirm_p1/*/items.tgz.enc and the node-side .keys stay untouched)",
+   "population": "confirm_p1_index",
+   "required": true,
+   "s3_candidates": [
+    "sealed/confirm_p1/index/confirm_p1_exclusion_index_v1.json.gz"
+   ]
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "^(?!.*/\\._).*\\.jsonl$",
+   "note": "RENDER1 dev bundle (P_def, cval, didev, egdev, caldev): read panels of the renderer decision",
+   "population": "render1_dev_v1",
+   "required": true,
+   "s3_candidates": [
+    "results_render1/data/render1_dev_v1.tgz"
+   ],
+   "tarball_md5": "5d73b18e13145e85f7ed587d83195098"
+  },
+  {
+   "kind": "tarball",
+   "member_regex": "^(?!.*/\\._).*\\.jsonl$",
+   "note": "RENDER0 stage-0 scoring population (curated val + DIDEV RAGTruth / PhishNChips)",
+   "population": "render0_pop_v1",
+   "required": true,
+   "s3_candidates": [
+    "results_render0/data/render0_pop_v1.tgz"
+   ],
+   "tarball_md5": "9069c7c2bd0a9cc19beb956dd9287f9d"
+  },
+  {
+   "file_kind": "rendered",
+   "kind": "jsonl_gz",
+   "note": "fullft pilot DEV devP (11,963 units: pilot-val, caldev, EG val, didev, bfdev) as RENDERED prompts (field: prompt)",
+   "population": "fullft_devP_rows",
+   "required": true,
+   "s3_candidates": [
+    "results_fullft/render/devP/rows.jsonl.gz"
+   ]
+  },
+  {
+   "file_kind": "rendered",
+   "kind": "jsonl_gz",
+   "note": "fullft LR-probe DEV devB as RENDERED prompts (field: prompt)",
+   "population": "fullft_devB_rows",
+   "required": true,
+   "s3_candidates": [
+    "results_fullft/render/devB/rows.jsonl.gz"
+   ]
+  },
+  {
+   "after": "di03_gsm8k_v3",
+   "convert_decision_index_md5": "dc22d68350c28a6c23ba3a1adcc8c75a",
+   "globs": [
+    "suite-0.3/selected-rows.jsonl.gz",
+    "suite-0.3/added-rows.jsonl.gz",
+    "suite-0.3/gsm8k-rows.jsonl.gz"
+   ],
+   "kind": "side_raw_rows",
+   "note": "Decision Index 0.3 public suite rows (every benchmark; built by the kit's own sha256-gated suite03 step during di03_gsm8k_v3 staging); converted where convert_decision_index knows the catalog, else every raw state + question field kept",
+   "population": "di03_suite_rows",
+   "required": true
+  }
+ ],
+ "schema": "stock-decision-protected-registry-v3",
+ "sealed_not_indexable": [
+  {
+   "name": "final_v1 items",
+   "reason": "ledger-gated sealed items; covered by final_v1_hl_index + final_v1_rd_index"
+  },
+  {
+   "name": "CONFIRM-2610 items (rw_v1, bf_v1)",
+   "reason": "sealed; covered by confirm_2610_index (ids, state sha1, clusters)"
+  },
+  {
+   "name": "worlds_v1_2_confirm",
+   "reason": "private-salt confirm split, never fetched, no exclusion index exists; the candidate generators are independent code (no worlds generator) so collisions are not expected but are not checked"
+  },
+  {
+   "name": "Decision Index private / new-domain panels",
+   "reason": "not public; outside any registry"
+  }
+ ]
+}

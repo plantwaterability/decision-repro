@@ -1,0 +1,52 @@
+# Environment of the peshtur engine: Python 3.12, Linux x86_64. `uv sync --frozen` installs exactly what uv.lock records.
+[project]
+name = "peshtur-engine-env"
+version = "1.0.0"
+description = "Pinned environment for the peshtur Decision Index vision engine"
+requires-python = "==3.12.*"
+dependencies = [
+    "torch==2.14.1",
+    "torchvision==0.29.1",
+    "transformers==5.12.1",
+    "tokenizers==0.22.2",
+    "accelerate==1.15.0",
+    "safetensors==0.8.0",
+    "huggingface_hub==1.33.0",
+    "pillow==13.0.0",
+    "numpy==2.3.5",
+    "flash-linear-attention==0.5.2",
+    "fla-core==0.5.2",
+    "einops==0.8.2",
+    "triton==3.8.0",
+    "paddlepaddle-gpu==3.2.0",
+    "paddleocr==3.7.0",
+    "paddlex[ocr]==3.7.2",
+    "opencv-contrib-python==4.10.0.84",
+    "pyclipper==1.4.0",
+    "shapely==2.2.0",
+    "decision-index",
+]
+
+[tool.uv]
+package = false
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+# PaddlePaddle (CUDA 12) and PyTorch (CUDA 13) each depend on their own cuDNN, NCCL and cuSPARSELt, and the two sets install the
+# same file names into the same directories. PaddlePaddle's three are left out, so PyTorch's are the only copies; PaddlePaddle
+# runs with them.
+override-dependencies = [
+    "nvidia-cudnn-cu12 ; sys_platform == 'never'",
+    "nvidia-nccl-cu12 ; sys_platform == 'never'",
+    "nvidia-cusparselt-cu12 ; sys_platform == 'never'",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+triton = { index = "pytorch-cu130" }
+paddlepaddle-gpu = { path = "wheels/paddlepaddle_gpu-3.2.0-cp312-cp312-linux_x86_64.whl" }
+decision-index = { git = "https://github.com/apolinario/decision-index", rev = "25c6ec7b6b5f44a216c63c3a700de3a9c6d6699d" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

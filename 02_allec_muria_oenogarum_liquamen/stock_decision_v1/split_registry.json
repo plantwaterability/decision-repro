@@ -1,0 +1,1024 @@
+{
+ "bridge_units": 281,
+ "components_too_big_to_carve": 270,
+ "families": {
+  "acceptability_prediction": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "afrisenti": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "agent_action_safety": {
+   "area": "tools",
+   "split": "confirm_seal"
+  },
+  "aidev_pr_outcomes": {
+   "area": "arts",
+   "split": "confirm_seal"
+  },
+  "amazon_counterfactual": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "amazon_esci": {
+   "area": "retrieval",
+   "split": "train"
+  },
+  "amazon_polarity": {
+   "area": "language",
+   "split": "train"
+  },
+  "anthropic_hh_rlhf": {
+   "area": "arts",
+   "split": "confirm_seal"
+  },
+  "aqua_rat": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "arct": {
+   "area": "language",
+   "split": "train"
+  },
+  "args_me": {
+   "area": "language",
+   "split": "train"
+  },
+  "atomic": {
+   "area": "language",
+   "split": "train"
+  },
+  "autotnli": {
+   "area": "language",
+   "split": "train"
+  },
+  "babi": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "banking77": {
+   "area": "retrieval",
+   "split": "train"
+  },
+  "bayes_families/coin": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "bayes_families/lr": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "bayes_families/normal_mean": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "bayes_families/rate": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "bayes_families/ret_fact": {
+   "area": "retrieval",
+   "split": "train"
+  },
+  "bayes_pref": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "bbq": {
+   "area": "language",
+   "split": "train"
+  },
+  "blimp": {
+   "area": "language",
+   "split": "train"
+  },
+  "blog_authorship_corpus": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "ca_dmhc_imr": {
+   "area": "arts",
+   "split": "train"
+  },
+  "casino": {
+   "area": "arts",
+   "split": "train"
+  },
+  "cicero": {
+   "area": "language",
+   "split": "train"
+  },
+  "circa": {
+   "area": "language",
+   "split": "train"
+  },
+  "civil_comments": {
+   "area": "language",
+   "split": "train"
+  },
+  "clcd_english": {
+   "area": "language",
+   "split": "train"
+  },
+  "clinc150": {
+   "area": "retrieval",
+   "split": "train"
+  },
+  "clinicaltrials_gov": {
+   "area": "arts",
+   "split": "train"
+  },
+  "cloth": {
+   "area": "language",
+   "split": "train"
+  },
+  "codah": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "code_contests": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "commonsense_qa": {
+   "area": "language",
+   "split": "train"
+  },
+  "commonsense_qa_2_0": {
+   "area": "knowledge",
+   "split": "confirm_seal"
+  },
+  "conceptrules_v2": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "condaqa": {
+   "area": "language",
+   "split": "train"
+  },
+  "contract_nli": {
+   "area": "language",
+   "split": "train"
+  },
+  "copa": {
+   "area": "language",
+   "split": "train"
+  },
+  "corr2cause": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "cosmos_qa": {
+   "area": "language",
+   "split": "train"
+  },
+  "courtlistener": {
+   "area": "arts",
+   "split": "dev_select"
+  },
+  "creak": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "cycic": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "dbpedia_14": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "dgen": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "discovery": {
+   "area": "language",
+   "split": "train"
+  },
+  "disrpt": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "dnd_style_intents": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "doc_nli": {
+   "area": "language",
+   "split": "train"
+  },
+  "docred": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "dynahate": {
+   "area": "language",
+   "split": "train"
+  },
+  "dynasent": {
+   "area": "language",
+   "split": "train"
+  },
+  "e_care": {
+   "area": "language",
+   "split": "train"
+  },
+  "emo": {
+   "area": "language",
+   "split": "train"
+  },
+  "equate": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "ethos": {
+   "area": "language",
+   "split": "train"
+  },
+  "exams": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "feasibilityqa": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "fever": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "fig_qa": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "flute": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "fol_nli": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "folio": {
+   "area": "knowledge",
+   "split": "confirm_seal"
+  },
+  "folktables_acs": {
+   "area": "arts",
+   "split": "train"
+  },
+  "fool_me_twice": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "garas_synth/beta_rate": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "garas_synth/binary_evidence": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "garas_synth/fact_world": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "gdelt": {
+   "area": "arts",
+   "split": "train"
+  },
+  "genomics_outcomes": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "github_issue_similarity": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "go_emotions": {
+   "area": "arts",
+   "split": "train"
+  },
+  "goal_step_wikihow": {
+   "area": "language",
+   "split": "train"
+  },
+  "google_wellformed_query": {
+   "area": "language",
+   "split": "train"
+  },
+  "gsm8k": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "hans": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "hate_speech18": {
+   "area": "language",
+   "split": "train"
+  },
+  "hatemojibuild": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "head_qa": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "headline_cause": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "health_fact": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "help_nli": {
+   "area": "language",
+   "split": "train"
+  },
+  "hendrycks_ethics": {
+   "area": "arts",
+   "split": "confirm_seal"
+  },
+  "hlgd": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "hope_edi": {
+   "area": "language",
+   "split": "train"
+  },
+  "hyperpartisan_news": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "i2d2": {
+   "area": "language",
+   "split": "train"
+  },
+  "ibm_argument_quality": {
+   "area": "arts",
+   "split": "train"
+  },
+  "implicatures": {
+   "area": "language",
+   "split": "train"
+  },
+  "jebadiah": {
+   "area": "tools",
+   "split": "train"
+  },
+  "jigsaw_toxicity": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "kaivoss": {
+   "area": "tools",
+   "split": "train"
+  },
+  "klue": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "lex_glue": {
+   "area": "knowledge",
+   "split": "confirm_seal"
+  },
+  "lichess": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "logical_entailment": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "lonli": {
+   "area": "language",
+   "split": "train"
+  },
+  "masakhanews": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "massive": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "measuring_hate_speech": {
+   "area": "arts",
+   "split": "train"
+  },
+  "medmcqa": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "medqa_usmle_4_options_hf": {
+   "area": "knowledge",
+   "split": "confirm_seal"
+  },
+  "mghafiri": {
+   "area": "tools",
+   "split": "train"
+  },
+  "miam": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "mindgames": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "miracl": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "mlma_hate_speech": {
+   "area": "language",
+   "split": "train"
+  },
+  "mnli": {
+   "area": "language",
+   "split": "train"
+  },
+  "monotonicity_entailment": {
+   "area": "language",
+   "split": "train"
+  },
+  "moral_stories": {
+   "area": "arts",
+   "split": "dev_select"
+  },
+  "ms_marco": {
+   "area": "retrieval",
+   "split": "train"
+  },
+  "mscinli": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "mtop": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "multilingual_sentiments": {
+   "area": "language",
+   "split": "train"
+  },
+  "nan_nli": {
+   "area": "language",
+   "split": "train"
+  },
+  "naturallogic": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "neuralchemy_prompt_injection": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "numer_sense": {
+   "area": "knowledge",
+   "split": "confirm_seal"
+  },
+  "nusax": {
+   "area": "language",
+   "split": "train"
+  },
+  "nvd_cwe": {
+   "area": "retrieval",
+   "split": "train"
+  },
+  "nvidia_helpsteer": {
+   "area": "arts",
+   "split": "train"
+  },
+  "offenseval_dravidian": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "onestop_qa": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "open_jev": {
+   "area": "tools",
+   "split": "train"
+  },
+  "open_question_type": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "openfda": {
+   "area": "arts",
+   "split": "train"
+  },
+  "openreview": {
+   "area": "arts",
+   "split": "train"
+  },
+  "osha_nhtsa": {
+   "area": "arts",
+   "split": "train"
+  },
+  "paradise": {
+   "area": "language",
+   "split": "train"
+  },
+  "pararule_plus": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "patent_phrase_similarity": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "physics_outcomes": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "poem_sentiment": {
+   "area": "language",
+   "split": "train"
+  },
+  "prm800k_dpo": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "probability_words_nli": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "procedural_typed_decisions": {
+   "area": "language",
+   "split": "train"
+  },
+  "prompt_injections": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "promptshield": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "propsegment": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "prost": {
+   "area": "language",
+   "split": "train"
+  },
+  "proto_qa": {
+   "area": "knowledge",
+   "split": "confirm_seal"
+  },
+  "pubmedqa": {
+   "area": "language",
+   "split": "train"
+  },
+  "qangaroo_wikihop": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "qasc": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "qasper": {
+   "area": "language",
+   "split": "train"
+  },
+  "quartz": {
+   "area": "knowledge",
+   "split": "dev_select"
+  },
+  "recast": {
+   "area": "language",
+   "split": "train"
+  },
+  "resnli": {
+   "area": "language",
+   "split": "train"
+  },
+  "ruletaker": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "rumoureval_2019": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "s_labs_prompt_injection": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "scientific_exaggeration_detection": {
+   "area": "language",
+   "split": "train"
+  },
+  "scinli": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "scone": {
+   "area": "language",
+   "split": "train"
+  },
+  "scruples": {
+   "area": "arts",
+   "split": "train"
+  },
+  "sdoh_nli": {
+   "area": "language",
+   "split": "train"
+  },
+  "sem_eval_2010_task_8": {
+   "area": "language",
+   "split": "train"
+  },
+  "shell_safety_v2": {
+   "area": "tools",
+   "split": "dev_select"
+  },
+  "sherliic": {
+   "area": "language",
+   "split": "train"
+  },
+  "silicone": {
+   "area": "language",
+   "split": "train"
+  },
+  "sms_spam": {
+   "area": "retrieval",
+   "split": "dev_select"
+  },
+  "snips_built_in_intents": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "snli": {
+   "area": "language",
+   "split": "train"
+  },
+  "social_chem_101": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "social_i_qa": {
+   "area": "language",
+   "split": "train"
+  },
+  "spacenli": {
+   "area": "language",
+   "split": "train"
+  },
+  "spartqa": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "stackoverflow_questions": {
+   "area": "arts",
+   "split": "dev_select"
+  },
+  "stanford_politeness": {
+   "area": "arts",
+   "split": "train"
+  },
+  "starcon": {
+   "area": "language",
+   "split": "train"
+  },
+  "stepgame": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "story_cloze": {
+   "area": "language",
+   "split": "train"
+  },
+  "sts_companion": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "subjectivity": {
+   "area": "language",
+   "split": "train"
+  },
+  "swe_rebench": {
+   "area": "arts",
+   "split": "train"
+  },
+  "swiss_federal_court": {
+   "area": "arts",
+   "split": "train"
+  },
+  "tabfact": {
+   "area": "language",
+   "split": "train"
+  },
+  "temporal_nli": {
+   "area": "language",
+   "split": "train"
+  },
+  "tomi_nli": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "touche23_valueeval": {
+   "area": "arts",
+   "split": "dev_select"
+  },
+  "tracie": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "trofi": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "turingbench": {
+   "area": "language",
+   "split": "train"
+  },
+  "tweet_sentiment_multilingual": {
+   "area": "language",
+   "split": "train"
+  },
+  "tweets_hate_speech_detection": {
+   "area": "language",
+   "split": "train"
+  },
+  "twitter_financial_news_sentiment": {
+   "area": "language",
+   "split": "train"
+  },
+  "ultrafeedback_paired": {
+   "area": "arts",
+   "split": "train"
+  },
+  "universal_joy": {
+   "area": "language",
+   "split": "train"
+  },
+  "vagmi": {
+   "area": "tools",
+   "split": "train"
+  },
+  "vitaminc": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "wanli": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "wice": {
+   "area": "retrieval",
+   "split": "confirm_seal"
+  },
+  "wikidata": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "wikimedqa": {
+   "area": "knowledge",
+   "split": "confirm_seal"
+  },
+  "wikipedia_afd": {
+   "area": "arts",
+   "split": "train"
+  },
+  "wikipedia_census": {
+   "area": "knowledge",
+   "split": "train"
+  },
+  "wildguardmix_cleaned": {
+   "area": "retrieval",
+   "split": "train"
+  },
+  "winodict": {
+   "area": "language",
+   "split": "dev_select"
+  },
+  "winogrande": {
+   "area": "language",
+   "split": "train"
+  },
+  "winowhy": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "wnut_17": {
+   "area": "language",
+   "split": "train"
+  },
+  "x_stance": {
+   "area": "language",
+   "split": "confirm_seal"
+  },
+  "xnli_americasnli": {
+   "area": "language",
+   "split": "train"
+  }
+ },
+ "panel_cluster_eligibility": {
+  "current_mixture_root": 29,
+  "di_ancestry": 10,
+  "eligible": 133,
+  "label_basis": 8,
+  "scarce_mechanism": 22,
+  "too_few_parents": 1
+ },
+ "panel_families": {
+  "confirm_seal": {
+   "arts": [
+    "aidev_pr_outcomes",
+    "hendrycks_ethics",
+    "anthropic_hh_rlhf"
+   ],
+   "knowledge": [
+    "commonsense_qa_2_0",
+    "folio",
+    "proto_qa",
+    "numer_sense",
+    "lex_glue",
+    "medqa_usmle_4_options_hf",
+    "wikimedqa"
+   ],
+   "language": [
+    "klue",
+    "equate",
+    "docred",
+    "headline_cause",
+    "acceptability_prediction",
+    "winowhy",
+    "social_chem_101",
+    "flute",
+    "x_stance",
+    "tracie",
+    "wanli",
+    "miam",
+    "scinli",
+    "afrisenti"
+   ],
+   "retrieval": [
+    "fool_me_twice",
+    "snips_built_in_intents",
+    "dbpedia_14",
+    "masakhanews",
+    "mtop",
+    "miracl",
+    "fever",
+    "vitaminc",
+    "massive",
+    "wice",
+    "github_issue_similarity"
+   ],
+   "tools": [
+    "agent_action_safety"
+   ]
+  },
+  "dev_select": {
+   "arts": [
+    "stackoverflow_questions",
+    "courtlistener",
+    "moral_stories",
+    "touche23_valueeval"
+   ],
+   "knowledge": [
+    "quartz",
+    "prm800k_dpo",
+    "exams",
+    "cycic",
+    "dgen",
+    "aqua_rat",
+    "qasc",
+    "head_qa",
+    "creak"
+   ],
+   "language": [
+    "hatemojibuild",
+    "propsegment",
+    "trofi",
+    "amazon_counterfactual",
+    "mscinli",
+    "naturallogic",
+    "winodict",
+    "onestop_qa",
+    "codah",
+    "disrpt",
+    "fig_qa",
+    "offenseval_dravidian",
+    "jigsaw_toxicity",
+    "hans",
+    "blog_authorship_corpus",
+    "feasibilityqa",
+    "sts_companion",
+    "rumoureval_2019"
+   ],
+   "retrieval": [
+    "open_question_type",
+    "sms_spam",
+    "patent_phrase_similarity",
+    "hlgd",
+    "qangaroo_wikihop",
+    "s_labs_prompt_injection",
+    "dnd_style_intents",
+    "health_fact",
+    "neuralchemy_prompt_injection",
+    "prompt_injections",
+    "promptshield",
+    "hyperpartisan_news"
+   ],
+   "tools": [
+    "shell_safety_v2"
+   ]
+  }
+ },
+ "panel_shortfalls_by_area": {
+  "confirm_seal/tools": {
+   "clusters": 1,
+   "eligible_clusters_in_area": 2,
+   "min_clusters": 8
+  },
+  "confirm_seal/tools/parents": {
+   "area_quota": 1097,
+   "parent_capacity": 400,
+   "rule": "reallocated to other areas by weight"
+  },
+  "dev_select/tools": {
+   "clusters": 1,
+   "eligible_clusters_in_area": 2,
+   "min_clusters": 8
+  },
+  "dev_select/tools/parents": {
+   "area_quota": 1097,
+   "parent_capacity": 400,
+   "rule": "reallocated to other areas by weight"
+  }
+ },
+ "pool_assign_counts": {
+  "bridge_reserved_component": 281,
+  "cal_select": 4086,
+  "cal_select_unused": 1197,
+  "confirm_seal": 7209,
+  "confirm_seal_family_unused": 178886,
+  "confirm_seal_reserve": 4317,
+  "confirm_seal_reserve_unused": 2314,
+  "confirm_seal_unused": 9667,
+  "cross_panel_bridge": 15,
+  "dev_select": 7620,
+  "dev_select_family_unused": 372475,
+  "dev_select_unused": 4759,
+  "discovery": 17108,
+  "discovery_unused": 2594,
+  "excluded": 167160,
+  "head_fit": 16384,
+  "head_fit_unused": 7950,
+  "pilot": 2132475
+ },
+ "pools_report": {
+  "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/work/pools_report.json",
+  "sha256": "e52f7828989c6520b484d788952436c2e12268733e6ab8f1475592ba40928dda"
+ },
+ "publication_gates": {
+  "component_disjointness": {
+   "components_by_group": {
+    "cal_select": 1793,
+    "confirm_family_unused": 139852,
+    "confirm_seal": 4780,
+    "confirm_seal_reserve": 2488,
+    "dev": 232805,
+    "discovery": 7627,
+    "head_fit": 12623,
+    "training": 979587
+   },
+   "intersections": 0,
+   "pairs_checked": 28
+  },
+  "protected_scan_manifest": {
+   "all_complete": true,
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/work/scan_manifest.json",
+   "sha256": "8fd3bac17a9151ff20fe140ddf6b61a239c32b2081a5577823a2b398e9d30cec"
+  },
+  "training_uids_in_pilot_pool": true
+ },
+ "rules": {
+  "max_siblings_per_parent": 4,
+  "panels": "whole family clusters reserved for dev_select / confirm_seal; other records of reserved families unusable; records of other families sharing an ancestry component with a reserved family removed ('bridge')",
+  "training_pools": "component-disjoint carving: head_fit (decisions), cal_select (parents), discovery (parents); rest pilot"
+ },
+ "schema": "stock-decision-split-registry-v1",
+ "seed": 20261013,
+ "stock_tokenizer": "google/gemma-4-31B-it@842da3794eaa0b77d5f08bae87a17459d91ff475",
+ "units_pools": {
+  "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/work/units_pools.parquet",
+  "sha256": "38fee463055994d992e250a30e7277293e256a07718c86bdd282291a2b7452a0"
+ }
+}

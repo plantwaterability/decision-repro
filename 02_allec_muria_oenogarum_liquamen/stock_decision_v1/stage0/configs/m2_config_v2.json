@@ -1,0 +1,47 @@
+{
+ "schema": "stock-decision-m2-config-v1",
+ "seed": 20261013,
+ "mixture": "M2",
+ "total_exposures": 48000,
+ "spec": "research/claude_bayes_handoff/SOTA_EXECUTION_PACK_2026-10-14/mixture_M2_spec.json",
+ "b1": 18200,
+ "b1_source_cap_exposures": 960,
+ "b1_exclude_sources": [
+  "chaosnli",
+  "chaos_nli",
+  "contract_nli",
+  "contractnli"
+ ],
+ "b2": {
+  "bayes_zen_U3": 3840,
+  "bayes_families_r2": 4320,
+  "garas_synth_r2": 3840
+ },
+ "b3": {
+  "synth_tool_policy": 3840,
+  "synth_appliance_sata_case": 2880,
+  "synth_causal_scm_cladder": 2880,
+  "synth_music_harmony_pop909": 2400,
+  "synth_pyexec_cruxeval": 2400
+ },
+ "b4_exposures": 3400,
+ "k_bucket_targets": {
+  "2": 0.3,
+  "3-5": 0.45,
+  "6-16": 0.13,
+  "17-32": 0.06,
+  "33-52": 0.06
+ },
+ "length_bucket_targets": {
+  "<=512": 0.55,
+  "513-2048": 0.32,
+  "2049-8192": 0.13
+ },
+ "deviations": [
+  "ChaosNLI (protected) and contract_nli (DI root) excluded from bucket 1 (coordinator 2026-10-14); neither is present in the eligible supply, so the exclusion removes nothing",
+  "bayes_zen U3 taken as delivered by BAYES-DATA (3,840 unique decisions, one exposure each)",
+  "music and pyexec gap families have 1,500 train decisions each, so 2,400 exposures use 1.6 exposures per decision",
+  "Bucket 4 supply 1,904 rows / 3,400 exposures; 3,800 reallocated to Bucket 1"
+ ],
+ "b1_reallocation": "Bucket 4 supply 1,904 rows / 3,400 exposures; 3,800 reallocated to Bucket 1 (coordinator 2026-10-14); remainder to bucket 2 bayes_families / garas_synth proportionally if the 2% source cap binds"
+}

@@ -1,0 +1,116 @@
+{
+ "schema": "sdv1-arm-config-v1",
+ "status": "SKELETON: manifest digests, renderer R2 hash, head-fit / calibration / development pools and the backbone (12B screen per the addendum, 31B bridge) are frozen before launch",
+ "init": {
+  "stock_only": true,
+  "backbones": {
+   "12b": {
+    "repo": "google/gemma-4-12B-it",
+    "revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+    "tokenizer": "pinned 31B snapshot's (the 12B repo ships none)"
+   },
+   "31b": {
+    "repo": "google/gemma-4-31B-it",
+    "revision": "842da3794eaa0b77d5f08bae87a17459d91ff475"
+   }
+  }
+ },
+ "trainer": {
+  "code": "fleetq/code/fullft13/trainers/fullft_train.py",
+  "md5": "d3f09d89a911137357799e8834756af2",
+  "preset": "sdv1_pilot",
+  "fixed": {
+   "optim": "fused fp32 AdamW betas (0.9, 0.95) eps 1e-8 wd 0",
+   "clip": 1.0,
+   "lr": 2.5e-06,
+   "warmup": 50,
+   "schedule": "cosine, floor 0.1 x peak",
+   "decisions_per_step": 64,
+   "steps": 600,
+   "exposures": 38400,
+   "evals_and_checkpoints": [
+    0,
+    200,
+    400,
+    600
+   ],
+   "alpha": 0.0,
+   "loss": "gold-weighted CE, global decision-weight normalisation",
+   "precision": "bf16 compute, fp32 masters, fp32 gradient reduce",
+   "max_rendered_tokens": 8192,
+   "K": [
+    2,
+    52
+   ],
+   "seed": 0,
+   "embeddings": "trainable",
+   "streaming_head": {
+    "family": "AuxVBLL",
+    "prior": 1,
+    "kl": 1,
+    "cov": "full",
+    "dim": 128,
+    "lr": 0.001,
+    "draws": 64,
+    "detached": true
+   }
+  },
+  "args_template": [
+   "--preset",
+   "sdv1_pilot",
+   "--backbone",
+   "<12b|31b>",
+   "--attention-policy",
+   "C",
+   "--seed",
+   "0",
+   "--manifest",
+   "<MIXTURE manifest>",
+   "--expect-rows-sha256",
+   "<frozen digest>",
+   "--val",
+   "<dev_select manifest>",
+   "--pack-tokens",
+   "8192",
+   "--out",
+   "<run dir>"
+  ]
+ },
+ "head_refit": {
+  "code": "fleetq/code/fullft13/trainers/sdv1_head.py",
+  "md5": "e6abfd4ff9fb87f16c1ffe7c6663c3fc",
+  "features": "fullft_train.py --extract-features on the frozen terminal backbone",
+  "pool": "head_fit (16,384 unique training-eligible decisions shared across arms)",
+  "steps": 1500,
+  "batch": 64,
+  "lr": 0.001,
+  "optimizer": "AdamW (0.9, 0.95), warmup 50 then cosine to 0, per-head clip 1.0",
+  "kl_denominator": "W_unique_headfit",
+  "sampling": "epochs of seeded permutations; weights in the likelihood only",
+  "controls": [
+   "native+T",
+   "trained deterministic residual+T (same feature map / init, CE)",
+   "posterior-mean+T",
+   "VBLL predictive+T (mean_s softmax(z_s/T))"
+  ],
+  "temperature": {
+   "pool": "cal_select",
+   "range": [
+    0.1,
+    10
+   ],
+   "search": "golden section over log T, tol 1e-6",
+   "objective": "source-balanced NLL",
+   "draws": "64 fixed, seed 0"
+  }
+ },
+ "attention_contract": "stock_decision_v1/attention_contract.json",
+ "arm": "C1",
+ "attention": "C",
+ "mixture": "M1",
+ "manifest": {
+  "name": "M1",
+  "sha256": "TO_FREEZE"
+ },
+ "order_seed0": 3
+}

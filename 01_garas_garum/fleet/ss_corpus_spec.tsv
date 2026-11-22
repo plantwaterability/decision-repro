@@ -1,0 +1,55 @@
+# fleet/ss_corpus.sh's inventory of every corpus the fleet has (screensaver phase 2; 10-07 inventory). Upload as
+# s3://YOUR_BUCKET/jev-race/fleetq/screensaver/corpus_spec.tsv to override this copy. Columns: see ss_corpus.sh.
+name	s3_key	md5	top	role	line	train_dirs	val_dirs	note
+jev_data	data/jev_data_ref.tgz	-	jev_data	train	mixed	train	val	base HF decision mix, canonical copy (setup_node.sh:22); ms_marco NC by source family; its go_emotions / mhs rows that share jev-bench test states go via the jev_real val/test exclusion
+jev_ext_strict	data/jev_ext_strict.tgz	-	jev_ext_strict	train	mixed	train	val	build_jev_ext.py: TD-format synthetic sources with TD's 4 workflows dropped (zero-shot legal, AN:2684-2689); mghafiri is Claude-labelled (CS:388); vagmi CC-BY-SA
+jev_ext2	data/jev_ext2.tgz	-	jev_ext2	train	mixed	train	val	15 human-label HF sets (AN:1657-1662); build-time gate vs eval families incl. TD (build_jev_ext2.py:41-54)
+jev_rd3	data/jev_rd3.tgz	32677581cc3e4b74f10c89108e44d94c	jev_rd3	train	clean	train	val	the gated real-data pool (rd3.md:18; 828,967 train units; 0 NC); contains rd1 + rd2; gates A/B/C vs DI + GDE-1 v3 (rd3.md:131-163); the raw realdata splits are NOT used (ungated)
+bp_train_v1	fleetq/data/bp_train_v1.tgz	63d0de53fa83c9f4161fdbf2984f5b80	bp_train_v1	train	clean	exact/train	-	(77b) flights, exact arm only (oracle / bayes_argmax = the same states, other targets); 0 state overlap with the bayes_pref eval (AN:3050-3052)
+jev_gdelt_v1	data/gdelt/jev_gdelt_v1.tgz	b77bb5ae946b7f4b7456ddb73fea06ce	jev_gdelt_v1	train	clean	train	val	GDELT forecasting (99) lineage; attribution required (task_gdelt.sh:8); test / test_recent excluded as its eval splits
+bayes_worlds_v1_2h	data/bayes_worlds/jev_bayes_worlds_v1_2h.tgz	e865bb412fd6020a23ce91f122fa905c	jev_bayes_worlds_v1_2h	train	clean	train_aug	val	exact-posterior worlds; train_aug only (train_plain / train_plain_k are the same worlds); the confirm split is not in this tarball (AN:5369)
+numeric_v2	fleetq/data/numeric_v2.tgz	5b7c4cb5e1eb168ee1f4dbfadcefceb0	numeric_v2	train	clean	train	val	numeric posteriors v2 (v1 axes leaked the answer: v1 not trained, CS:619)
+typed_synth_v1_labelled	data/typed_synth_v1_labelled.tgz	-	typed_synth_v1_labelled	train	mixed	train	val	TD-FORMAT synthetic over NEW workflows (TD's 4 workflows / 20 schemas excluded in code, synth_workflows/exclusion.py:1-40): zero-shot legal by the user's 10-01 rule; open-teacher labels
+jev_dist46pool	results46/jev_dist46pool.tgz	?	jev_dist46pool	train	mixed	train	val	ext2-family rows no model trained on, OWN labels (claude_distill46.py:3-15); teacher-output twins (dist46a/b, d89*) are NOT added
+l1_panel_v2	data/l1_panel/l1_panel_v2.tgz	7c6ee2bb34d4cedcaa3f356e097e7f29	l1_panel_v2	train	clean	fit	-	worlds-derived L1 panel: fit only; dev_* excluded; reserved templates 2/3 + skins never in fit (l1_reserved.py); records the trainer's loader cannot read are dropped (schema)
+l1_fitwc_v1	data/l1_panel/l1_fitwc_v1.tgz	0899f029206d121202dc7ea17e994776	l1_fitwc_v1	train	clean	fit	-	extra fit renderings (task_l1sup2.sh:13); same worlds as l1_panel_v2 fit
+jev_ext3	data/jev_ext3.tgz	-	jev_ext3	evalsplits	-	-	-	NOT trained in all1: the S3 copy may predate the lewidi block (pre-block rows share MultiPICo posts with LeWiDi test: build_jev_ext3.py:116, AN:2450) -- re-enable as train after checking
+jev_ext4	data/jev_ext4.tgz	-	jev_ext4	evalsplits	-	-	-	duplicates rd3's openjev / wiki_census (build_jev_rd1.py:212-215)
+jev_rd1	data/jev_rd1.tgz	e572a12b6c511e23cfaab7b62a881749	jev_rd1	evalsplits	-	-	-	contained in rd3
+jev_rd2	data/jev_rd2.tgz	904e5e792565f275b8e31c9b97e89a23	jev_rd2	evalsplits	-	-	-	251,827 of 252,259 records are in rd3 (rd3.md:66)
+outcomes2_jev	data/outcomes2_jev.tgz	?	outcomes2_jev	evalsplits	-	-	-	raw; reaches training via rd3 only; afd: never publish records
+realdata_rw_trainval_v1	data/realdata_rw_trainval_v1.tgz	395e43035eb38bd9cfc7b35e8ba34994	.	evalsplits	-	-	-	RAW (ungated) courts / genomics / OpenReview / physics train+val: its VAL splits are RDF-B's pool (final_suite.md:135-140)
+realdata_fda_dmhc_v1	data/realdata_fda_dmhc_v1.tgz	-	.	evalsplits	-	-	-	raw; val / eval / eval_cf / teacher_fill excluded; DMHC has minors' age bins
+realdata_safety_v1	data/realdata_safety_v1.tgz	-	.	evalsplits	-	-	-	raw; val / eval excluded
+laptop_data	data/laptop_data_2026-10-01.tgz	?	.	evalsplits	-	-	-	raw source dirs behind rd (AN:2727): gde1/ and meragpt_eval subtrees + every val / eval split excluded; meraGPT outputs never trained
+wikidata_A_v1	data/wikidata_A_v1.tgz	?	.	evalsplits	-	-	-	raw; val / eval / probe / gde1 excluded
+wikidata_jev_B	data/wikidata_jev_B_final_2026-10-01.tgz	?	.	evalsplits	-	-	-	raw; wd_compare train must never be trained (rd1_pipeline.md:89)
+numeric_v1	fleetq/data/numeric_v1.tgz	b345c9de24941164d1f6222223db2566	numeric_v1	evalsplits	-	-	-	superseded (answer-leaking axes)
+numeric_p101	fleetq/data/numeric_p101.tgz	e911411ff7d2e467b43e292aedd09a32	numeric_p101	evalsplits	-	-	-	re-render of numeric v1
+numeric_p101_v2	fleetq/data/numeric_p101_v2.tgz	cf00e0c4380784cf4e096818fc69f09a	numeric_p101_v2	evalsplits	-	-	-	re-render of numeric v2
+bayes_worlds_v1	data/bayes_worlds/jev_bayes_worlds_v1.tgz	ae47059ad780d40c3e11a2c9a8e855ce	.	evalsplits	-	-	-	older worlds
+bayes_worlds_v1_1	data/bayes_worlds/jev_bayes_worlds_v1_1.tgz	c8d4e1d067b956637e30e4f9cfd2b0d6	.	evalsplits	-	-	-	older worlds
+bayes_worlds_v1_2d	data/bayes_worlds/jev_bayes_worlds_v1_2d.tgz	36e0fc3ca17c1ec935c0962fc58d752f	.	evalsplits	-	-	-	eval files = v1_2h's
+l1_panel_v1	data/l1_panel/l1_panel.tgz	?	.	evalsplits	-	-	-	older panel: dev splits excluded
+rw_eval_v1	data/rw_eval_v1.tgz	-	.	eval	-	-	-	results67's real-world eval sets (no train dirs, AN:3165)
+gde1_v3	data/gde1_v3.tgz	1698eff2938f8abdcf235c3607c01391	.	eval	-	-	-	GDE-1 v3 incl. healthbench / hle (DO_NOT_TRAIN) / tutormoments / medqa
+gde1_v3_gated	data/gde1_v3_gated.tgz	7bd4f39c86e67dfad7206494fa23d094	.	eval	-	-	-	GDE-1 v3 gated
+gde1_v2_gated	data/gde1_v2_gated.tgz	-	.	eval	-	-	-	GDE-1 v2
+gde1_outcomes2	data/gde1_outcomes2.tgz	?	.	eval	-	-	-	swe_agent / ecthr eval
+bayes_pref_v1	fleetq/data/bayes_pref_v1.tgz	-	.	eval	-	-	-	bayes_pref eval
+bayes_consistency_v1	fleetq/data/bayes_consistency_v1.tgz	3988d60a71893431a13d76c799bab48c	.	eval	-	-	-	consistency suite v1
+bayes_consistency_v2	fleetq/data/bayes_consistency_v2.tgz	90416ce3df51800b6a2be6daa31479e6	.	eval	-	-	-	consistency suite v2
+bc_val_v1	fleetq/data/bc_val_v1.tgz	5d0d66a00eff60cd1466851156f43e91	.	eval	-	-	-	(103) mixture val
+bc_val_v2	fleetq/data/bc_val_v2.tgz	a12285e5fe39f0a51779fa1a404254a4	.	eval	-	-	-	(103) mixture val
+decision_index_v021	data/decision_index_v021.tgz|fleetq/data/decision_index_v021.tgz	d023674a8e8c654e650cc5d34a0e7079	.	eval	-	-	-	EVAL ONLY (task_di.sh:13)
+jev_rd3_stackpool	data/jev_rd3_stackpool.tgz	3c52345eb0d0c04794d29f66723945a7	.	eval	-	-	-	stack pool: train AND val are held out (rd3.md:19)
+jev_d89rdval	results89/jev_d89rdval.tgz	?	.	eval	-	-	-	(89) rd-val stack sample: held out
+final_v1_rd_index	sealed/final_v1/rd_exclusion_index.json.gz	28a13a92edc55b38da3db5d4f5f93ef5	-	index	-	-	-	RDF-A / RDF-B: ids, unassigned eval-only ids, state sha1s, entity keys, clusters; not label-bearing
+final_v1_hl_index	sealed/final_v1/hl_exclusion_index.json.gz	f047836e7cf6be1f9dcde484d1318676	-	index	-	-	-	HL-F: ids, state sha1s, clusters; not label-bearing
+final_v1_items	sealed/final_v1/	-	-	skip	-	-	-	the sealed final suite's items / inputs: ledger-gated, never fetched
+worlds_v1_2_confirm	sealed/worlds_v1_2_confirm/worlds_v1_2_confirm.tgz	-	-	skip	-	-	-	private-salt confirm split: never fetched
+macjev_INTERNAL_v1	data/macjev_INTERNAL_v1.tgz	-	-	skip	-	-	-	closed-teacher TD-format data, INTERNAL ONLY (CS:446-447)
+typed_synth_v1	data/typed_synth_v1.tgz	-	-	skip	-	-	-	unlabelled
+rd2_variants	data/variants/	-	-	skip	-	-	-	rd2 relabelled: the same states as rd2
+jev_d89real	results89/jev_d89real.tgz	-	-	skip	-	-	-	duplicate of rd3
+extevals	-	-	-	skip	-	-	-	not on S3 (built per node by convert_extevals.py): NOT checked -- a gap

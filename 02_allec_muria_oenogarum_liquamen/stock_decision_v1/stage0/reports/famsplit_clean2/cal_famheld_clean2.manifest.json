@@ -1,0 +1,297 @@
+{
+ "build": {
+  "by_area": {
+   "arts": 978,
+   "knowledge": 872,
+   "language": 1756,
+   "retrieval": 218,
+   "tools": 262
+  },
+  "by_kind": {
+   "choice": 2570,
+   "noul": 929,
+   "score": 587
+  },
+  "decisions": 4086,
+  "drawn": 4086,
+  "fallback": {
+   "L2:choice|17-32|knowledge": 11,
+   "L2:choice|2|arts": 27,
+   "L2:score|6-16|arts": 2,
+   "L3:choice|retrieval": 30,
+   "L3:score|knowledge": 39,
+   "L3:score|language": 6,
+   "L3:score|tools": 4,
+   "L4:noul": 3,
+   "L4:score": 49
+  },
+  "families": 36,
+  "families_by_area": {
+   "arts": 7,
+   "knowledge": 7,
+   "language": 20,
+   "retrieval": 2,
+   "tools": 2
+  },
+  "family_list": [
+   "args_me",
+   "banking77",
+   "ca_dmhc_imr",
+   "clinicaltrials_gov",
+   "cloth",
+   "code_contests",
+   "condaqa",
+   "copa",
+   "discovery",
+   "folktables_acs",
+   "garas_synth/beta_rate",
+   "garas_synth/binary_evidence",
+   "garas_synth/fact_world",
+   "gdelt",
+   "ibm_argument_quality",
+   "implicatures",
+   "logical_entailment",
+   "lonli",
+   "mghafiri",
+   "mlma_hate_speech",
+   "nan_nli",
+   "nusax",
+   "open_jev",
+   "osha_nhtsa",
+   "recast",
+   "ruletaker",
+   "scone",
+   "sem_eval_2010_task_8",
+   "snli",
+   "spartqa",
+   "story_cloze",
+   "swe_rebench",
+   "tabfact",
+   "tweet_sentiment_multilingual",
+   "tweets_hate_speech_detection",
+   "winogrande"
+  ],
+  "max_family_share": 0.11820851688693099,
+  "parents": 3974,
+  "same_stratum": 3915,
+  "target": 4086,
+  "top_families": {
+   "garas_synth/fact_world": 483,
+   "gdelt": 123,
+   "ibm_argument_quality": 142,
+   "mghafiri": 137,
+   "open_jev": 125,
+   "osha_nhtsa": 436,
+   "snli": 173,
+   "spartqa": 253
+  },
+  "unfilled": {}
+ },
+ "component_disjointness": {
+  "components_by_group": {
+   "cal_select": 3862,
+   "confirm_family_unused": 139852,
+   "confirm_seal": 4780,
+   "confirm_seal_reserve": 2488,
+   "dev": 232805,
+   "discovery": 7627,
+   "head_fit": 12136,
+   "training": 978005
+  },
+  "intersections": 0,
+  "pairs_checked": 28
+ },
+ "decisions": 4086,
+ "families": [
+  "args_me",
+  "banking77",
+  "ca_dmhc_imr",
+  "clinicaltrials_gov",
+  "cloth",
+  "code_contests",
+  "condaqa",
+  "copa",
+  "discovery",
+  "folktables_acs",
+  "garas_synth/beta_rate",
+  "garas_synth/binary_evidence",
+  "garas_synth/fact_world",
+  "gdelt",
+  "ibm_argument_quality",
+  "implicatures",
+  "logical_entailment",
+  "lonli",
+  "mghafiri",
+  "mlma_hate_speech",
+  "nan_nli",
+  "nusax",
+  "open_jev",
+  "osha_nhtsa",
+  "recast",
+  "ruletaker",
+  "scone",
+  "sem_eval_2010_task_8",
+  "snli",
+  "spartqa",
+  "story_cloze",
+  "swe_rebench",
+  "tabfact",
+  "tweet_sentiment_multilingual",
+  "tweets_hate_speech_detection",
+  "winogrande"
+ ],
+ "family_disjoint": {
+  "cal_clusters": 36,
+  "cal_families": 36,
+  "cal_groups": 34,
+  "head_clusters": 84,
+  "head_families": 85,
+  "head_groups": 80,
+  "shared_families": [],
+  "shared_groups": []
+ },
+ "family_split_milp": {
+  "area_groups": {
+   "arts": {
+    "C": 7,
+    "groups_in_head": 17
+   },
+   "knowledge": {
+    "C": 5,
+    "groups_in_head": 23
+   },
+   "language": {
+    "C": 19,
+    "groups_in_head": 64
+   },
+   "retrieval": {
+    "C": 1,
+    "groups_in_head": 5
+   },
+   "tools": {
+    "C": 2,
+    "groups_in_head": 5
+   }
+  },
+  "groups": {
+   "C": 34,
+   "C_list": [
+    "cl:args_me",
+    "cl:banking77",
+    "cl:ca_dmhc_imr",
+    "cl:clinicaltrials_gov",
+    "cl:cloth",
+    "cl:code_contests",
+    "cl:condaqa",
+    "cl:copa",
+    "cl:discovery",
+    "cl:folktables_acs",
+    "cl:gdelt",
+    "cl:ibm_argument_quality",
+    "cl:implicatures",
+    "cl:logical_entailment",
+    "cl:lonli",
+    "cl:mghafiri",
+    "cl:mlma_hate_speech",
+    "cl:nan_nli",
+    "cl:nusax",
+    "cl:open_jev",
+    "cl:osha_nhtsa",
+    "cl:recast",
+    "cl:ruletaker",
+    "cl:scone",
+    "cl:sem_eval_2010_task_8",
+    "cl:snli",
+    "cl:spartqa",
+    "cl:story_cloze",
+    "cl:swe_rebench",
+    "cl:tabfact",
+    "cl:tweet_sentiment_multilingual",
+    "cl:tweets_hate_speech_detection",
+    "cl:winogrande",
+    "garas_synth"
+   ],
+   "H": 80,
+   "total": 114
+  },
+  "seed": 20261014
+ },
+ "files": {
+  "decisions": {
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/famsplit_clean2/render/decisions_cal_famheld_clean2.jsonl.gz",
+   "md5": "05feec61a0a3def0ba26514e5afa7b2a",
+   "sha256": "68bb348848a00259748f02f4b01b5009f4c27ee8b35a97be07708f77ef421c09"
+  },
+  "exposures": {
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/famsplit_clean2/render/exposures_cal_famheld_clean2.jsonl.gz",
+   "md5": "ee16c02524f05de44fe6204bc6b1969a"
+  },
+  "render_header": {
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/famsplit_clean2/render/render_cal_famheld_clean2.json",
+   "md5": "c0562b39b0c96ba4648482ef5184e9d5"
+  },
+  "selection": {
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/famsplit_clean2/sel_cal_famheld_clean2.parquet",
+   "md5": "225b8da032aba7d45677f0786db3afd7"
+  }
+ },
+ "label_semantics": {
+  "conversion_counts": {
+   "exact_action -> optimal_action / exact_oracle": 176,
+   "exact_posterior -> exact_posterior / exact_oracle": 74,
+   "exact_posterior -> optimal_action / exact_oracle": 126,
+   "execution_verified -> hard_fact / execution_check": 57,
+   "human_annotation -> hard_fact / source_human_gold": 886,
+   "human_distribution -> human_distribution / retained_human_distribution": 142,
+   "model_or_unverified_synthetic -> hard_fact / model_label": 137,
+   "realised_outcome -> hard_fact / source_human_gold": 158,
+   "realised_outcome -> human_distribution / retained_human_distribution": 16,
+   "realised_outcome -> realised_outcome / outcome_record": 662,
+   "recorded_agent_action -> recorded_action / recorded_behaviour": 125,
+   "rule_oracle -> hard_fact / exact_oracle": 746,
+   "upstream_annotation_llm_reviewed -> hard_fact / upstream_llm_reviewed": 781
+  },
+  "schema_sha256": "515fadce08b8183eb067c0b219b9d897bcfa5d2c041bb2a7b346bfe6459b3474"
+ },
+ "licence_sweep": {
+  "NC": 0,
+  "offending": {
+   "ctgov [generation_permission=unresolved]": 87,
+   "tasksource:recast/recast_factuality [composite_review=unresolved]": 7,
+   "tasksource:recast/recast_megaveridicality [composite_review=unresolved]": 8,
+   "tasksource:recast/recast_ner [composite_review=unresolved]": 14,
+   "tasksource:recast/recast_puns [composite_review=unresolved]": 8,
+   "tasksource:recast/recast_sentiment [composite_review=unresolved]": 18,
+   "tasksource:recast/recast_verbcorner [composite_review=unresolved]": 8,
+   "tasksource:recast/recast_verbnet [composite_review=unresolved]": 16
+  },
+  "quarantine": 0,
+  "registry_keys": 89,
+  "rows": 4086,
+  "unmapped": 0,
+  "unresolved": 166
+ },
+ "notes": {
+  "unresolved_kept": "licence entries with unresolved terms are kept by rule (user 2026-10-14) and listed in licence_sweep.offending"
+ },
+ "pair": [
+  "head_fit_famsplit_clean2",
+  "cal_famheld_clean2"
+ ],
+ "panel": "cal_famheld_clean2",
+ "parents": 3974,
+ "r2_pool_kept": "stage0/r2 head_fit / cal_select (12B screen)",
+ "rendered_tokens_real": 1351296,
+ "renderer_sha256": "0fab3c66ad3bb2044c27a849022912e3d83cf46fb51e9f5b1807fbaa821884e3",
+ "replaces_for_final_run": "cal_select_clean2 (stage0/clean_heads2)",
+ "role": "head / temperature selection, families held out of the head pool",
+ "schema": "stock-decision-panel-manifest-v1",
+ "strata_match": {
+  "tv_cal_vs_head": 0.04452859707690897,
+  "tv_cal_vs_head_fit_clean2": 0.04294168301440897,
+  "tv_head_vs_head_fit_clean2": 0.00323486328125
+ },
+ "uid_set_sha256": "98eb7d6932759d8c6212887c14d904e473b0a7db592a8e42caeed85fccd04cdd",
+ "vs_training_selections_component_intersection": 0,
+ "why": "cal_select shared ~all head_fit families, so head / temperature selection on it rewarded family-specific fitting; the two pools are family-disjoint (family clusters; bayes_families/* and garas_synth/* each one group)"
+}

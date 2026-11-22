@@ -1,0 +1,97 @@
+--- vx_train_vl.orig.py	2026-11-18 14:36:24
++++ vx_train_vl.py	2026-11-18 15:04:43
+@@ -1,4 +1,4 @@
+-"""VX port of qv_train_vl.py (recipe_vl/code2) to other VLM families: --family qwen | minicpm | internvl selects the loader
++"""WX patch 11-18 (layout d3 = wx_engine.py prompt + OCR state, --head-init; AGENT_NOTES WX wxs1 prereg): VX port of qv_train_vl.py (recipe_vl/code2) to other VLM families: --family qwen | minicpm | internvl selects the loader
+ (AutoModelForImageTextToText instead of Qwen3_5ForConditionalGeneration), the processor's documented image options (InternVL:
+ crop_to_patches, <= 12 tiles) and the LoRA target rule (MoE routers `gate` / `shared_expert_gate` excluded: LoRA on a router changes
+ routing, not a layer's function). Everything else is the stock trainer. Used for the 8xH200 feasibility smoke only.
+@@ -82,7 +82,33 @@
+         return [self.rows[i] for i in idx[self.rank::self.world]]
+ 
+ 
++def d3_text(proc, question, options, images, ocr, state):
++    """WX (layout d3): WeMM-Decision's d3 contract with the OCR block as the state, rendered by wx_engine.py's own d3_user / D3_SYSTEM (the
++    inference truth), so trainer and engine prompts are identical by construction. Codes = A.. (<= 26 options here)."""
++    import wx_engine as WXE
++    block = O.ocr_prefix(ocr, images) if ocr is not None else ""
++    q = {"type": "choice", "instructions": question, "criteria": {C.LETTERS[i]: o for i, o in enumerate(options)}}
++    content = [{"type": "image"} for _ in images] + [{"type": "text", "text": WXE.d3_user(block if block else state, q, list(C.LETTERS[:len(options)]))}]
++    return proc.apply_chat_template([{"role": "system", "content": WXE.D3_SYSTEM}, {"role": "user", "content": content}], tokenize=False,
++                                    add_generation_prompt=True, enable_thinking=False)
++
++
++def d3_encode(proc, question, options, images, img_root, ocr, state):
++    """WX (layout d3): images through the kit loader at the board cap (as wx_engine.py), d3 text, processor call as the engine makes it."""
++    from decision_index.vision import images as kimg
++    import wx_engine as WXE
++    pils = [kimg.pil(p, img_root, WXE.D3_MAX_PIXELS).convert("RGB") for p in images]
++    text = d3_text(proc, question, options, images, ocr, state)
++    if text.count("<|image_pad|>") != len(pils) or "<|video_pad|>" in text:
++        raise ValueError("literal image / video placeholder in the row text")
++    return proc(text=[text], images=pils if pils else None, padding=True, return_tensors="pt")
++
++
+ def encode(proc, row, img_root, max_tokens, ocr=None):
++    if VL["layout"] == "d3":  # WX: no sandwich length adjustment; the cap applies to the d3 prompt itself
++        enc = d3_encode(proc, row["question"], row["options"], row["images"], img_root, ocr, row.get("state", {}))
++        n = int(enc["input_ids"].shape[1])
++        return (enc, n) if n <= max_tokens else (None, n)
+     pils = [C.load_image(os.path.join(img_root, p)) for p in row["images"]]
+     pr = row.get("prompt") or {}
+     # VL: the OCR block is handed over on its own; images_first renders C.render(proc, block + question, ...) exactly as the stock trainer
+@@ -132,10 +158,13 @@
+         q = r["questions"]["answer"]
+         keys = list(q["criteria"])
+         pr = r.get("prompt") or {}
+-        pils = [kimg.pil(p, root, C.MAX_PIXELS).convert("RGB") for p in r["images"]]
+-        text = LY.render(proc, q["instructions"], [q["criteria"][k] for k in keys], len(pils), pr.get("options_in_image", False), pr.get("readout"),
+-                         O.ocr_prefix(ocr, r["images"]), VL["layout"])
+-        enc = proc(text=[text], images=([pils] if VX["nested"] else pils) if pils else None, return_tensors="pt", **(VX["proc_kw"] if pils else {}))
++        if VL["layout"] == "d3":  # WX: the d3 path, identical to wx_engine.py on kit rows (criteria keys = A..)
++            enc = d3_encode(proc, q["instructions"], [q["criteria"][k] for k in keys], r["images"], root, ocr, r.get("state", {}))
++        else:
++            pils = [kimg.pil(p, root, C.MAX_PIXELS).convert("RGB") for p in r["images"]]
++            text = LY.render(proc, q["instructions"], [q["criteria"][k] for k in keys], len(pils), pr.get("options_in_image", False), pr.get("readout"),
++                             O.ocr_prefix(ocr, r["images"]), VL["layout"])
++            enc = proc(text=[text], images=([pils] if VX["nested"] else pils) if pils else None, return_tensors="pt", **(VX["proc_kw"] if pils else {}))
+         enc = {k: v.to(dev) for k, v in enc.items()}
+         with torch.no_grad():
+             z = head(C.last_hidden(model, enc).float())[: len(keys)]
+@@ -198,7 +227,9 @@
+     ap.add_argument("--gate-baseline", action="store_true", help="read the gate set at step 0 (the init model) and anchor the step gates to it")
+     ap.add_argument("--gate-continue-rel", type=float, default=0.0, help="with --gate-baseline: continue if read >= baseline + this")
+     ap.add_argument("--gate-stop-rel", type=float, default=-1.73, help="with --gate-baseline: stop if read < baseline + this")
+-    ap.add_argument("--layout", default="images_first", choices=LY.LAYOUTS, help="VL: prompt layout in training and in every in-trainer read")
++    ap.add_argument("--layout", default="images_first", choices=LY.LAYOUTS + ("d3",), help="VL: prompt layout in training and in every in-trainer read "
++                                                                                         "(WX: d3 = WeMM-Decision's contract + OCR state, wx_engine.py)")
++    ap.add_argument("--head-init", default=None, help="WX: safetensors file whose 'weight' rows [:26] start the head (bias 0), e.g. WeMM's readout.safetensors")
+     ap.add_argument("--merger-lr-mult", type=float, default=0.0, help="VL: > 0 trains the vision merger (full fp32 weights) at --lr times this")
+     ap.add_argument("--family", default="qwen", choices=("qwen", "minicpm", "internvl", "gemma"), help="VX: VLM family (loader / processor options / LoRA rule)")
+     ap.add_argument("--soft-tokens", type=int, default=560, help="VX gemma: the image processor's max_soft_tokens (E1's vision engine: 560)")
+@@ -232,7 +263,13 @@
+     torch.manual_seed(a.seed + rank)
+ 
+     proc = AutoProcessor.from_pretrained(a.model)
+-    if a.family == "qwen":
++    if a.layout == "d3":  # WX: WeMM's processor budget (wx_engine.py): min 589,824 / max 1,638,400 px, left padding
++        if a.kit and a.kit not in sys.path:  # wx_engine imports the kit at module level; main() adds --kit only further down
++            sys.path.insert(0, a.kit)
++        import wx_engine as WXE
++        proc.tokenizer.padding_side = "left"
++        proc.image_processor.size = {"shortest_edge": WXE.D3_MIN_PIXELS, "longest_edge": WXE.D3_MAX_PIXELS}
++    elif a.family == "qwen":
+         C.set_pixel_cap(proc)
+     if a.family == "gemma":
+         proc.image_processor.max_soft_tokens = int(a.soft_tokens)
+@@ -256,6 +293,10 @@
+         head.bias.zero_()
+         if getattr(lm, "bias", None) is not None:
+             head.bias.copy_(lm.bias.detach()[lids].float())
++        if a.head_init:  # WX: e.g. WeMM's code readout rows A..Z (fp32), bias 0
++            from safetensors.torch import load_file as _lf
++            head.weight.copy_(_lf(a.head_init)["weight"][: len(lids)].float().to(dev))
++            head.bias.zero_()
+     if a.head_softcap > 0:  # VX: same weights / state_dict as the linear head (checkpoint- and soup-compatible); only the readout is capped
+         _lin, _cap = head.forward, float(a.head_softcap)
+         head.forward = lambda x: _cap * torch.tanh(_lin(x) / _cap)

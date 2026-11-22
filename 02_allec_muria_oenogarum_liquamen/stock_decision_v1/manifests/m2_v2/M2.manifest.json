@@ -1,0 +1,345 @@
+{
+ "backbone_objective": {
+  "note": "alpha 0.15 with target-basis routing is the user's spec; the 12B screen ran at alpha 0 and says nothing about alpha 0.15. Parent caches need 31B scoring: NOT queued (coordinator approval required).",
+  "parent_preservation_alpha": 0.15,
+  "routing": "exact_posterior / optimal_action / synthetic exact_oracle -> none; realised_outcome / human_distribution / graded_rating / outcome_probability -> garas; other hard_fact -> stock"
+ },
+ "change": "review 2026-10-14 17:00 finding 4: synth_tool_policy diagnosis was non-exclusive (ready and cached both true with every argument present, no lock and a cached verified result; one-hot gold on cached). gap_supply_v2 (generator v1.1) redefines ready = arguments present, no lock, result not already verified; the verifier evaluates every diagnosis option independently and requires exactly one true (v1: 351/1,500 train records had two true; v2: 0). M2 v2 = M2 v1 with only the tool rows re-rendered from gap_supply_v2: same selection, same option orders (inherited per exposure), same positions (inherited, --order-from v1).",
+ "checks": {
+  "assembly": "passed",
+  "bucket4_gold_matches_export": "1,904/1,904",
+  "components": {
+   "gap_components_touching_stage0": 0,
+   "gap_records": 7500,
+   "intersection": 0,
+   "panel_components": 394341,
+   "stage0_components": 16985,
+   "stage0_decisions": 22654,
+   "u3_check": "BAYES-DATA render_bzen_m2_u3.json component check PASS (0 links to any Stage 0 group)"
+  },
+  "distinct_prompts": {
+   "decisions": 35894,
+   "decisions_with_repeated_prompt": 0,
+   "multi_exposure_decisions": 12106
+  },
+  "failures": [],
+  "fixed_order_second_exposures": 0,
+  "order_from_v1": {
+   "file": "m2/final_v1/assembled/exposures_M2.jsonl.gz",
+   "matched": 48000,
+   "md5": "d5c77b961fc5d0f3d9f9003f2c5f98e6",
+   "uid_map": [
+    "gap_supply_v1=gap_supply_v2"
+   ],
+   "unmatched": 0
+  },
+  "status": "passed",
+  "tool_diagnosis_exclusivity": "verify_gap_labels_pd.py --all-tool: v2 train 1,500/1,500, val 300/300, discovery 500/500 exactly-one-true = gold (v1: 351 / 70 / 143 records with two true)"
+ },
+ "config": {
+  "file": "stage0/configs/m2_config_v3.json",
+  "md5": "c8b6f0c7c6bc59895c282643f10d975d"
+ },
+ "declared_deviations": [
+  "Bucket 4 supply 1,904 rows / 3,400 exposures; Bucket 4 share 7.1% (spec 15%); 3,800 reallocated 30:25 to Bucket 1 (+2,073) and Bucket 2 (+1,727: bayes_families +914, garas_synth +813; U3 as delivered) -- coordinator decision (A)",
+  "263 bucket-4 common teacher failures on non-oracle labels held (pending two independent reviews); 0 tool-slice candidates (only olmo fails there)",
+  "unique decisions 35,894 vs the spec's 32,000: second exposures go only to choice questions (score / noul rows get one exposure), which raises the unique count",
+  "ChaosNLI (protected) and contract_nli (DI root) excluded from bucket 1; neither is in the eligible supply",
+  "music / pyexec gap families at 1.6 exposures per decision (1,500 train decisions each)",
+  "length 2049-8192: 2880 exposures (6.0%) vs the 13% target -- gap, U3 and most bucket-2 rows are <= 2,048 tokens"
+ ],
+ "diff_vs_v1": {
+  "decisions": {
+   "gap_other": {
+    "decision_uid|evidence_refs|generator_revision|parent_uid|record_uid|source_repo|source_revision": 6840
+   },
+   "non_gap": {
+    "identical": 26494
+   },
+   "tool_diagnosis": {
+    "decision_uid|evidence_refs|generator_revision|len_bucket|option_sha256|ordered_options|parent_uid|prompt_sha256_first_exposure|record_uid|rendered_token_count|source_repo|source_revision": 64,
+    "decision_uid|evidence_refs|generator_revision|option_sha256|ordered_options|parent_uid|prompt_sha256_first_exposure|record_uid|rendered_token_count|source_repo|source_revision": 1223
+   },
+   "tool_policy": {
+    "decision_uid|evidence_refs|generator_revision|parent_uid|record_uid|source_repo|source_revision": 1273
+   }
+  },
+  "exposures_changed_tool_diagnosis": {
+   "n_tokens|prompt_sha256": 1928
+  },
+  "exposures_identical": 46072,
+  "file": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/m2/v2/m2_v1_v2_diff.json",
+  "note": "gap rows carry pool tag gap_supply_v2 (decision / record / parent uid, source_repo / revision, evidence_refs, generator_revision); prompts, option orders, labels and positions of every non-diagnosis row are identical to v1",
+  "tool_diagnosis_decisions_with_cached_gold": 296
+ },
+ "exposures_by_bucket": {
+  "1_core_real_decision_and_disagreement": 16473,
+  "2_exact_bayesian_posteriors_and_eu_actions": 13727,
+  "3_di03_gap_closers_deterministic_oracles": 14400,
+  "4_stage3_teacher_failure_mined_rows": 3400
+ },
+ "files": {
+  "b123_render": {
+   "decisions_md5": "a1261e6a6d70c448a440005196da9541",
+   "exposures_md5": "9d4c89a6d17b004cb8e5fbee73706a52",
+   "selection_md5": "e6b448b5e43b342b8ffa07a435d1378e"
+  },
+  "b4_and_u3": "unchanged from v1 (same files, md5 in M2_report.parts)",
+  "decisions": {
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/m2/v2/decisions_M2.jsonl.gz",
+   "md5": "0679bb41edf763eb2031c32dec0585b0",
+   "sha256": "c818a37d723718f61853a4251390fa8e6f4eecf8069821e65db8c9db7610d420"
+  },
+  "exposures": {
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/m2/v2/exposures_M2.jsonl.gz",
+   "md5": "e610d76a9d42cd7639effe52bb90b409",
+   "sha256": "21158b47d3dc63618639f66847e6571e1eb1b10fbd020e8e4aa7b498490dbcef"
+  },
+  "report": {
+   "key": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/m2/v2/M2_report.json",
+   "md5": "64bb1872e7bcacbce7d20991f58bd6b8"
+  }
+ },
+ "gap_source": {
+  "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/gap_supply_v2/gap_supply_v2.manifest.json",
+  "pool": "gap_supply_v2"
+ },
+ "k_buckets": {
+  "17-32": 3020,
+  "2": 16902,
+  "3-5": 20055,
+  "33-52": 2310,
+  "6-16": 5713
+ },
+ "label_semantics_schema_sha256": [
+  "515fadce08b8183e"
+ ],
+ "length_buckets": {
+  "2049-8192": 2880,
+  "513-2048": 16425,
+  "<=512": 28695
+ },
+ "mixture": "M2",
+ "n_exposures": 48000,
+ "option_order_rule": "a selection column option_order_keys (explicit semantic-key order per exposure) wins; otherwise choice: numpy default_rng(sha256(seed|mixture|uid|exposure_k)[:16]) permutation (exposure_k > 0: redrawn with |altN until it differs from exposure 0); noul / score stored order; bucket 4 uses the TEACHER export's per-exposure orders; U3 as rendered by BAYES-DATA",
+ "parent_route_decisions": {
+  "garas": 6436,
+  "none": 22072,
+  "stock": 7386
+ },
+ "parent_route_exposures": {
+  "garas": 7365,
+  "none": 29933,
+  "stock": 10702
+ },
+ "protected_scans": {
+  "blocks": {
+   "gap_supply_v2_records": {
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/gap_supply_v2/work/scan_manifest_gap_v2.json",
+    "status": "COMPLETE",
+    "strong": 0,
+    "units_scanned": 22600,
+    "weak": 0
+   },
+   "gap_tool_discovery_v2": {
+    "after_adjudication": {
+     "strong_kinds": {},
+     "strong_units": 0,
+     "weak_only_units": 0
+    },
+    "decisions": 1000,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "c2388b03f43b60fd5e36a70a653df15c",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/gap_tool_discovery_v2/scan_manifest_gap_tool_discovery_v2.json",
+    "raw": {
+     "strong_units": 0,
+     "weak_only_units": 0
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {},
+    "units_scanned": 1000
+   },
+   "m2_b4": {
+    "after_adjudication": {
+     "strong_kinds": {
+      "text_long": 245
+     },
+     "strong_units": 245,
+     "weak_only_units": 1564
+    },
+    "decisions": 1904,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "7672cfd508164c385c51731ec8005d92",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/m2_b4/scan_manifest_m2_b4.json",
+    "raw": {
+     "strong_units": 245,
+     "weak_only_units": 1564
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {
+     "weak / template in source pool": 245
+    },
+    "units_scanned": 1904
+   },
+   "m2_u3": {
+    "after_adjudication": {
+     "strong_kinds": {},
+     "strong_units": 0,
+     "weak_only_units": 474
+    },
+    "decisions": 3840,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "4aa5691a27ebbab7b4a7f4ad8533cc85",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/m2_u3/scan_manifest_m2_u3.json",
+    "raw": {
+     "strong_units": 0,
+     "weak_only_units": 474
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {},
+    "units_scanned": 3840
+   },
+   "m2_v2": {
+    "after_adjudication": {
+     "strong_kinds": {
+      "text_long": 2016
+     },
+     "strong_units": 2016,
+     "weak_only_units": 18502
+    },
+    "decisions": 35894,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "0679bb41edf763eb2031c32dec0585b0",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/m2_v2/scan_manifest_m2_v2.json",
+    "raw": {
+     "strong_units": 4074,
+     "weak_only_units": 16444
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {
+     "weak / template in source pool": 2016
+    },
+    "units_scanned": 35894
+   },
+   "uarms_U1": {
+    "after_adjudication": {
+     "strong_kinds": {},
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "decisions": 1920,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "6d521326126b1704441328edbc5fe498",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/uarms_U1/scan_manifest_uarms_U1.json",
+    "raw": {
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {},
+    "units_scanned": 1920
+   },
+   "uarms_U1p": {
+    "after_adjudication": {
+     "strong_kinds": {},
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "decisions": 1920,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "dc0a5ef80ccfea5d09197336b737381d",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/uarms_U1p/scan_manifest_uarms_U1p.json",
+    "raw": {
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {},
+    "units_scanned": 1920
+   },
+   "uarms_U2": {
+    "after_adjudication": {
+     "strong_kinds": {},
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "decisions": 1920,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "c94c8b23391b23e94af1ca46f85c9de5",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/uarms_U2/scan_manifest_uarms_U2.json",
+    "raw": {
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {},
+    "units_scanned": 1920
+   },
+   "uarms_U3": {
+    "after_adjudication": {
+     "strong_kinds": {},
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "decisions": 1920,
+    "index_npz_md5": "f1c26d3f160e2c97e4277c16e6225570",
+    "input_md5": "cbbd7a5acfec26fef188a628a328cf1d",
+    "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/protected/rendered_scans/uarms_U3/scan_manifest_uarms_U3.json",
+    "raw": {
+     "strong_units": 0,
+     "weak_only_units": 229
+    },
+    "status": "COMPLETE",
+    "strong_vs_stage0_source_adjudication": {},
+    "units_scanned": 1920
+   }
+  },
+  "index": "protected index v3 (npz md5 f1c26d3f), evalindex_v3.py scan + adjudicate; rendered blocks scanned as jev records of their visible fields (sd0_scan_rendered.py); a STRONG unit stops publication",
+  "result": "0 STRONG under the pre-registered rule. M2 v2 / B4: 2,016 / 245 rows keep a text_long hit when the T1 template DF is counted inside the block; every one is a Stage 0 unit whose own Stage 0 adjudication (DF over its source pool) demoted it to text_template (generator template sentences shared with held-out splits of the same generators: bayes_families, gdelt, casino, ctgov, garas_synth). U arms, U3, gap rows: 0 strong. No protected or sealed text read."
+ },
+ "renderer": "R2 = production build_prompt (claude_lmscore e0672bd0) with noul_defs=True, max_len 8192, margin 16, no truncation",
+ "renderer_sha256": "0fab3c66ad3bb2044c27a849022912e3d83cf46fb51e9f5b1807fbaa821884e3",
+ "schema": "stock-decision-mixture-manifest-v1",
+ "spec": "research/claude_bayes_handoff/SOTA_EXECUTION_PACK_2026-10-14/mixture_M2_spec.json",
+ "sub_allocations": {
+  "b1": 16473,
+  "b2": {
+   "bayes_families_r2": 5234,
+   "bayes_zen_U3": 3840,
+   "garas_synth_r2": 4653
+  },
+  "b3": {
+   "synth_appliance_sata_case": 2880,
+   "synth_causal_scm_cladder": 2880,
+   "synth_music_harmony_pop909": 2400,
+   "synth_pyexec_cruxeval": 2400,
+   "synth_tool_policy": 3840
+  },
+  "b4": 3400
+ },
+ "supersedes": {
+  "decisions_md5": "95d7e82260df679ae4f3231c764ac8e5",
+  "exposures_md5": "d5c77b961fc5d0f3d9f9003f2c5f98e6",
+  "manifest": "s3://YOUR_BUCKET/jev-race/stock_decision_v1/stage0/m2/v1/M2.manifest.json",
+  "version": "v1"
+ },
+ "target_basis_exposures": {
+  "exact_posterior": 11256,
+  "graded_rating": 212,
+  "hard_fact": 22801,
+  "human_distribution": 712,
+  "optimal_action": 6578,
+  "outcome_probability": 399,
+  "realised_outcome": 6042
+ },
+ "td_workflow_imitation": {
+  "consequence": "a model trained on M2 is NOT zero-shot for Typed-Decisions tool routing; M2 is not on the strict zero-shot line",
+  "decisions": 2560,
+  "exposures": 3840,
+  "value": "agent_tool_routing"
+ },
+ "tokenizer_revision": "google/gemma-4-31B-it@842da3794eaa0b77d5f08bae87a17459d91ff475",
+ "tokens_r2": 33569151,
+ "unique_decisions": 35894,
+ "version": "v2"
+}
